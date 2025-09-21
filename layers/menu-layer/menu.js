@@ -2,7 +2,8 @@
 
 <!--																												-->
 <!-- defer zorgt ervoor dat het script pas wordt uitgevoerd nadat de volledige DOM is geladen						-->
-<!--	als volgt <script src="layers/menu-layer/menu.js" defer></script>											-->
+<!--	als volgt 																									-->
+<!--	<script src="https://danga4biz.github.io/nextglamping/layers/menu-layer/menu.js" defer></script>			-->
 <!--																												-->
 
 	
