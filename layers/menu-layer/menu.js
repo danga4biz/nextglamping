@@ -62,8 +62,10 @@
 	<!--																												-->
 	function initHamburgerToggle() {
 		const toggleBtn = document.getElementById('menu-toggle-3');
-		toggleBtn.addEventListener('click', myHamburgFunction3);
-	});	
+		if (toggleBtn) {		
+			toggleBtn.addEventListener('click', myHamburgFunction3);
+		}
+	}
 	<!-- *** END *** SCRIPT om de myHamburgFunction3() te activeren *************************************************** -->
 
 
@@ -193,7 +195,7 @@
 		});
 		
 		// sluit submenu's als viewport van mobiel naar desktop gaat **
-		window.addEventListener("resize", function handleResize() {
+		window.addEventListener("resize", () => {
 			const isDesktop = window.matchMedia("(min-width: 801px)").matches;
 			
 			if (isDesktop) {
@@ -210,7 +212,7 @@
 			}
 		});
 		
-	});
+	}
 	<!-- *** END *** SCRIPT voor openen van submenus ******************************************************************	-->
 
 	<!-- *** BEGIN *** SCRIPT om aria-expanded op desktop op true en false te zetten **********************************	-->
@@ -241,7 +243,7 @@
 				}
 			});
 		});
-	});
+	}
 	<!-- *** END *** SCRIPT om aria-expanded op desktop op true en false te zetten ************************************	-->
 
 	<!-- *** BEGIN *** SCRIPT voor verbeterde mobiele toegankelijkheid ************************************************ -->
@@ -268,6 +270,7 @@
 	
 	<!-- *** BEGIN *** SCRIPT voor verbeterde mobiele toegankelijkheid ************************************************ -->
 	function initMenuCloseHandlers() {	
+	
 		<!-- klik buiten menu -->	
 		document.addEventListener('click', function handleOutsideClick(event) {
 			const menu = document.getElementById('myHamburg-3');
@@ -279,7 +282,6 @@
 			if (!isClickInsideMenu && !isToggleButton) {
 			
 				// Sluit het menu en alle open submenu's als buiten het menu wordt geklikt		
-				
 				menu.classList.remove('open');
 				document.body.classList.remove('nav-openZ');
 				toggleBtn.classList.remove('open');
@@ -288,19 +290,35 @@
 				// Sluit ook de open submenu's
 				document.querySelectorAll('.has-submenu').forEach(submenu => {
 					submenu.classList.remove('open');
-					submenu.querySelector('a').setAttribute('aria-expanded', 'false');
+					const link = submenu.querySelector('a');
+					if (link) {
+						link.setAttribute('aria-expanded', 'false');
+					}					
 				});				
 			}
 		});
 	
 		<!-- escape -->
-		document.addEventListener('keydown', function handleEscape(event) {
+		document.addEventListener('keydown', function (event) {
 			if (event.key === 'Escape') {
-				document.getElementById('myHamburg-3').classList.remove('open');
+				const menu = document.getElementById('myHamburg-3');
+				const toggleBtn = document.getElementById('menu-toggle-3');
+			
+				if (!menu || !toggleBtn) return;
+
+				menu.classList.remove('open');
 				document.body.classList.remove('nav-openZ');
-				document.getElementById('menu-toggle-3').classList.remove('open'); // ⬅️ ook hier
-				document.getElementById('menu-toggle-3').setAttribute('aria-expanded', 'false');
+				toggleBtn.classList.remove('open');
+				toggleBtn.setAttribute('aria-expanded', 'false');
 			}
-		});	
-	});	
+		});			
+	}
 	<!-- *** END *** SCRIPT voor verbeterde mobiele toegankelijkheid ************************************************** -->
+
+	// Init alles na DOM load
+	document.addEventListener("DOMContentLoaded", () => {
+		initHamburgerToggle();
+		initMobileMenuDropdowns();
+		initDesktopAriaExpanded();
+		initMenuCloseHandlers();
+	});		
