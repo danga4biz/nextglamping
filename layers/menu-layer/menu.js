@@ -1,5 +1,11 @@
 
 
+<!--																												-->
+<!-- defer zorgt ervoor dat het script pas wordt uitgevoerd nadat de volledige DOM is geladen						-->
+<!--	als volgt <script src="layers/menu-layer/menu.js" defer></script>											-->
+<!--																												-->
+
+	
 	<!-- ****** SCRIPT om nav-openZ in de body te zetten ************************************************************** -->
 
 	<!-- 17-09-2025 VERWIJDERT STAAT IN SCRIPT voor drop-down MENU myHamburgFunction3()									-->
