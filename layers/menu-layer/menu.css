@@ -1,0 +1,927 @@
+
+		/* ================================================================================================================ */
+		/* 										W3C FLY-OUT MenuText START													*/
+		/* ================================================================================================================ */
+		
+		/* ================================================================================================================ */
+		/*																													*/
+		/*	SAMENVATTING VAN DEZE MENU STRUCTUUR 																			*/
+		/*																													*/
+		/*	✅ Een top-level menu item met een dunne streep bovenaan en een dikke streep onderaan bij hover					*/
+		/*	✅ Een gap van 15px tussen menu item en submenu																	*/
+		/*	✅ De submenu-items gecentreerd in de dropdown																	*/
+		/*	✅ De dropdown gecentreerd onder het top-level menu item														*/
+		/*	✅ Zowel top-level item als dropdown box nemen de breedte aan van het breedste submenu item						*/
+		/*	✅ Gebruik van ::after pseudo-element om hover-activatie betrouwbaar te houden									*/
+
+		/* ================================================================================================================ */
+
+		/*************************************** BEGIN desktop menu layout d-flyout *****************************************/
+		/* desktop menu layout 																								*/
+		/*																													*/
+		/*	REMARK: 	Design is desktop georiënteerd, voor mobiel gebruiken we @mediaquery								*/
+		/*																													*/
+		/*************************************** BEGIN desktop menu layout d-flyout *****************************************/
+		
+		/* 	+-------------------------------+-------------------------+-----------------------------+-------------------------------+	*/
+		/* 	| Element                       | Rol in layout           | Hovergedrag                 | Transition                    |	*/
+		/*	+-------------------------------+-------------------------+-----------------------------+-------------------------------+	*/
+		/*	| .d-flyout > ul > li           | Container van menu-item | Border-top/bottom kleur     | border-color 0.3s ease        |	*/
+		/*	| .d-flyout li a                | Klikbare link           | Tekstkleur + achtergrond    | background-color, color 0.3s  |	*/
+		/*	| .d-flyout li a:hover          | Hover op link           | Kleur verandert via cascade | Geactiveerd via bovenstaande  |	*/
+		/*	| .d-flyout > ul > li:hover     | Hover op container      | Borderkleur zichtbaar       | Geactiveerd via container     |	*/
+		/*	| .d-flyout > ul > li > a:after | Pijltje-indicator       | Geen hovergedrag            | Geen transition nodig         |	*/
+		/*	+-------------------------------+-------------------------+-----------------------------+-------------------------------+	*/
+		
+		/********************************************************************************************************************/
+		/* BEGIN MEDIA QUERY @media screen and (min-width: 801px) {															*/
+		/********************************************************************************************************************/
+		@media screen and (min-width: 801px) { 
+		
+
+		/* =======================================	d-flyout ul ===========================================================	*/
+
+		/* 29-09-2023 	'display: flex' is set in class flex-container														*/
+		/*																													*/
+		/*				class flex-container is added to the ul (navigatie)													*/
+		/*																													*/
+		/* 24-09-2023	set 'box-sizing: border-box' to include the padding and border in de width and height 				*/
+		/*																													*/
+		/* 21-09-2023	set 'align-items: center' to ensure the icon aligns with the other menu-options						*/
+		/*					maybe we have to assign 'align-items: center' to the class flex-container						*/
+		/*																													*/
+		/*		'padding: 0' en 'margin: 0' reset spacing																	*/
+		/*		'list-style-type: none' verwijdert de list bullets															*/
+		
+		/* =======================================	d-flyout ul ===========================================================	*/
+	
+		.d-flyout ul
+		{
+			list-style-type: none;		
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box; /* optioneel: is gedefinieerd als universele reset */
+			gap: 1rem; /* ruimte tussen menu-items */
+			
+			display: flex;	
+			justify-content: center;	
+			align-items: center;	
+		}
+
+		/* =======================================	d-flyout > ul > li ====================================================	*/
+		
+		/* 17-09-2025 verwijder flex wordt niet gebruikt in d-flyout														*/
+		
+		/* transition zorgt voor de verandering van border-top/bottom kleur													*/
+		
+		/*	bevat de dunne streep boven een top menu item en de dikke streep onder een top menu item						*/
+		/*																													*/
+		/* 11-09-2025 vervang border parameters door border-top en border-bottom											*/
+		/*																													*/
+		/* 27-09-2023 border parameters avoid that the drop down box stretches each time a top menu item is hovered			*/
+		/*		border-bottom-color: transparent and border-top-color: transparent											*/
+		/*		set the border back in '.d-flyout > ul > li:hover' to show them												*/
+		/*		set the border-bottom-color: initial to set back the original color											*/
+		/*		set the border-top-color: initial to set back the original color											*/
+		/*																													*/
+		/* 8-09-2023                                                                                  						*/
+		/*  Set 'flex: auto' means flex-grow=1, flex-shrink=1, flex-basis=auto                      						*/
+		/*  Need to set 'display: flex' in d-flyout ul                                              						*/
+		/*																													*/
+		/* 23-08-2023 'text-align: center' aligns the text in the li and also those in sub-menu's							*/
+		/*																													*/
+		/*			(ul binnen li) d-flyout > ul > li > ul dat 'position: absolute' heeft 									*/
+		/*																													*/
+		/* REMARK: 	?? li handles the CSS layout of each top menu item	??													*/
+		/*			positioneringscontext met 'position: relative'															*/
+		
+		/* =======================================	d-flyout > ul > li ====================================================	*/
+		.d-flyout > ul > li
+		{
+			position: relative;
+			flex: auto; 
+			text-align: center;
+			
+			border-bottom-color: transparent;
+			border-bottom-style: solid;
+			border-bottom-width: thick;
+			border-bottom: 3px solid transparent; /* dikke lijn onder */
+
+			border-top-color: transparent;
+			border-top-style: solid;
+			border-top-width: thin;
+			border-top: 1px solid transparent; /* dunne lijn boven */
+
+			transition: border-color 0.3s ease;
+  
+		}
+
+		/* =======================================	.d-flyout > ul > li:hover =============================================	*/
+		
+		.d-flyout > ul > li:hover
+		{
+			border-bottom-color: initial; /* dikke lijn zichtbaar bij hover */
+			border-bottom-style: solid;
+			border-bottom-width: thick;
+			border-top-color: initial; /* dunne lijn zichtbaar bij hover */
+			border-top-style: solid;
+			border-top-width: thin;
+		}
+		
+		/*	=======================================	.d-flyout li a ========================================================	*/
+		
+		/*																													*/
+		/*		'display: block' zorgt dat het a-element block-level, belangrijk anders werkt 'text-align: center' niet		*/
+		/*		op elk sub-menu item in .d-flyout > ul > li > ul > li 														*/
+		/*																													*/
+		/*		transition: vloeiende kleurverandering, met iets snellere color-reactie, op a-element						*/
+		/*																													*/
+		/*		'padding: 10px' voegt ruimte toe binnen de link - rondom de tekst 											*/
+		/*			verbetert de klikbare zone en visuele ademruimte														*/
+		/*																													*/
+		/*		'text-decoration: none' verwijdert de onderstreping die standaard op het a-element staat					*/
+		/*			geeft meer controle over de visuele stijl van de link, zodat je later zelf hover-onderstreping, 		*/
+		/*			kleurverandering of andere effecten aan toe kunt voegen 												*/
+			
+		/*	REMARK: block-level item 																						*/
+		/*			vloeiende overgang bij hover op top level menu items													*/
+		
+		/*	=======================================	.d-flyout li a ========================================================	*/
+		.d-flyout li a 
+		{
+			display: block;
+			transition: background-color 0.3s ease, color 0.3s ease;
+			padding: 10px;
+			text-decoration: none;
+		}
+
+		/*	=======================================	.d-flyout > ul > li > a ===============================================	*/
+		
+		/* 17-09-2025 verwijder, wordt reeds in voorzien door .d-flyout li a												*/
+
+		/*																													*/
+		/*	Ensures the color of the top-label fades in, the color is set in .d-flyout li a:hover							*/
+		/*																													*/
+
+		/*	=======================================	.d-flyout > ul > li > a ===============================================	*/
+/*		
+		.d-flyout > ul > li > a
+		{
+			transition: color .2s linear;
+		}
+*/
+
+		/****************************** COMMENTS d-flyout pseudo classes ****************************/
+		/* a:hover MUST come after a:link and a:visited in the CSS definition to be effective!      */
+		/* a:active MUST come after a:hover in the CSS definition to be effective!                  */
+		/*                                                                                          */
+		/*  https://www.w3schools.com/css/css_pseudo_classes.asp                                    */
+		/*                                                                                          */
+		/* NEED TO CHANGE THE ORDER OF THE PSEUDO CLASSES IN MENU_WRAPPER                           */
+		/********************************************************************************************/
+
+		/* REMARK: Standaard heeft CSS 4 link toestanden (in deze volgorde van specificiteit):								*/
+		/*		a:link       → nog niet bezocht																				*/
+		/*		a:visited    → bezocht																						*/
+		/*		a:hover      → wanneer je er met je muis overheen gaat														*/
+		/*		a:active     → op het moment dat je erop klikt																*/
+		/*																													*/
+		/*	De volgorde waarin je deze definieert, maakt uit, en wordt vaak samengevat als:									*/
+		/*		LoVe HAte → :link, :visited, :hover, :active																*/
+
+
+		/*	=======================================	.d-flyout li a:link ===================================================	*/
+		/* REMARK: sets the color of all li-elements of type link 															*/
+		
+		.d-flyout li a:link
+		{
+			color: var(--menu-items-TXT-link-color, var(--menu-items-TXT-fallback-color, var(--root-TXT-color, white )));
+		}
+
+		/*	=======================================	.d-flyout li a:visited ================================================	*/
+		/* REMARK: sets the color of all li-elements of type visited														*/
+		
+		.d-flyout li a:visited
+		{
+			color: var(--menu-items-TXT-visited-color, var(--menu-items-TXT-fallback-color, var(--root-TXT-color, white )));
+		}
+
+		/*	=======================================	.d-flyout li a:hover ==================================================	*/
+		/* REMARK: sets the color of all li-elements of type hover 															*/
+		
+		
+		.d-flyout li a:hover
+		{
+			color: var(--menu-items-TXT-hover-color, var(--menu-items-TXT-fallback-color, var(--root-TXT-color, white )));
+		}
+
+		/*	=======================================	.d-flyout li a:active =================================================	*/
+		/* REMARK: sets the color of all li-elements of type active															*/
+		
+		.d-flyout li a:active
+		{
+			color: var(--menu-items-TXT-active-color, var(--menu-items-TXT-fallback-color, var(--root-TXT-color, white )));
+		}
+		
+		/*	=======================================	.d-flyout > ul > li > a:after =========================================	*/
+		
+		/* 11-09-2025 visueel kleine arrow vervangen door grote																*/
+		/*																													*/
+		/* REMARK: Set the drop down arrow (desktop) 																		*/
+		/*																													*/
+
+		/*	=======================================	.d-flyout > ul > li > a:after =========================================	*/
+		/* 11-09-2025 visueel kleine arrow vervangen door grote 															*/
+		/* .d-flyout > ul > li > a:after {content: '\1F893';} */
+
+		/* visueel grote en duidelijke arrow 																				*/
+		.d-flyout > ul > li > a:after {
+			content: '\25BC'; 
+			font-size: 1.2rem;
+			margin-left: 0.5rem;
+		}
+
+		/* voorkomt dat een arrow verschijnt bij items zonder submenu 														*/
+		.d-flyout li > a:only-child:after {content: '';}
+
+		/*	=======================================	.d-flyout > ul > li > ul ==============================================	*/
+		
+		/* 13-09-2025																										*/
+		/*		'right: 0' zorgt dat de breedte van het sub-menu aan de li wordt gebonden, nodig om ervoor te zorgen		*/
+		/*			dat het top level menu item de breedte overneemt van het sub-menu										*/
+		/*																													*/
+		
+
+		/* 21-10-2023 'background-color' zorgt dat de drop down box donkerblauw kleur heeft									*/
+		/*																													*/
+		/* 28-9-2023 remove 'list-style-type: none' is already set in 'd-flyout ul'											*/
+		/*		'display: none' ensures the drop down box is not shown, it is only shown when hovering over the top 		*/
+		/*			level menu item due to 'display: block' in .d-flyout > ul > li:hover::after								*/
+		/*																													*/
+		/* 25-09-2023 'margin-top: 15px' creates gap between top level menu items and the drop down box 					*/
+		/*																													*/
+		/*		'.d-flyout > ul > li:hover::after' fills up the gap	otherwise when hovering over the top level				*/
+		/*			item otherwise the drop down box looses focus and vanishes												*/
+		/*																													*/
+		/* 8-9-2023 'fonts-size: smaller' makes drop down box smaller than its containing parent .d-flyout > ul > li		*/
+
+		/* 30-08-2023 z-index ensures the drop down box is shown overlaying other contexts           						*/
+		/*																													*/
+		/*		'position: absolute' positioneert submenu ten opzichte van parent li - maar alleen als de parent  			*/
+		/*			ul > li 'position; relative' heeft 																		*/
+		/*																													*/
+		/* REMARK: 	handles the css layout of the drop down box when a top level menu ite is selected						*/
+		/*			dropdowns die netjes onder hun parent vallen															*/
+		/*			positioneringscontext met 'position: absolute'															*/
+		/*			ruimte tussen dikke streep en drop down box																*/
+
+		/*	=======================================	.d-flyout > ul > li > ul ==============================================	*/
+		.d-flyout > ul > li > ul 
+		{
+			display: none;
+			position: absolute;
+			padding: 0;
+			margin: 0;
+			left: 0;
+			right: 0;
+			z-index: 2;
+			font-size: smaller;
+			margin-top: 15px;
+			background-color: var(--d-flyout-dropdown-BG-color, var(--root-BG-color, white ));
+		}
+
+		/*	=======================================	.d-flyout > ul > li:hover::after ======================================	*/
+		
+		/*                                                                                          						*/
+		/* 25-09-2023																										*/
+		/*		'display: block' ensures that the drop down box is shown when hovering over the top level menu item,		*/
+		/*			the drop down box was set to 'display: none' in .d-flyout > ul > li > ul								*/
+		/*																													*/
+		/*		fills up the gap between the top level menu item and the drop down box created by 'margin-top: 15px'		*/
+		/*			in .d-flyout > ul > li > ul to avoid the drop down box looses focus	and vanishes when hovering over		*/
+		/*			the top level menu item 																				*/
+		/*						 																							*/
+		/*		::after pseudo-element creëert een onzichtbare laag over het li bij hover									*/
+		/*			Die laag verlengd het hovergebied en zorgt voor een buffer van 15px tussen het top level menu item		*/
+		/*			en de drop down box — dankzij margin-top: 15px op de dropdown (.d-flyout > ul > li > ul)				*/
+		/*			Dit voorkomt dat de drop down box verdwijnt zodra je je muis beweegt tussen het top level menu item		*/
+		/*			drop down box.																							*/
+		/*																													*/
+		/*      adds an element content '' = onzichtbare laag between the li and the dropdown list 							*/
+		/*      	so when hovering down the mouse does not loose focus            										*/
+
+		/* REMARK: 	fills up the gap between top level menu item and drop down box with content = gap 						*/
+		/*			dropdowns die netjes onder hun parent vallen															*/
+		/*			positioneringscontext met 'position: absolute'															*/
+		/*			ruimte tussen dikke streep en drop down box																*/
+
+		/*	“Samen vormen ::before en ::after een onzichtbare hoverzone die het menu-item én de ruimte tot de dropdown 		*/
+		/*	afdekt, zodat de muisbeweging nooit het hovergebied verlaat.”													*/
+
+		/*	=======================================	.d-flyout > ul > li:hover::after ======================================	*/
+
+		.d-flyout > ul > li:hover::after
+		{
+			content:'';
+			display:block;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+
+		/*	=======================================	.d-flyout > ul > li:hover ul ==========================================	*/
+
+		/* 13-09-2025 brede selector 																						*/
+		/*		Het submenu 'd-flyout > ul > li > ul' blijft in de flow van de parent li en de li moet ruimte maken, 		*/
+		/*		daardoor groeit het li mee met de 	breedte van de submenu													*/
+		/*																													*/
+		/*		'display: block' hiermee verleng je het hovergebied															*/
+		/*			Dit zorgt dat de dropdown open blijft zolang je óf op het menu-item bent, óf op de dropdown zelf		*/
+		/*																													*/
+		/*		LET OP: brede selector .d-flyout > ul > li:hover ul															*/
+		/*				met de specifieke selector (zie hierna) bereik je hetzelfde effect									*/
+		
+		/*																													*/
+		/* 6-9-2023                                                                                							*/
+		/*		replaces the nav > ul li:hover ul which was set by fly-out menu W3C                    						*/
+		/*																													*/
+		
+		/*																													*/
+		/* REMARK: 	hover over sub-menu ul bepaalt wanneer sub-menu en onderliggende structuur zichtbaar worden 			*/
+		/*			zodra de muis het menu-item of submenu verlaat, verdwijnt de dropdown									*/
+		/*																													*/
+	
+		/*	=======================================	.d-flyout > ul > li:hover ul ==========================================	*/
+
+		.d-flyout > ul > li:hover ul {display: block;}
+
+
+
+		/*	=======================================	.d-flyout > ul > li:hover > ul ========================================	*/
+		
+		/* 18-09-2025 
+		/*		- submenu wordt zichtbaar als het ouder element (li) de .open class heeft									*/
+		/*		- deze .open class wordt door SCRIPT voor openen van submenus op het ouder element gezet					*/
+		/*																													*/
+
+		/* 13-09-2025 specifieke selector 																					*/
+		/*		Het submenu 'd-flyout > ul > li > ul' blijft in de flow van de parent li en de li moet ruimte maken, 		*/
+		/*		daardoor groeit het li mee met de breedte van de submenu													*/
+		/*																													*/
+		/*		'display: block' hiermee verleng je het hovergebied															*/
+		/*			Dit zorgt dat de dropdown open blijft zolang je óf op het menu-item bent, óf op de dropdown zelf		*/
+		/*																													*/
+		/*		LET OP: specifieke selector .d-flyout > ul > li:hover > ul													*/
+		/*				hiermee bereik je hetzelfde effect als met de brede selector 										*/
+		/*				bovendien als je deze alleen gebruikt dan voorkomt het dat nested ul’s per ongeluk meedoen.			*/
+		/*					voorlopig allebei gebruiken hebben geen nested ul's												*/
+
+		/*																													*/
+		/* REMARK: 	hover over sub-menu ul bepaalt wanneer sub-menu en onderliggende structuur zichtbaar worden 			*/
+		/*			zodra de muis het menu-item of submenu verlaat, verdwijnt de dropdown									*/
+		/*																													*/
+
+		/*	=======================================	.d-flyout > ul > li:hover > ul ========================================	*/
+
+		.d-flyout > ul > li:hover > ul {display: block;}
+		
+
+		/*	=======================================	.d-flyout > ul > li > ul > li =========================================	*/
+
+		/*	13-09-2025																										*/
+		/*		zorgt dat de inhoud binnen elk sub-menu-item (dus binnen elk li in de drop down box) 						*/
+		/*		gecentreerd wordt — maar alleen als die inhoud inline of inline-block is.									*/
+		/*	
+		/*		standaard is li een block-level element: 																	*/
+		/*			het vult de volledige breedte van zijn container														*/
+		/*			begint op een nieuwe regel																				*/
+		/*			kan 'text-align' toepassen op inline of inline-block kinderen, maar niet op block-level kinderen		*/
+		
+		/*																													*/
+		/* REMARK: sub-menu items centreren 																				*/
+		/*																													*/
+
+		/*	=======================================	.d-flyout > ul > li > ul > li =========================================	*/
+
+		.d-flyout > ul > li > ul > li 
+		{
+			text-align: center;
+		}
+		
+
+		/*	=======================================	.d-flyout > ul > li.open > ul =========================================	*/
+		/* bepaalt wanneer sub-menu's zichtbaar worden 																		*/
+		
+		/* LET OP: 	zorg dat je JS of toggle-logica op mobiel de .open class toevoegt aan li bij tap						*/
+		/*			zie SCRIPT voor openen van submenus																		*/
+		
+		/* REMARK: 	klikmechanisme via .open class zorgt dat het sub-menu geopend wordt 									*/
+		/*			Dit is permanent: zolang de li de class .open heeft, blijft de dropdown open — ongeacht hover.			*/
+		/*																													*/
+		
+		/*	=======================================	.d-flyout > ul > li.open > ul =========================================	*/
+		
+		.d-flyout > ul > li.open > ul {display: block; }
+
+
+
+}
+		
+		/********************************************************************************************************************/
+		/* END MEDIA QUERY @media screen and (min-width: 801px) {															*/
+		/********************************************************************************************************************/
+		
+		/*************************************** END desktop menu layout d-flyout *******************************************/
+		/* desktop menu layout 																								*/
+		/*************************************** END desktop menu layout d-flyout *******************************************/
+
+		/*************************************** BEGIN hamburger knop en menu instellingen **********************************/
+		/* Hamburger-knop EN menu instellingen 																				*/
+		/*																													*/
+		
+		/* Er zijn drie selectors .menu-toggleZ en myHamburg-3 + open die samenwerken maar verschillende dingen doen		*/
+		/*																													*/
+		/*	UITLEG:																											*/
+		/*		CSS Selector		Wat het doet							Voor welk element?								*/
+		/*		.menu-toggleZ		Verbergt of toont de hamburgerknop		🔘 De knop om menu te openen					*/
+		/*							Styling van de hamburgerknop 															*/
+		/*		#myHamburg-3		Verbergt of toont het mobiele menu		📋 Het daadwerkelijke menu						*/
+		/*		#myHamburg-3.open	Toont het menu wanneer knop geklikt is	📋 Het menu mét .open klas						*/
+		/*																													*/
+		/*		.m-menu-middle		Maakt hamburgerknop	op mobiel			🔘 De knop om menu te openen					*/
+		/*		.m-menu-hide		Verbergt het navigatiemenu op mobiel	Navigatiemenu									*/
+
+		/*	16-09-2025																										*/
+		/*		OPMERKING: onclick verwijdert																				*/
+		/*		button onclick='myHamburgFunction3()																		*/
+		/*			de hamburger knop activeert de functie myHamburgFunction3												*/
+		/*			functie voegt class open toe aan #myHamburg-3 waardoor het menu getoond wordt via de media query		*/
+		/*				voor mobiel die #myHamburg-3.open  op display: block zetten											*/
+		/*		OPMERKING: onclick verwijdert																				*/
+		
+		/*	OPMERKING: .m-menu-middle is redundant want .menu-toggleZ doet hetzelfde										*/
+		
+		/*																													*/
+		/*************************************** BEGIN hamburger knop en menu instellingen **********************************/
+
+		/*************************************** hamburger knop instellingen ************************************************/
+
+		/*	=======================================	.menu-toggleZ =========================================================	*/
+
+		/*																													*/
+		/* 11-09-2025																										*/
+		/* 		'position: relative' is geen positionering van de layout maar alleen om de bars binnen de knop te 			*/
+		/*			positioneren  — niet om de knop zelf uit te lijnen in de topbar. 										*/
+		/*			de uitlijning zelf blijft via de flex box topMenuBarRight												*/
+		/*																													*/
+		/*		'display: inline-flex' om de drie balkjes netjes te centreren binnen de knop								*/
+		/*		'display: inline-flex' maakt de knop een flex-container														*/
+		/*																													*/
+		/*		'align-items: center' en 'justify-content: center' centreert de inhoud (de drie balkjes) verticaal én 		*/
+		/*			horizontaal binnen de knop																				*/
+		/*																													*/
+		/*		'height: 34px' en 'width: 40px' bepaalt de klikbare zone van de knop — visueel én interactief				*/
+		/*																													*/
+		/*		'margin-left: auto' in flex-container (#topMenuBarRight) duwt dit de knop helemaal naar rechts				*/
+		/*																													*/
+		/*		'border: 0' en 'background: transparent' verwijdert de standaard knopstijl en zorgt dat de knop visueel		*/
+		/*			neutraal is — alleen de balkjes zijn zichtbaar															*/
+		/*																													*/
+		/*		'cursor: pointer' geeft een handje bij hover — visuele feedback voor interactie								*/
+		/*																													*/
+		/*		'text-decoration: none' voorkomt onderstreping — handig als je ooit een a gebruikt ipv button				*/
+		/*																													*/
+		/*	LET OP nesting van flexboxen: #topMenuBar → #topMenuBarRight → .menu-toggleZ → .menu-toggle-barZ				*/
+		/*																													*/
+		
+		/*																													*/
+		/*	REMARK: hamburger knop instellingen																				*/
+		/*																													*/
+		
+		/*	=======================================	.menu-toggleZ =========================================================	*/
+
+		.menu-toggleZ 
+		{
+			position: relative;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			height: 34px;
+			width: 40px;
+			margin-left: auto; /* duwt hem naar rechts binnen de flex-container */
+			border: 0;
+			background: transparent;
+			cursor: pointer;
+			color: var(--container-items-TXT-color, #000);
+			text-decoration: none;
+			transition: color 0.3s ease;
+		}
+
+		/*	=======================================	verberg Hamburger menu ================================================	*/
+		
+		/* 	'display: none' zorgt dat menu-toggleZ op desktop schermen het hamburger menu niet laat zien					*/
+
+		/*																													*/
+		/* REMARK: verberg hamburger menu																					*/
+		/*																													*/
+
+		/*	=======================================	verberg Hamburger menu ================================================	*/
+		
+		.menu-toggleZ {
+			display: none;
+		}
+
+
+		/*	=======================================	.menu-toggleZ voor mobiel =============================================	*/
+		@media screen and (max-width: 800px) {
+			.menu-toggleZ {
+				display: inline-flex;
+			}
+		}
+
+
+		/*** BEGIN *** CSS .menu-toggle-barZ ********************************************************************************/
+		/*																													*/
+		/* SCSS-Syntax: deze CSS moet worden gecompileerd naar gewone CSS													*/
+		/*																													*/
+		/*		Gebruik SCSS-syntax, vereist class nav-openZ op parent, in de body											*/
+		/*																													*/
+		/*		Zie SCRIPT om nav-openZ in de body te zetten																*/
+		/*** BEGIN *** CSS menu-toggle-barZ *********************************************************************************/
+	
+		.menu-toggle-barZ {
+			display: block;
+			position: absolute;
+			top: 50%;
+			margin-top: -1px;
+			right: 0;
+			width: 100%;
+			height: 3px;
+			border-radius: 4px;
+			background-color: black;
+			transition: all 0.3s ease;
+
+			&.menu-toggle-bar--topZ {
+				transform: translate(0, -8px);
+			}
+		
+			&.menu-toggle-bar--middleZ {
+			}
+		
+			&.menu-toggle-bar--bottomZ {
+				transform: translate(0, 8px);
+			}
+
+			.nav-openZ & {
+				&.menu-toggle-bar--topZ {
+					transform: translate(0, 0) rotate(45deg);
+				}
+    
+				&.menu-toggle-bar--middleZ {
+					opacity: 0;
+				}
+
+				&.menu-toggle-bar--bottomZ {
+					transform: translate(0, 0) rotate(-45deg);
+				}
+			}
+		}
+	
+		/*	=======================================	#myHamburg-3 en .open =================================================	*/
+		
+		/*	
+		/*		#myHamburg-3 (je hoofdmenu-navigatie) wordt standaard verborgen met display: none;							*/
+		/*																													*/
+		/*		Als het element de klasse .open krijgt (dus #myHamburg-3.open), dan wordt het menu zichtbaar gemaakt	 	*/
+		/*		met display: block;																							*/
+		/*																													*/
+		/* 	REMARK: ondersteunt hamburger menu op mobiel																	*/
+		/*																													*/
+		/*	=======================================	#myHamburg-3 en .open =================================================	*/
+
+		@media screen and (max-width: 800px) {
+		
+			#myHamburg-3 {
+				display: none;
+			}
+			
+			#myHamburg-3.open {
+				display: block;
+			}
+		}
+	
+		/*************************************** END hamburger knop instellingen ********************************************/
+
+
+	
+
+		/* 11-09-2025																										*/
+
+		/*		We hebben het volgende gedaan: 																				*/
+		/*			- de oude versie van myHamburgFunction3 vervangen, geen style.display meer, alles via class toggling	*/
+		/*																													*/
+		/*			- matchMedia-script (in myHamburgFunction3) verwijdert, is niet langer nodig, je regelt dit via CSS		*/
+		/*																													*/
+		/*			- onderstaande CSS toegevoegd																			*/
+		/*																													*/
+
+
+
+		/*************************************** BEGIN mobiel menu layout m-flyout ******************************************/
+		/* mobiel menu layout 																								*/
+		/*************************************** BEGIN mobiel menu layout m-flyout ******************************************/
+		
+		/*	=======================================	@media queries mobiel =================================================	*/
+		/*		BEGIN			INSTELLINGEN VOOR DE MEDIA QUERIES VOOR MOBIELE MENU								BEGIN	*/
+		/*	=======================================	@media queries mobiel =================================================	*/
+
+		/*	=======================================	m-menu-middle configureren MOBIEL =====================================	*/
+		
+		/*																													*/
+		/* m-menu-middle bevat de css van de hamburger knop																	*/
+		/*																													*/
+		/*		'background-color: transparent' zorgt dat de knop geen eigen achtergrondkleur heeft (was voorheen			*/
+		/*			lichtgroen.																								*/
+		/*																													*/
+		/*	LET OP: Als menu-toggleZ na m-menu-middle komt zorg dat deze de background-color niet overschrijft.				*/
+		/*																													*/
+
+		/* On screens that are 800px or less, set the background color to lightgreen 										*/
+		/*		@media screen: de stijl geldt alleen voor beeldschermen (dus niet voor print bijvoorbeeld)	 				*/
+		/*		(max-width: 800px): de stijl geldt alleen als het scherm 800 pixels breed of smaller is						*/
+
+		@media screen and (max-width: 800px) { 
+
+			.m-menu-middle
+			{
+				background-color: lightgreen;
+				display: block;
+				text-align: left;
+				z-index: 2;
+			}
+
+			.m-menu-hide
+			{
+				display: none;
+			}
+		}
+
+		/* ========================================	topMenuBar configureren MOBIEL ========================================	*/
+
+		/* 16-09-2025 wijzig de direction van topMenuBar bij mobiel															*/
+		/*		'flex-direction: column' zorgt ervoor dat de beide flex-items topMenuBarRight en topMenuBarLeft onder 		*/
+		/*			worden geplaatst op mobiel of tablet.																	*/
+		/*																													*/
+		/*		'align-items; stretch' zorgt ervoor dat de flex-items in de container zich uitrekken om de volledige 		*/
+		/*			hoogte 																									*/
+		/*																													*/
+		/*		(of breedte) van de container te vullen langs de kruis-as.													*/
+		/*			- in een flex-direction: 	row is de hoofdas horizontaal en de kruisas verticaal						*/
+		/*			- 							column is de hoofdas verticaal en de kruisas horizontaal					*/
+		/*																													*/
+		
+		@media screen and (max-width: 800px) {
+
+			#topMenuBar {
+				flex-direction: column;
+				align-items: stretch;
+			}
+		}
+
+
+
+		/* LET OP: mobiele layout is flex georienteerd																		*/
+		
+		/*	+-------------------------------+-------------------------+-------------------------------+-------------------------------+	*/
+		/*	| Element                       | Rol in layout           | Hovergedrag                   | Transition                    |	*/
+		/*	+-------------------------------+-------------------------+-------------------------------+-------------------------------+	*/
+		/*	| .m-flyout > ul > li           | Container van menu-item | Geen hover-effect             | Geen transition nodig         |	*/
+		/*	| .m-flyout li a                | Klikbare link           | Kleur + achtergrond verandert | background-color, color 0.3s  |	*/
+		/*	| .m-flyout li a:hover          | Hover op link           | Kleur verandert via cascade   | Geactiveerd via bovenstaande  |	*/
+		/*	| .m-flyout > ul > li > a:after | Pijltje-indicator       | Geen hovergedrag              | Geen transition nodig         |	*/
+		/*	| .m-flyout > ul > li > ul      | Submenu-container       | Wordt zichtbaar via `.open`   | Geen transition (optioneel)   |	*/
+		/*	+-------------------------------+-------------------------+-------------------------------+-------------------------------+	*/
+		
+		@media screen and (max-width: 800px) {
+
+		/* =======================================	m-flyout ==============================================================	*/
+
+		/* 17-09-2025																										*/
+		
+		/*	'display: none' verbergt het menu standaard op mobiel, wordt overschreven door .open							*/
+		/*					voorkomt dat het menu zichtbaar is vóór activatie.												*/
+		/*																													*/
+		/*	'padding: 1rem' geeft interne ruimte rondom de inhoud															*/
+		/*																													*/
+		/*	'width: 100%' laat het menu de volledige breedte van de container innemen										*/
+		/*																													*/
+				
+		.m-flyout {
+			display: none;
+			width: 100%;
+			padding: 1rem;				
+			background-color: var(--d-flyout-dropdown-BG-color, #036);
+		}
+
+		/* =======================================	m-flyout.open =========================================================	*/
+		
+		/*	'display: flex' activeert flex box zodra menu opent, nodig om flex-direction en align-items te laten werken		*/
+		/*																													*/
+		/*	'flex-direction: column' stapelt child-elementen verticaal, onder elkaar										*/
+		/*																													*/
+		/*	'align-items: flex-start' lijnt child-elementen links uit in container, als ze smaller zijn dan 100%			*/
+		/*																													*/
+
+		.m-flyout.open {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start; 
+		}
+
+		/* =======================================	m-flyout ul ===========================================================	*/
+		
+		/*	'display: flex' zorgt dat de li-items als flex-items acteren													*/
+		/*																													*/
+		/*	'flex-direction: column' plaatst de li-items onder elkaar														*/
+		/*																													*/
+		/*	padding: 0 + margin: 0 verwijdert de standaard browserruimte													*/
+		/*																													*/
+		/*	'list-style: none' verwijdert bullets																			*/
+		/*																													*/
+		/*	'width: 100%' laat de lijst de volledige breedte benutten, nodig voor linkse uitlijning van de inhoud			*/
+		/*																													*/
+		
+		.m-flyout ul {
+			display: flex;
+			flex-direction: column;
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			width: 100%;
+		}
+
+
+		/* =======================================	m-flyout > ul > li ====================================================	*/
+		
+		/*	'width: 100%' laat elk menu-item de volledige breedte innemen, zorgt dat de klikbare zone breed is				*/
+		/*																													*/
+		/*	'margin: 0' verwijdert de verticale ruimte tussen items															*/
+		/*																													*/
+		/*	'text-align: left' lijnt de tekst links uit																		*/
+		/*																													*/
+		
+		.m-flyout > ul > li {
+			width: 100%;
+			margin: 0;
+			text-align: left;
+			
+			border-top: none;
+			border-bottom: none;
+		}
+		
+		/* =======================================	.d-flyout > ul > li:hover =============================================	*/
+		
+		
+		/* =======================================	.m-flyout li a ========================================================	*/
+		
+		/*	'display: block' maakt van a een block-element zodat hij de volledige breedte van zijn container inneemt		*/
+		/*		hierdoor wordt de hele rij klikbaar, niet alleen de tekst													*/
+		/*																													*/
+		/*	transition: zorgt voor een vloeiende overgang bij hover of active states										*/
+		/*																													*/
+		/*	'padding: 10px' geeft ruimte binnen de link, zodat tekst niet tegen de rand plakt								*/
+		/*		Verhoogt de klikbare zone en verbetert de toegankelijkheid.													*/
+		/*																													*/
+		
+		.m-flyout li a 
+		{
+			display: block;
+			transition: background-color 0.3s ease, color 0.3s ease;
+/* magweg			padding: 10px; */
+			text-decoration: none;
+		}
+
+		/* =======================================	.m-flyout > ul > li > a ===============================================	*/
+
+		/*	'display: flex' maakt het mogelijk om tekst en icoon naast elkaar te zetten										*/
+		/*																													*/
+		/*	'justify-content: space-between' zet tekst links, icoon rechts													*/
+		/*																													*/
+		/*	'width: 100%' laat de link de hele rij vullen																	*/
+		/*																													*/
+		
+		.m-flyout > ul > li > a {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+/* magweg			padding: 0.5rem 0.75rem; */
+			font-size: 1rem;
+			color: white;
+			text-decoration: none;
+			width: 100%;
+		}		
+
+
+		/* =======================================	.d-flyout li a:link ===================================================	*/
+
+		/* =======================================	.d-flyout li a:visited ================================================	*/
+
+		/* =======================================	.d-flyout li a:hover ==================================================	*/
+
+		/* =======================================	.d-flyout li a:active =================================================	*/
+		
+		/* =======================================	.d-flyout > ul > li > a:after =========================================	*/
+		
+		/* =======================================	.d-flyout > ul > li > a:after =========================================	*/
+
+
+		/* =======================================	.m-flyout > ul > li > ul ==============================================	*/
+		
+		/*	'display: none' verbergt het menu standaard op mobiel, wordt overschreven door .open							*/
+		/*					voorkomt dat het menu zichtbaar is vóór activatie.												*/
+		/*																													*/
+
+		.m-flyout > ul > li > ul {
+			display: none;
+			background-color: #024;
+			padding-left: 1rem;
+			margin-top: 0.25rem;
+		}		
+
+		/* =======================================	.m-flyout > ul > li.open > ul =========================================	*/
+		
+		/*  Is het een selector die het sub-menu opent wanneer de class open op li wordt gezet.	Daarvoor zorgt het			*/
+		/*	script dat naar has-submenu zoekt.																				*/
+		/*																													*/
+		/*	LET OP: met .m-flyout > ul > li:hover > ul - niet op display; none zetten want dan ontstaan conflicten,		 	*/
+		/*			omdat deze open-css en de hover-css, allebei selectors even specifiek zijn en vechten om iets met		*/
+		/*			de ul te doen.																							*/
+		/*																													*/
+		/*	'display: flex' activeert flex box zodra het menu opent 														*/
+		/* 																													*/
+		/*	
+		/*			nodig om flex-direction en align-items te laten werken													*/
+		/*																													*/
+		/*	'flex-direction: column' stapelt child-elementen verticaal, onder elkaar										*/
+		/*																													*/
+		/*	REMARK: selector voor het openen van het submenu																*/
+		/*																													*/
+		
+				
+		.m-flyout > ul > li.open > ul {
+			display: flex;
+			flex-direction: column;			
+		}		
+
+		
+		/* =======================================	.d-flyout > ul > li > ul ==============================================	*/
+
+		/* =======================================	.d-flyout > ul > li:hover::after ======================================	*/
+
+		/* =======================================	.d-flyout > ul > li:hover::after ======================================	*/
+
+		/* =======================================	.d-flyout > ul > li:hover ul ==========================================	*/
+
+		/* =======================================	.m-flyout > ul > li:hover > ul ========================================	*/
+
+		/* =======================================	.d-flyout > ul > li > ul > li =========================================	*/
+		
+		/* =======================================	.d-flyout > ul > li.open > ul =========================================	*/
+
+
+		/*	=======================================	.m-flyout > ul > li.has-submenu > a:after =============================	*/
+		
+		/*	content: '+' / '−' visuele cue dat er een submenu is															*/
+		/*																													*/
+		/*	font-size, color, margin-left styling van het icoon																*/
+		/*																													*/
+		
+		.m-flyout > ul > li.has-submenu > a:after {
+			content: '+';
+			font-size: 1.2rem;
+			color: white;
+			margin-left: 0.5rem;
+		}		
+		
+		/* =======================================	.m-flyout > ul > li.open > a:after ====================================	*/
+		
+		/*	content: '+' / '−' visuele cue dat er een submenu is															*/
+
+		.m-flyout > ul > li.open > a:after {
+			content: '−';
+		}
+
+	}
+
+		/* =======================================	@media queries mobiel =================================================	*/
+		/*		END				INSTELLINGEN VOOR DE MEDIA QUERIES VOOR MOBIELE MENU							END			*/
+		/* =======================================	@media queries mobiel =================================================	*/
+
+
+
+		/* ================================================================================================================ */
+		/* 										W3C FLY-OUT MenuText END													*/
+		/* ================================================================================================================ */
+
+	</style>		
+		
