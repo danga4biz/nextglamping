@@ -6,17 +6,18 @@ Deze layer bevat alle navigatiecomponenten van de website, inclusief hamburgerkn
 
 ## 🔗 Bestanden
 
-- `navigation-menu.css`
-- `CHANGELOG-menu-layer.md`
-- `README-menu-layer.md`
+- 'menu.css'
+- 'menu.js'
+- 'CHANGELOG-menu-layer.md'
+- 'README-menu-layer.md'
 
 ---
 
 ## 🧠 Cascade-impact
 
-- Beïnvloedt alleen `.nav-openZ`, `.submenu`, `.dropdown`
-- Geen impact op `theme-layer`, `layout-layer`, of externe stylesheets
-- Gekoppeld via `@layer menu` in de globale CSS-opbouw
+- Beïnvloedt alleen .nav-openZ, .submenu, .dropdown
+- Geen impact op theme-layer, layout-layer, of externe stylesheets
+- Gekoppeld via '@layer menu' in de globale CSS-opbouw
 
 ---
 
