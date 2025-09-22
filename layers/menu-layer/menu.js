@@ -7,167 +7,155 @@
 <!--																												-->
 
 	
-	<!-- ****** SCRIPT om nav-openZ in de body te zetten ************************************************************** -->
-
-	<!-- 17-09-2025 VERWIJDERT STAAT IN SCRIPT voor drop-down MENU myHamburgFunction3()									-->
-	<!-- 16-09-025 																										-->
+	/* ****************************************************************************************************************	*/
+	/* - myHamburgFunction3() → togglet menu en knop 																	*/
+	/* - initHamburgerToggle() → voegt click-event toe																	*/
+	/* - initMobileMenuDropdowns() → submenu gedrag op mobiel															*/
+	/* - initDesktopAriaExpanded() → accessibility op desktop 															*/
+	/* - initMenuCloseHandlers() → sluit menu bij klik buiten of Escape 												*/
+	/* ****************************************************************************************************************	*/
 	
-	<!--	Er zijn twee scripts die hetzelfde element aanspreken, maar met verschillende intenties.					-->
-	<!--		document.body.classList.toggle('nav-openZ')																-->
-	<!--																												-->
-	<!--	1. 	Bindt een klik op #menu-toggle-3 met .addEventListener('click', function()								-->
-	<!--		Zet alleen nav-openZ op body																			-->
-	<!--																												-->
-	<!--	2. 	Bindt een klik op dezelfde knop (id='menu-toggle-3) 													-->
-	<!--		Zet nav-openZ op body, én .open op #myHamburg-3															-->
-	<!-- 																												-->
-	<!-- 	Je hebt twee event listeners op dezelfde knop:																-->
-	<!-- 		Eén die alleen nav-openZ togglet																		-->
-	<!-- 		Eén die nav-openZ, .open, en aria-expanded togglet														-->
-	<!-- 		Beide worden uitgevoerd bij klikken, tenzij ze elkaar overschrijven of conflicteren.					-->
-	<!--																												-->
-
-	<!-- 	1. Verwijder script (optie 1 hieronder) dat aleen nav-openZ op de body zet via klik op de hamburger knop	-->
-	<!-- 	(id='menu-toggle-3') via document.getElementById('menu-toggle-3').addEventListener('click', function(), 	-->
-	<!--	want de regel document.body.classList.toggle('nav-openZ') zit ook al in de functie myHamburgFunction3 (). 	-->
-	<!--																												-->
-	<!--	Door deze dubbele toggle op nav-openZ krijg je toggles die elkaar acties ongedaan maken of elkaars gedrag	-->
-	<!--	verstoren.																									-->
-	<!--		>>>> SCRIPT om nav-openZ in de body te zetten VERWIJDERT <<<<											-->
+	/* ****************************************************************************************************************	*/
+	/* *** BEGIN *** SCRIPT voor drop-down MENU myHamburgFunction3() **************************************************	*/
+	/* 			met menu-toggle-3, myHamburg-3, nav-openZ *************************************************************	*/
 	
-	<!--	2. Zorg dat myHamburgFunction3() wordt geactiveerd wanneer op de hamburger knop wordt geklikt				-->
-	<!--																												-->
-	<!-- 	Voeg een script toe waarin myHamburgFunction3() wordt gebonden aan een click event op de hamburger knop		-->
-	<!--	(id='menu-toggle-3') zodat de functie wordt aangeroepen als op de knop wordt geklikt.						-->
-	<!--																												-->
-	<!--	In de oude situatie werd de functie myHamburgFunction3() die de open-klasse op #myHamburg-3 zet niet 		-->
-	<!-- 	aangeroepen wanneer een gebruiker op de hamburger knop klikt ((id='menu-toggle-3') waardoor de hamburger	-->
-	<!--	knop niet veranderde van horizontale bars naar kruis.														-->
-	<!--																												-->
-	<!--		>>>> ZIE SCRIPT om de myHamburgFunction3() te activeren <<<<											-->
-	<!-- *** END *** SCRIPT om nav-openZ in de body te zetten ********************************************************* -->
+	/* Laatste update: 22-09-2025																						*/
+	/*		Commentaarstijl aangepast en commentaar binnen script geplaatst	in HTML-versie								*/
+	/*																													*/
+	/* Historie																											*/
+	/* 	16-09-2025																										*/
+	/*																													*/
+	/*		Script definieert toggle-functie voor het hamburger menu en voor visuele transformatie hamburger knop		*/
+	/*																													*/
+	/* 		Wat doet het?																								*/
+	/* 			Zet .nav-openZ op de <body> (hamburgeranimatie)															*/
+	/* 			Zet .open op #myHamburg-3 (menu openen/sluiten)															*/
+	/* 			CSS maakt de hamburgerknop zichtbaar																	*/
+	/* 			Zet aria-expanded op true gezet voor screenreaders														*/
+	/*																													*/
+	/*	13-09-2025  																									*/
+	/*																													*/
+	/*		x.style.display-logica is niet meer nodig vervangen door semantisch en modulair gedrag						*/
+	/*		via CSS en class switches.																					*/
+	/*																													*/
+	/* Toelichting:																										*/
+	/* 		'const nav = document.getElementById('myHamburg-3')'haalt het element met ID 'myHamburg-3', het 			*/
+	/*		navigatiemenu, op.																							*/
+	/*																													*/
+	/*		'const toggleBtn = document.getElementById('menu-toggle-3') 'haalt de knop op waarmee je het menu 			*/
+	/* 		opent/sluit.																								*/
+	/*																													*/
+	/*		'const isOpen = nav.classList.toggle('open')' wisselt de CSS-klasse 'open' aan/uit op het menu-element;		*/
+	/*		als het er was, wordt het verwijderd, anders toegevoegd. 'isOpen' is true als 'open' nu actief is.			*/
+	/*																													*/
+	/*		'document.body.classList.toggle('nav-openZ')' Wisselt ook de class nav-openZ op de body						*/
+	/*																													*/
+	/*		'toggleBtn.classList.toggle('open')' wisselt de klasse 'open' op de knop zelf , hamburger wordt kruis.		*/
+	/*																													*/
+	/*		'toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false')' zet toegankelijkheidsattribuut (ARIA) 	*/
+	/*		op de knop zodat schermlezers weten of menu open is.														*/
 	
+	/* 																													*/
+	/* DOEL: Functie myHamburgFunction3 opent en sluit Drop Down menu en transformeert de hamburger knop				*/
+	/*																													*/
 	
-	<!-- 16-09-2025																										-->
-
-	<!-- *** BEGIN *** SCRIPT om de myHamburgFunction3() te activeren ************************************************* -->
-
-	<!-- Voeg script toe dat de myHamburgFunction3() activeert die de open-klasse op #myHamburg-3 zet 					-->
-	<!-- Voeg myHamburgFunction3() toe aan het click event in een script												-->
-	<!--																												-->
-	<!--	'window.addEventListener("DOMContentLoaded", ...)' zorgt dat de code pas wordt uitgevoerd als de hele 		-->
-	<!-- 	pagina is geladen 																							-->
-	<!-- 																												-->
-	<!--	'const toggleBtn = document.getElementById('menu-toggle-3')' zoekt naar een HTML-element met ID				-->
-	<!--	menu-toggle-3 en slaat dit op in de variabele toggleBtn.													-->
-	<!--																												-->
-	<!--	'toggleBtn.addEventListener('click', myHamburgFunction3)' voegt een klik-eventlistener toe aan dat element. -->
-	<!-- 	Als je erop klikt, wordt de functie myHamburgFunction3 uitgevoerd.											-->
-	<!-- 																												-->
-	<!-- REMARKT: Zodra de pagina geladen is, zorgt dit script ervoor dat als je op het element met ID menu-toggle-3 	-->
-	<!-- 	klikt, de functie myHamburgFunction3 wordt aangeroepen.														-->
-	<!--																												-->
-	function initHamburgerToggle() {
-		const toggleBtn = document.getElementById('menu-toggle-3');
-		if (toggleBtn) {		
-			toggleBtn.addEventListener('click', myHamburgFunction3);
-		}
-	}
-	<!-- *** END *** SCRIPT om de myHamburgFunction3() te activeren *************************************************** -->
-
-
-
-	<!-- *** BEGIN *** SCRIPT voor drop-down MENU myHamburgFunction3() ************************************************ -->
-	<!--		met menu-toggle-3, myHamburg-3, nav-openZ *************************************************************	-->
-	
-	<!-- ✔️ Togglet nav-openZ 																							-->
-	<!-- ✔️ Togglet .open op menu 																						-->
-	<!-- ✔️ Past aria-expanded aan 																						-->
-	<!-- ❌ Wordt alleen uitgevoerd als je hem expliciet aanroept (bijv. via onclick="myHamburgFunction3()")				-->
-	<!-- 16-09-2025																										-->
-	<!-- 		of via SCRIPT om de myHamburgFunction3() te activeren													-->
-
-	<!-- x.style.display-logica is niet meer nodig vervangen door semantisch en modulair gedrag							-->
-	<!--	via CSS en class switches.																					-->
-	
-	<!-- Wat doet het?																									-->
-	<!-- 	Zet .nav-openZ op <body> (hamburgeranimatie)																-->
-	<!-- 	Zet .open op #myHamburg-3 (menu openen/sluiten)																-->
-	<!-- 	CSS maakt de hamburgerknop zichtbaar																		-->
-	<!-- 	Past aria-expanded aan op de knop = aria-expanded wordt op true gezet voor screenreaders					-->
-
-	<!-- 	'const nav = document.getElementById('myHamburg-3')'haalt het element met ID 'myHamburg-3', het 			-->
-	<!--	navigatiemenu, op.																							-->
-	<!--																												-->
-	<!--	'const toggleBtn = document.getElementById('menu-toggle-3') 'haalt de knop op waarmee je het menu 			-->
-	<!-- 	opent/sluit.																								-->
-	<!--																												-->
-	<!--	'const isOpen = nav.classList.toggle('open')' wisselt de CSS-klasse 'open' aan/uit op het menu-element;		-->
-	<!--	als het er was, wordt het verwijderd, anders toegevoegd. 'isOpen' is true als 'open' nu actief is.			-->
-	<!--																												-->
-	<!--	'document.body.classList.toggle('nav-openZ')' Wisselt ook de class nav-openZ op de body						-->
-	<!--																												-->
-	<!--	'toggleBtn.classList.toggle('open')' wisselt de klasse 'open' op de knop zelf , hamburger wordt kruis.		-->
-	<!--																												-->
-	<!--	'toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false')' zet toegankelijkheidsattribuut (ARIA) 	-->
-	<!--	op de knop zodat schermlezers weten of menu open is.														-->
-	<!--																												-->
-
-	<!--																												-->
-	<!-- REMARK: Open en sluiten Drop Down menu alsook veranderen van de hamburger knop naar kruis en verticale bars	-->
-	<!--																												-->
-
-	<!-- *** BEGIN *** SCRIPT voor drop-down MENU myHamburgFunction3() ************************************************ -->
-	<!--		met menu-toggle-3, myHamburg-3, nav-openZ *************************************************************	-->
 	function myHamburgFunction3() {
 		const nav = document.getElementById('myHamburg-3');
 		const toggleBtn = document.getElementById('menu-toggle-3');
+		
+		if (!nav || !toggleBtn) return;
+		
 		const isOpen = nav.classList.toggle('open');
 
 		document.body.classList.toggle('nav-openZ');
-		toggleBtn.classList.toggle('open');  // 👈 voeg dit toe nodig voor visuele transformatie
+		toggleBtn.classList.toggle('open');
 		toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 	}
-	<!-- *** END *** SCRIPT voor drop-down MENU myHamburgFunction3() ************************************************** -->
-	<!--		met menu-toggle-3, myHamburg-3, nav-openZ *************************************************************	-->
+	
+	/* *** END *** SCRIPT voor drop-down MENU myHamburgFunction3() ****************************************************	*/
+	/*			met menu-toggle-3, myHamburg-3, nav-openZ *************************************************************	*/
+	/* ****************************************************************************************************************	*/
 
 
+	/* ****************************************************************************************************************	*/
+	/* *** BEGIN *** SCRIPT om de myHamburgFunction3() te activeren *************************************************** */
+
+	/* Laatste update: 22-09-2025																						*/
+	/*		Functienaam initHamburgerToggle toegevoegd aan script														*/
+	/*		DOMContentLoaded event toegevoegd via document.addEventListener (ipv window.addEventListener) 				*/
+	/*		Controle toegevoegd om te checken of element #menu-toggle-3 bestaat alvorens event toe te voegen 			*/
+	/*		Commentaarstijl aangepast en commentaar binnen script geplaatst	in HTML-versie								*/
+	/*																													*/
+	/* Historie																											*/
+	/* 	16-09-2025																										*/
+	/*																													*/
+	/* 		Script activeert myHamburgFunction3() die de 'open' klasse toggle't op #myHamburg-3 						*/
+	/*		Voeg click-eventlistener toe op element met id 'menu-toggle-3' 												*/
+	/*																													*/
+	/* Toelichting:																										*/
+	/* 		'const toggleBtn = document.getElementById('menu-toggle-3')' zoekt naar een HTML-element met ID				*/
+	/*		menu-toggle-3 en slaat dit op in de variabele toggleBtn.													*/
+	/*																													*/
+	/*		'toggleBtn.addEventListener('click', myHamburgFunction3)' voegt een click-eventlistener toe aan element en 	*/
+	/* 		zorgt bij klik dat de functie myHamburgFunction3 wordt uitgevoerd.											*/
+	/*																													*/
+	/*		'document.addEventListener("DOMContentLoaded", ...)' zorgt dat de code pas loopt wanneer de DOM volledig 	*/
+	/* 		geladen is																									*/
+	/* 																													*/
+	/* 																													*/
+	/* DOEL: Script roept functie myHamburgFunction3 bij klik op het element met ID menu-toggle-3 						*/
+	/*																													*/
+	
+	function initHamburgerToggle() {
+		const toggleBtn = document.getElementById('menu-toggle-3');
 		
-	<!-- *** BEGIN *** SCRIPT voor openen van submenus **************************************************************** -->
+		if (toggleBtn) {
+			toggleBtn.addEventListener('click', myHamburgFunction3);
+		}
+	}		
 	
-	<!-- 18-09-2025 geen JS nodig om submenu's te openen en te sluiten via hover op desktop								-->
-	<!--	wordt geregeld via .d-flyout > ul > li:hover > ul {display: block;}											-->
-	<!--	er hoeft geen .open class meer te worden toegevoegd via een script											-->
-	<!--																												-->
-	<!--	LET OP desktop is opschonen dan nog nodig met extra script													-->
+	//document.addEventListener("DOMContentLoaded", initHamburgerToggle); staat centraal
 	
-	
-	<!-- SAMENVATTTING:																									-->
-	<!--																												-->
-	<!-- Gedrag				Desktop (>800px)					Mobiel (≤800px)											-->
-	<!--																												-->
-	<!-- Submenu openen		Via :hover (CSS)					Via klik op <a> in li.has-submenu (JavaScript)			-->
-	<!-- Submenu sluiten	Automatisch bij mouseout (CSS)		Bij klik op ander submenu, buiten menu, of Escape		-->
-	<!-- .open class		Niet gebruikt						Wordt gezet op <nav> en <li.has-submenu>				-->
-	<!-- Event listeners	Niet actief (JS checkt viewport)	Actief: klik, buitenklik & Escape						-->
-
-	<!-- Hamburger openen	Niet zichtbaar	 			Klik op #menu-toggle-3 => opent nav#myHamburg-3 (class .open)	-->
-	<!-- Hamburger sluiten	Niet zichtbaar				Bij klik buiten menu of Escape => sluit nav + reset knop		-->
-	<!-- Hamburger toggle	Niet zichtbaar				class .open wordt op knop gezet voor visuele transformatie		-->
+	/* *** END *** SCRIPT om de myHamburgFunction3() te activeren ***************************************************** */
+	/* ****************************************************************************************************************	*/
 
 
+	/* ****************************************************************************************************************	*/
+	/* *** BEGIN *** SCRIPT voor openen van submenus ******************************************************************	*/
 	
-	<!--	const link = el.querySelector("a") 																			-->
-	<!--		- zoekt binnen elke li.has-submenu het eerste a-element													-->
-	<!--		- zet daar een klik-event op a-element																	-->
-	<!--		- bij een klik: toggle .open op het <li>-element (de parent)											-->
+	/* Laatste update: 22-09-2025																						*/
+	/*		Commentaarstijl aangepast en commentaar binnen script geplaatst	in HTML-versie								*/
 	
-	<!--	event.preventDefault(); voorkomt dat de link gevolgd wordt													-->
-	<!--																												-->
-	<!-- 	CSS laat het submenu (de <ul>) zien als de .open-class aanwezig is via:										-->
-	<!-- 		.m-flyout > ul > li.open > ul {display: flex; flex-direction: column;}									-->
+	/* Historie																											*/
+	/* 	18-09-2025 																										*/
+	/*																													*/
+	/*		geen JS meer nodig om submenu's te openen en te sluiten voor hover op desktop								*/
+	/*		wordt geregeld via .d-flyout > ul > li:hover > ul {display: block;}											*/
+	/*		er hoeft geen .open class meer te worden toegevoegd via een script											*/
+	/*																													*/
+	/*		CSS laat het submenu (de <ul>) zien als de .open-class aanwezig is via:										*/
+	/*			.m-flyout > ul > li.open > ul {display: flex; flex-direction: column;}									*/
+	/*																													*/
+	/* Toelichting:																										*/
+	/*																													*/
+	/* 	Gedrag				Desktop (>800px)					Mobiel (≤800px)											*/
+	/*																													*/
+	/* 	Submenu openen		Via :hover (CSS)					Via klik op <a> in li.has-submenu (JavaScript)			*/
+	/* 	Submenu sluiten		Automatisch bij mouseout (CSS)		Bij klik op ander submenu, buiten menu, of Escape		*/
+	/* 	.open class			Niet gebruikt						Wordt gezet op <nav> en <li.has-submenu>				*/
+	/* 	Event listeners		Niet actief (JS checkt viewport)	Actief: klik, buitenklik & Escape						*/
+
+	/* 	Hamburger openen	Niet zichtbaar	 			Klik op #menu-toggle-3 => opent nav#myHamburg-3 (class .open)	*/
+	/* 	Hamburger sluiten	Niet zichtbaar				Bij klik buiten menu of Escape => sluit nav + reset knop		*/
+	/* 	Hamburger toggle	Niet zichtbaar				class .open wordt op knop gezet voor visuele transformatie		*/
+	/*																													*/
+
+	/* 																													*/
+	/* DOEL: SCRIPT voor openen van submenus 																			*/
+	/*																													*/
 
 	function initMobileMenuDropdowns() {
+	
 		const menuItems = document.querySelectorAll("li.has-submenu");
 
 		menuItems.forEach((el) => {
@@ -220,14 +208,32 @@
 		});
 		
 	}
-	<!-- *** END *** SCRIPT voor openen van submenus ******************************************************************	-->
 
-	<!-- *** BEGIN *** SCRIPT om aria-expanded op desktop op true en false te zetten **********************************	-->
+	//document.addEventListener("DOMContentLoaded", initMobileMenuDropdowns); staat centraal
+
+	/* *** END *** SCRIPT voor openen van submenus ******************************************************************** */
+	/* ****************************************************************************************************************	*/
+
+
+	/* ****************************************************************************************************************	*/
+	/* *** BEGIN *** SCRIPT om aria-expanded op desktop op true en false te zetten ************************************	*/
 	
-	<!-- 18-09-2025								 																		-->
-	<!--																												-->
-	<!--	LET OP desktop aria-expanded wordt niet meer gezet omdat we dit nu zuiver met CSS doen via hover			-->
-	<!--	Dit script zorgt dat het alsnog gebeurt.																	-->
+	/* Laatste update: 22-09-2025																						*/
+	/*		Commentaarstijl aangepast en commentaar binnen script geplaatst	in HTML-versie								*/
+	
+	/* Historie																											*/
+	/* 	18-09-2025																										*/
+	/*																													*/
+	/*		Script toegevoegd om aria-expanded in desktop mode goed te zetten.											*/
+	/*																													*/
+	/* Toelichting:																										*/
+	/*																													*/
+	/*		LET OP: desktop aria-expanded werd niet meer gezet omdat we het afhandelen via CSS voor destkop. 			*/
+	/*		Dit script ervoor dat aria-expanded alsnog wordt gezet in desktop mode.										*/
+	/*																													*/
+	/* DOEL: Script zorgt dat aria-expanded in desktop mode goed gezet wordt bij open en sluiten 						*/
+	/*																													*/
+
 	function initDesktopAriaExpanded() {
 		const menuItems = document.querySelectorAll("li.has-submenu");
 
@@ -251,34 +257,44 @@
 			});
 		});
 	}
-	<!-- *** END *** SCRIPT om aria-expanded op desktop op true en false te zetten ************************************	-->
+	
+	//document.addEventListener("DOMContentLoaded", initDesktopAriaExpanded); staat centraal
+	
+	/* *** END *** SCRIPT om aria-expanded op desktop op true en false te zetten **************************************	*/
+	/* ****************************************************************************************************************	*/
 
-	<!-- *** BEGIN *** SCRIPT voor verbeterde mobiele toegankelijkheid ************************************************ -->
 	
-	<!--																												-->
-	<!-- 17-09-2025																										-->
-	<!--	Code aangepast / vereenvoudigt																				-->
-	<!--	Gezorgd dat de klasse open die op de toggle-button wordt gezet om deze te openen (open-toestand) weer wordt	-->
-	<!--	verwijderd wanneer de gebruiker klikt buiten het menu of escape.											-->
-	<!--																												-->
-
-	<!--																												-->
-	<!-- 14-09-2025																										-->
-	<!-- 	📱 Dit zorgt ervoor dat gebruikers het mobiele menu kunnen sluiten door:										-->
-	<!-- 		op ESC te drukken																						-->
-	<!--		buiten het menu te tikken																				-->
+	/* ****************************************************************************************************************	*/
+	/* *** BEGIN *** SCRIPT voor verbeterde mobiele toegankelijkheid **************************************************	*/
 	
-	<!-- REMARK: Verbeter mobiele menu toegankelijkheid met ESC en buiten-klik sluiten									-->
+	/* Laatste update: 22-09-2025																						*/
+	/*		Commentaarstijl aangepast en commentaar binnen script geplaatst	in HTML-versie								*/
 	
-	<!-- Wat doet het?																									-->
-	<!-- 	Sluit menu bij klik buiten of op Escape																		-->
-	<!-- 	Verwijdert .open van #myHamburg-3																			-->
-	<!-- 	Verwijdert .nav-openZ van <body>																			-->
+	/* Historie																											*/
+	/*																													*/
+	/*	17-09-2025																										*/
+	/*		Code aangepast / vereenvoudigt																				*/
+	/* 		Gezorgd dat de klasse open die op de toggle-button wordt gezet om deze te openen (open-toestand) weer wordt	*/
+	/*		verwijderd wanneer de gebruiker klikt buiten het menu of escape.											*/
+	/*																													*/
+	/* 		Dit zorgt ervoor dat gebruikers het mobiele menu kunnen sluiten door:										*/
+	/*			op ESC te drukken																						*/
+	/*			buiten het menu te tikken																				*/
+	/*																													*/
+	/*																													*/
+	/* Toelichting:																										*/
+	/*																													*/
+	/* 		Wat doet het?																								*/
+	/* 		Sluit menu bij klik buiten of op Escape																		*/
+	/*		Verwijdert .open van #myHamburg-3																			*/
+	/* 		Verwijdert .nav-openZ van <body>																			*/
+	/*																													*/
+	/* DOEL: Script verbetert mobiele menu toegankelijkheid met ESC en buiten-klik sluiten								*/
+	/*																													*/
 	
-	<!-- *** BEGIN *** SCRIPT voor verbeterde mobiele toegankelijkheid ************************************************ -->
 	function initMenuCloseHandlers() {	
-	
-		<!-- klik buiten menu -->	
+
+		/* klik buiten menu */
 		document.addEventListener('click', function handleOutsideClick(event) {
 			const menu = document.getElementById('myHamburg-3');
 			const toggleBtn = document.getElementById('menu-toggle-3');
@@ -293,7 +309,7 @@
 				document.body.classList.remove('nav-openZ');
 				toggleBtn.classList.remove('open');
 				toggleBtn.setAttribute('aria-expanded', 'false');
-				
+
 				// Sluit ook de open submenu's
 				document.querySelectorAll('.has-submenu').forEach(submenu => {
 					submenu.classList.remove('open');
@@ -301,17 +317,17 @@
 					if (link) {
 						link.setAttribute('aria-expanded', 'false');
 					}					
-				});				
+				});								
 			}
 		});
 	
-		<!-- escape -->
+		/* escape */
 		document.addEventListener('keydown', function (event) {
 			if (event.key === 'Escape') {
 				const menu = document.getElementById('myHamburg-3');
 				const toggleBtn = document.getElementById('menu-toggle-3');
 			
-				if (!menu || !toggleBtn) return;
+				if (!menu || !toggleBtn) return; //als element met id menu-toggle-3 niet bestaat stop uitvoering functie
 
 				menu.classList.remove('open');
 				document.body.classList.remove('nav-openZ');
@@ -319,13 +335,15 @@
 				toggleBtn.setAttribute('aria-expanded', 'false');
 			}
 		});			
-	}
-	<!-- *** END *** SCRIPT voor verbeterde mobiele toegankelijkheid ************************************************** -->
-
-	// Init alles na DOM load
+	}	
+	
+	//document.addEventListener("DOMContentLoaded", initMenuCloseHandlers); staat centraal
+	
 	document.addEventListener("DOMContentLoaded", () => {
 		initHamburgerToggle();
 		initMobileMenuDropdowns();
 		initDesktopAriaExpanded();
 		initMenuCloseHandlers();
-	});		
+	});
+
+	/* *** END *** SCRIPT voor verbeterde mobiele toegankelijkheid ****************************************************	*/	
