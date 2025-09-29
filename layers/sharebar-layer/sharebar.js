@@ -25,8 +25,6 @@
 /*																													*/
 /*** END *** SCRIPT Dynamically Add URL for SOCIAL MEDIA BUTTONS ****************************************************/
   
-<script type='text/javascript'>
-//<![CDATA[
 	document.addEventListener("DOMContentLoaded", function () 
 	{
 		const currentURL = window.location.href;
@@ -41,7 +39,5 @@
 			link.href = base + encodeURIComponent(fullURL);
 		});
 	});
-//]]>
-</script>
 
 /*** END *** SCRIPT Dynamically Add URL for SOCIAL MEDIA BUTTONS ****************************************************/
