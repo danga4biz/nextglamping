@@ -1,0 +1,188 @@
+		/* *** BEGIN *** layer pagination *************************************************************************************	*/
+
+			/* ================================================================================================================	*/
+			/* 11-09-2024							PAGINATION START															*/
+			/* ================================================================================================================	*/
+
+			/*	INSTALL: in b:skin OF in layer base																				*/
+
+
+				/* Container voor paginering met Flexbox */
+				#blog-pager {
+					display: flex;               /* Zet de kinderen naast elkaar in een flexibele rij */
+					justify-content: center;     /* Centreert alle knoppen horizontaal */
+					flex-wrap: wrap;             /* Laat knoppen automatisch naar de volgende regel gaan bij weinig ruimte */
+					gap: 8px;                    /* Zorgt voor ruimte tussen de knoppen */
+					padding: 7px;                /* Binnenruimte rondom de knoppen */
+					margin: 30px auto;           /* Boven/onder marge en centrering op de pagina */
+					clear: both;                 /* Voorkomt dat floats van andere elementen de layout verstoren */
+					background: none;            /* Geen achtergrondkleur voor de container */
+				}
+
+				/* Genummerde pagina en actieve pagina */
+				.displaypageNum a,
+				.showpage a,
+				.pagecurrent {
+					display: inline-block;
+					font-size: 14px;             /* Leesbare tekstgrootte */
+					padding: 5px 12px;           /* Binnenruimte voor klikbare knoppen */
+					color: #666;                 /* Neutrale tekstkleur */
+					background-color: #eee;      /* Lichtgrijze achtergrond voor knoppen */
+					text-decoration: none;       /* Verwijdert onderstreping van links */
+					border-radius: 4px;          /* Ronde hoeken voor moderne look */
+					line-height: 1.4;
+					transition: background 0.3s, color 0.3s;
+				}
+
+				/* Hover en actieve stijl */
+				.displaypageNum a:hover,
+				.showpage a:hover,
+				.pagecurrent:hover,
+				.firstpage a:hover,
+				.lastpage a:hover,
+				.blog-pager-older-link:hover,
+				.blog-pager-newer-link:hover {
+					background: #359BED;         /* Blauwe achtergrond bij hover of actieve pagina */
+					color: #fff;                 /* Witte tekst voor contrast */
+				}
+
+				/* Actieve pagina visueel gemarkeerd */
+				.pagecurrent {
+					background: #359BED;
+					color: #fff;
+					font-weight: bold;           /* Maakt actieve pagina visueel sterker */
+					cursor: default;
+				}
+
+				/* Eerste en Laatste knoppen */
+				.firstpage a,
+				.lastpage a {
+					display: inline-block;
+					font-size: 14px;             /* Leesbare tekstgrootte */
+					padding: 5px 12px;           /* Binnenruimte voor klikbare knoppen */
+					color: #666;                 /* Neutrale tekstkleur */
+					background-color: #eee;      /* Lichtgrijze achtergrond voor knoppen */
+					text-decoration: none;       /* Verwijdert onderstreping van links */
+					border-radius: 4px;          /* Ronde hoeken voor moderne look */
+					line-height: 1.4;
+					transition: background 0.3s, color 0.3s;
+				}
+
+				/* Blogger standaard navigatie-links (ouder/nieuwer) */
+				.blog-pager-older-link,
+				.blog-pager-newer-link {
+					display: inline-block;
+					font-size: 14px;             /* Leesbare tekstgrootte */
+					padding: 5px 12px;           /* Binnenruimte voor klikbare knoppen */
+					color: #666;                 /* Neutrale tekstkleur */
+					background-color: #eee;      /* Lichtgrijze achtergrond voor knoppen */
+					text-decoration: none;       /* Verwijdert onderstreping van links */
+					border-radius: 4px;          /* Ronde hoeken voor moderne look */
+					line-height: 1.4;
+					transition: background 0.3s, color 0.3s;
+				}
+
+				.blog-pager-older-link:hover,
+				.blog-pager-newer-link:hover {
+					background: #359BED;
+					color: #fff;
+				}
+
+				/* Opruiming van ongewenste elementen */
+				.showpageOf {
+					display: none !important;    /* Verbergt Pagina X van Y tekst */
+				}
+
+				#blog-pager .pages {
+					border: none;                /* Verwijdert eventuele rand rond paginering */
+				}
+
+				/* Mobiele optimalisatie */
+				@media (max-width: 480px) 
+				{
+					#blog-pager {
+						gap: 4px;
+						padding: 5px;
+						flex-direction: row;
+						flex-wrap: wrap;
+					}
+
+					.displaypageNum a,
+					.showpage a,
+					.pagecurrent,
+					.firstpage a,
+					.lastpage a,
+					.blog-pager-older-link,
+					.blog-pager-newer-link {
+						font-size: 12px;
+						padding: 4px 8px;
+					}
+
+					.gap {
+						display: none; /* Verbergt &quot;...&quot; op kleine schermen */
+					}
+				}
+
+			/* ================================================================================================================	*/
+			/* 11-09-2024							PAGINATION END																*/
+			/* ================================================================================================================	*/
+
+			/* ================================================================================================================	*/
+			/* 10-09-2025							READ MORE BUTTON START														*/
+			/* ================================================================================================================	*/
+			
+			/*** BEGIN *** CSS READ MORE BUTTON *********************************************************************************/
+			/*																													*/
+			/* 10-09-2025																										*/
+			/*																													*/
+			/*	jump-link: Styling of jump-link is done with this CSS.															*/
+			/*																													*/
+			/*																													*/
+			/********************************************************************************************************************/
+
+			.jump-link {
+				display: block;
+				font-size: 12px;
+				font-weight: bold;
+				text-align:right;
+			}
+
+			.jump-link  a {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 12px;
+				color: #ffffff;
+				padding: 6px 15px;
+
+				/* Gradient background (fallback, old, modern) */
+				background: #42aaff; /* fallback for old browsers */
+
+      			background: -moz-linear-gradient(top, #42aaff 0%, #003366); /* Firefox legacy */
+				background: -webkit-gradient(linear, left top, left bottom, from(#42aaff), to(#003366)); /* Webkit legacy */
+
+      			background: linear-gradient(to bottom, #42aaff 0%, #003366 100%); /* modern syntax */
+      
+      
+				/* Rounded corners */
+				border-radius: 8px;
+    
+				/* Border */
+				border: 1px solid #003366;
+      
+				/* Box shadow for depth */
+				box-shadow:
+					0px 1px 3px rgba(0, 0, 0, 0.5),
+					inset 0px 0px 1px rgba(255, 255, 255, 0.5);
+    
+				/* Text shadow for slight emboss effect */
+				text-shadow:
+					0px -1px 0px rgba(0, 0, 0, 0.7),
+					0px 1px 0px rgba(255, 255, 255, 0.3);      
+
+			}
+			/*** END *** CSS READ MORE BUTTON ***********************************************************************************/   
+			
+			/* ================================================================================================================	*/
+			/* 10-09-2025							READ MORE BUTTON END														*/
+			/* ================================================================================================================	*/	
+
+		/* *** END *** layer pagination ***************************************************************************************	*/
