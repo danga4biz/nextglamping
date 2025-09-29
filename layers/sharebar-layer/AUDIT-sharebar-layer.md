@@ -1,3 +1,7 @@
+# Audit-layer: Sharebar
+
+Documentatie van enginegedrag, parserfiltering, testresultaten en edge-cases voor `sharebar-layer`. Alle observaties zijn DevTools-verifieerbaar en rollbackbaar.
+
 ## Tips
 Je hebt nu een eigen sticky share bar, dus kun je de hele standaard Blogger sharing-structuur uit je template halen. 
 
@@ -54,18 +58,17 @@ Je eigen sticky bar (#stickyShareBarBottom) en de HTML die je daarvoor hebt gema
 Die kun je blijven stylen en uitbreiden zoals jij wilt.
 
 
-# Audit-layer: Sharebar
+### [audit-layer] Blogger script-tagged behavior
 
-Documentatie van enginegedrag, parserfiltering, testresultaten en edge-cases voor `sharebar-layer`. Alle observaties zijn DevTools-verifieerbaar en rollbackbaar.
+✅ Blogger accepteert `<script src="..."/>` als self-closing tag  
+❌ Verwijdert expliciete `</script>` zelfs als correct geschreven  
+❌ Niet conform HTML5-specificatie  
+✅ Script correct geladen en uitgevoerd via `defer`  
+🔍 DevTools: script zichtbaar onder “Sources”, geen parse errors
 
 ---
 
 ## ✅ Enginegedrag
-
-**Self-closing `<script />` met `src`**  
-✅ Geaccepteerd door Blogger  
-❌ Niet conform HTML5-specificatie  
-🔍 DevTools: script correct geladen en uitgevoerd
 
 **`defer` attribuut**  
 ✅ Script wordt pas uitgevoerd na DOM  
