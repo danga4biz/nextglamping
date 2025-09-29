@@ -1,0 +1,109 @@
+		/* *** BEGIN *** layer sharebar ***************************************************************************************	*/
+
+			/* ================================================================================================================	*/
+			/* 23-08-2025							SOCIAL MEDIA BUTTONS ONDERAAN START											*/
+			/* ================================================================================================================	*/
+
+			/*** BEGIN *** CSS SOCIAL MEDIA BUTTONS ONDERAAN ********************************************************************/
+			/*																													*/
+			/* 03-9-2025	zorg dat SCRIPT Dynamically Add URL	wordt geïnstalleerd	(encodeURIComponent)						*/
+			/*																													*/
+			/* 18-08-2025 css voor het stylen van de social media balk onderaan posts											*/
+			/*																													*/
+			/* social media buttons onderaan post: 																				*/
+			/* 	- de knoppen verschijnen onderaan de pagina																		*/
+			/*	- ze blijven zichtbaar bij scrollen																				*/
+			/*	- werken op desktop en mobiel																					*/
+			/*																													*/
+			/* 23-08-2025 stickyShareBarBottom onzichtbaar gemaakt 																*/
+			/*	- background-color op transparant: maakt de balk onzichtbaar													*/ 
+			/*	- width op auto: zorgt dat de balk alleen zo breed is als de iconen zelf										*/ 
+			/*	- border-radius op 0: verwijdert alle rondingen - eigenlijk niet nodig als balk niet getoond wordt				*/  
+			/*	- box-shadow op none: geen schaduw - eigenlijk niet nodig als balk niet getoond wordt							*/
+			/*																													*/
+			/*	INSTALL: in b:skin OF in layer base																				*/
+			/*																													*/
+			/********************************************************************************************************************/ 
+
+				/* STICKY BAR ONDERAAN */  
+				#stickyShareBarBottom {
+					position: sticky;
+					bottom: 0;
+					width: 100%; /* uitgezet hierna zodat balk net zo groot als de iconen die er in staan 23-08-2025 */
+					background-color: #ffffff; /* uitgezet hierna zodat balk onzichtbaar is - 23-08-2025 */
+					display: flex;
+					justify-content: center;
+					gap: 16px; /* bepaalt de afstand tussen de iconen binnen stickyShareBarBottom */
+					padding: 12px 0; /* voegt verticale ruimte toe boven en onder de iconen binnen stickyShareBarBottom */
+					box-shadow: 0 -2px 6px rgba(0,0,0,0.1); /* uitgezet hierna 23-08-2025*/
+					z-index: 9999;
+			  
+					border-radius: 40px; /* Hier komen je afgeronde hoeken - uitgezet hierna 23-08-2025 */
+					transition: all 0.3s ease; /* zorgt dat veranderende CSS-eigenschappen (zoals kleur, grootte, positie, etc.) vloeiend verlopen in plaats van abrupt */  
+			  
+					/* 23-08-2025 balk onzichtbaar gemaakt */
+					width: auto; /* zorgt dat de balk alleen zo breed is als de iconen zelf */
+					background-color: transparent; /* maakt de balk onzichtbaar */  
+					border-radius: 0; /* verwijder alle rondingen - eigenlijk niet nodig want balk wordt toch niet getoond */
+					box-shadow: none; /* geen schaduw - eigenlijk niet nodig want balk wordt toch niet getoond */  
+				}
+
+				/* Icon styling met afgeronde hoeken */
+				#stickyShareBarBottom a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 48px;
+					height: 48px;
+					border-radius: 50%; /* Ronde iconen */
+					background-color: #f0f0f0;
+					text-decoration: none;
+					font-size: 24px;
+					transition: transform 0.2s ease, background-color 0.3s ease;
+			  
+					/* 23-08-2025 social media icons kleiner gemaakt voor desktop */
+					/*	- voor mobiel zie media query */
+					width: 42px;
+					height: 42px;
+					font-size: 22px;  
+				}
+
+				/* Hover effect */
+				#stickyShareBarBottom a:hover {
+					transform: scale(1.1);
+					background-color: #e0e0e0;
+				}
+
+				/* Merk-kleuren */
+				.share-icon.linkedin i  { color: #0077B5; }
+				.share-icon.twitter i   { color: #1DA1F2; }
+				.share-icon.facebook i  { color: #1877F2; }
+				.share-icon.whatsapp i  { color: #25D366; }
+
+				/* Hover tinten */
+				.share-icon.linkedin:hover i  { color: #005582; }
+				.share-icon.twitter:hover i   { color: #1681c4; }
+				.share-icon.facebook:hover i  { color: #145dbf; }
+				.share-icon.whatsapp:hover i  { color: #1da851; }
+
+				/* Mobiel optimalisatie */
+				@media (max-width: 600px) {
+					#stickyShareBarBottom {
+						gap: 12px; /* tussen de iconen wordt op mobiel iets kleiner dan op desktop 16px naar 12px) */
+						padding: 10px 0; /* voegt verticale ruimte toe boven en onder de iconen binnen stickyShareBarBottom */
+					}
+			  
+					#stickyShareBarBottom a {
+						width: 40px;
+						height: 40px;
+						font-size: 20px;
+					}
+				}  
+			  
+			/*** END *** CSS SOCIAL MEDIA BUTTONS ONDERAAN **********************************************************************/
+
+			/* ================================================================================================================	*/
+			/* 23-08-2025							SOCIAL MEDIA BUTTONS ONDERAAN END											*/
+			/* ================================================================================================================	*/
+
+		/* *** END *** layer sharebar *****************************************************************************************	*/
