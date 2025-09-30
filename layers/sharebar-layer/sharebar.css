@@ -6,6 +6,10 @@
 
 			/*** BEGIN *** CSS SOCIAL MEDIA BUTTONS ONDERAAN ********************************************************************/
 			/*																													*/
+			/* 30-09-2025	stickybar voor linkerkant toegevoegd 																*/
+			/*	- de knoppen verschijnen bij gebruik van deze stickybar aan de linkerkant in centerBarLeft						*/
+			/*	- 																												*/
+			/*																													*/
 			/* 03-9-2025	zorg dat SCRIPT Dynamically Add URL	wordt geïnstalleerd	(encodeURIComponent)						*/
 			/*																													*/
 			/* 18-08-2025 css voor het stylen van de social media balk onderaan posts											*/
@@ -25,6 +29,60 @@
 			/*																													*/
 			/********************************************************************************************************************/ 
 
+				/* STICKY BAR LINKS */
+				#stickyShareBarLeft {
+					position: fixed;
+					top: 50%;
+					left: 12;
+					transform: translateY(-50%);
+					display: flex;
+					flex-direction: column;
+					gap: 16px;
+					padding: 12px 0;
+					z-index: 9999;
+
+					background-color: transparent;
+					box-shadow: none;
+					border-radius: 0;
+				}
+
+				#stickyShareBarLeft a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 42px;
+					height: 42px;
+					border-radius: 50%;
+					background-color: #f0f0f0;
+					text-decoration: none;
+					font-size: 22px;
+					transition: transform 0.2s ease, background-color 0.3s ease;
+				}
+
+				#stickyShareBarLeft a:hover {
+					transform: scale(1.1);
+					background-color: #e0e0e0;
+				}				
+
+				/* Mobiel gedrag */
+				@media (max-width: 600px) {
+					#stickyShareBarLeft {
+						top: auto;
+						bottom: 0;
+						left: 50%;
+						transform: translateX(-50%);
+						flex-direction: row;
+						gap: 12px;
+						padding: 10px 0;
+					}
+
+					#stickyShareBarLeft a {
+						width: 40px;
+						height: 40px;
+						font-size: 20px;
+					}
+				}		  
+				
 				/* STICKY BAR ONDERAAN */  
 				#stickyShareBarBottom {
 					position: sticky;
