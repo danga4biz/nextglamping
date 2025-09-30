@@ -5,6 +5,33 @@ Bestand: `AUDIT-sharebar-layer.md`
 Technische documentatie van enginegedrag, parserfiltering, DOM-verificatie en edge-cases voor `sharebar-layer`.  
 Alle observaties zijn DevTools-verifieerbaar en rollbackbaar.
 
+# Test-auditregels
+
+## 30-09-2025 — [TESTFASE] stickyShareBarLeft injectie en enginegedrag
+
+- Injectiepunt: correct geplaatst binnen `#centerBarLeft` van `#centerBarWrapper`
+- Engine-reactie:
+  - Geen parserfiltering
+  - Geen layout-conflict met `flex-basis` of `overflow`
+- CSS-reactie:
+  - `position: fixed` buiten flow, geen invloed op `centerBarLeft`
+  - `top: 50%` + `transform: translateY(-50%)` → verticale centrering
+  - `left: 0` → bar plakt tegen schermrand
+- JS-reactie:
+  - `data-base` correct geïnterpreteerd
+  - `window.location.href` + UTM werkt zoals bedoeld
+- DevTools-verificatie:
+  - Bar zichtbaar in DOM
+  - Iconen renderen correct via FontAwesome
+  - Links actief en correct opgebouwd
+  - Hover-effecten en kleurtransities werken zoals bedoeld
+
+🔍 Status: testfase — overlapgedrag bij scroll, z-index-conflict met modals, en mobile fallback worden nog onderzocht.
+
+---
+
+# ✅ Productie-auditregels
+
 ## Component Mapping: sharebar-layer v1A  
 
 **Versie:** 1A  
@@ -15,8 +42,6 @@ Alle observaties zijn DevTools-verifieerbaar en rollbackbaar.
 
 
 Overzicht van alle subcomponenten van de sharebar-layer, inclusief hun functie en verificatiepunten.
-
-
 
 | Subcomponent            | Type       | Functie                                               | Verifieerbaar via |
 |-------------------------|------------|-------------------------------------------------------|-------------------|
