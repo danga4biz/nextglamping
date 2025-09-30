@@ -83,5 +83,12 @@ Niet engine-agnostisch, dus uitgesloten van `utilities-layer`.
 Deze layer is volledig verwijderbaar zonder impact op andere delen van de repository. 
 Zie `CHANGELOG-sharebar-layer.md` voor het exacte subtree-pad en rollbackcommando.
 
+---
+
+## 🔧 Operationeel protocol
+
+> 📄 Zie `docs/layer-protocol.md` voor changelog- en auditworkflow binnen deze layer  
+> Documenteert de generieke testaanpak, changelogstructuur, auditregels en rollbackstrategie voor alle layers.  
+> Geldt voor CSS-, JS- en documentatiecomponenten. Testcommits zijn gemarkeerd met `[TESTFASE]`, correcties met `[CORRECTIE]`, en productiecommits met `✅`.
 
 
