@@ -1,15 +1,151 @@
-# Audit-layer: Sharebar
+# Audit: sharebar-layer
 
-Documentatie van enginegedrag, parserfiltering, testresultaten en edge-cases voor `sharebar-layer`. Alle observaties zijn DevTools-verifieerbaar en rollbackbaar.
+Bestand: `AUDIT-sharebar-layer.md`
 
-## Tips
-Je hebt nu een eigen sticky share bar, dus kun je de hele standaard Blogger sharing-structuur uit je template halen. 
+Technische documentatie van enginegedrag, parserfiltering, DOM-verificatie en edge-cases voor `sharebar-layer`.  
+Alle observaties zijn DevTools-verifieerbaar en rollbackbaar.
 
-De onderstaande Blogger-includables (standaard share buttons) mogen worden verwijderd omdat je een eigen sticky share bar gebruikt. Ze zijn niet 
-meer nodig en zorgen alleen voor extra code en mogelijke conflicten. Dat ruimt op én voorkomt dat er ongewenste knoppen of scripts blijven hangen.
+## Component Mapping: sharebar-layer v1A  
 
-### Blogger Includables
-Deze Blogger-includables (standaard share buttons) kunnen worden verwijderd omdat je een eigen sticky share bar gebruikt. Ze zijn niet meer nodig en zorgen alleen voor extra code en mogelijke conflicten. Dat ruimt op én voorkomt dat er ongewenste knoppen of scripts blijven hangen.
+**Versie:** 1A  
+**Datum:** 1 Sep 2025  
+**Module:** `sharebar-layer`  
+**Locatie:** Sticky bar onderaan pagina (`#stickyShareBarBottom`)  
+**Doel:** Dynamisch genereren van social media links met tracking
+
+
+Overzicht van alle subcomponenten van de sharebar-layer, inclusief hun functie en verificatiepunten.
+
+
+
+| Subcomponent            | Type       | Functie                                               | Verifieerbaar via |
+|-------------------------|------------|-------------------------------------------------------|-------------------|
+| `#stickyShareBarBottom` | HTML `div` | Container voor iconen, sticky onderaan pagina         | DOM-verificatie   |
+| `.share-link`           | HTML `a`   | Social media knop met `data-base` attribuut           | DOM-verificatie   |
+| `sharebar-layer.js`     | JS-script  | Injecteert dynamisch tracking-URL's met UTM-tags      | DevTools Console  |
+| `data-base` attribuut   | HTML attr  | Basis-URL voor social media sharing                   | DOM-verificatie   |
+| `utm_source`            | tracking   | Verkeerbron: social                                   | JS-uitvoer        |
+| `utm_medium`            | tracking   | Kanaal: sharebar                                      | JS-uitvoer        |
+| `utm_campaign`          | tracking   | Context: post                                         | JS-uitvoer        |
+| `.share-icon i`         | CSS + FA   | Icon via Font Awesome `::before`                      | CSS-rendering     |
+| `position: sticky`      | CSS        | Verankering onderaan viewport                         | Enginegedrag      |
+| `border-radius`         | CSS        | Ronde iconen                                          | CSS-verificatie   |
+| `transition`            | CSS        | Hover-effecten                                        | Parserfiltering   |
+| `@media` query          | CSS        | Mobiele optimalisatie                                 | Parserfiltering   |
+| `script-src` CSP        | Meta tag   | Toestemming voor inline en GitHub-hosted scripts      | CSP-verificatie   |
+| `style-src` CSP         | Meta tag   | Toestemming voor Font Awesome stylesheet via CDNJS    | CSP-verificatie   |
+| `font-src` CSP          | Meta tag   | Toestemming voor `.woff2` fontbestanden               | CSP-verificatie   |
+
+
+---
+
+## 1. DOM-elementen
+
+| Selector                  | Type        | Functie                                                  |
+|---------------------------|-------------|----------------------------------------------------------|
+| `#stickyShareBarBottom`   | `div`       | Container voor social media iconen                       |
+| `.share-link`             | `a`         | Individuele social media knoppen                         |
+| `.share-icon`             | `a`         | Stylingklasse voor ronde iconen                          |
+| `.share-icon i`           | `i`         | Font Awesome icon via pseudo-element `::before`          |
+
+- Elementen correct geïnjecteerd via script
+- `data-base` attributen correct gelezen
+- `link.href` correct samengesteld via `encodeURIComponent`
+
+---
+
+## 2. CSS-interactiepunten
+Verificatie van CSS- en HTML-eigenschappen zoals `position: sticky`, `z-index`, `border-radius`, enz.
+
+| Eigenschap                  | Doel                                                                 |
+|-----------------------------|----------------------------------------------------------------------|
+| `position: sticky`          | Verankert de bar onderaan de viewport                                |
+| `border-radius: 50%`        | Maakt iconen rond                                                    |
+| `font-size`                 | Bepaalt icongrootte                                                  |
+| `::before`                  | Injecteert Font Awesome glyph via CSS                                |
+| `hover`-states              | Verandert kleur bij interactie                                       |
+| `@media (max-width: 600px)` | Optimaliseert layout voor mobiel                                     |
+| `z-index: 9999`             | 
+| `box-shadow`                | 
+
+- CSS getest op parser-acceptatie in layout editor en live site
+- Hover-effecten en sticky gedrag zichtbaar in DevTools
+- Font Awesome iconen correct gerenderd via CDNJS stylesheet
+
+---
+
+## 3. Scriptinteractie
+
+| Event                    | Actie                                                                        |
+|--------------------------|------------------------------------------------------------------------------|
+| `DOMContentLoaded`       | Wacht tot DOM klaar is voor manipulatie                                      |
+| `window.location.href`   | Bepaalt huidige pagina-URL                                                   |
+| `data-base` attribuut    | Basis-URL voor social media sharing (bijv. `https://twitter.com/share?url=`) |
+| `link.href`              | Wordt samengesteld uit `data-base + encodeURIComponent(fullURL)`             |
+
+- Script werkt zonder externe afhankelijkheden
+- Geen Theme Designer afhankelijkheden
+- DevTools: script zichtbaar onder “Sources” → `sharebar.js` , geen console-errors
+- Dynamische `href`-injectie op basis van `data-base` en `window.location.href`
+- Fallback ingebouwd: `if (!base) return;`  
+
+---
+
+## 4. Trackingparameters (UTM)
+Uitleg van de trackingstrategie via UTM-parameters en hoe deze worden gegenereerd in het script.
+
+| Parameter         | Waarde        | Doel                                                                 |
+|-------------------|---------------|----------------------------------------------------------------------|
+| `utm_source`      | `social`      | Verkeer komt van social media                                        |
+| `utm_medium`      | `sharebar`    | Kanaal is de sticky sharebar                                         |
+| `utm_campaign`    | `post`        | Campagne is individuele blogpost                                     |
+
+
+- Dynamisch toegevoegd aan elke `.share-link` via het script
+- DevTools: zichtbaar in DOM en meetbaar via Google Analytics
+
+---
+
+## 5. CSP-interactie
+
+| Directive     | Vereiste domeinen                                 | Reden                                                                 |
+|---------------|---------------------------------------------------|-----------------------------------------------------------------------|
+| `script-src`  | `'unsafe-inline'`, `https://danga4biz.github.io`  | Voor inline script of GitHub-hosted versie van `sharebar-layer`       |
+| `style-src`   | `'unsafe-inline'`, `https://cdnjs.cloudflare.com` | Voor Font Awesome stylesheet via CDNJS                                |
+| `font-src`    | `https://fonts.gstatic.com`                       | Voor `.woff2` fontbestanden van Font Awesome                          |
+
+- Geen CSP-blokkades bij correcte configuratie
+- Font Awesome stylesheet en fonts laden correct
+
+---
+
+## 6. Fallbacklogica
+
+- Als `data-base` ontbreekt in een `.share-link`, wordt die link overgeslagen
+- Script crasht niet — robuuste fallback via `if (!base) return;`
+
+---
+
+## 7. DevTools-verifieerbare gedrag
+Wat je in DevTools kunt zien om de werking van de sharebar te bevestigen: scripts, DOM, CSS, tracking.
+
+- Injectie van `href`-attributen met correcte UTM-tags zichtbaar in DOM
+- Font Awesome iconen gerenderd via `::before` in “Elements”
+- Sticky positioning, hover-effecten en `box-shadow` zichtbaar in layout
+- Script zichtbaar onder “Sources” → `sharebar.js`
+- JS-uitvoering zichtbaar in “Console” → geen errors
+- Geen CSP-blokkades bij correcte domeinconfiguratie
+
+---
+
+## 8. Legacy Blogger-verwijdering
+
+Je hebt nu een eigen sticky sharebar, dus de standaard Blogger sharing-includables zijn overbodig.  
+Deze sectie documenteert welke onderdelen veilig verwijderd kunnen worden.
+
+### Te verwijderen includables
+Deze Blogger-includables (standaard share buttons) kunnen worden verwijderd omdat je een eigen sticky share bar gebruikt. 
+Ze zijn niet meer nodig en zorgen alleen voor extra code en mogelijke conflicten. 
 
 ID                    | Functie
 ----------------------|-----------------------------------------------------
@@ -26,8 +162,21 @@ googlePlusShare       | Verouderd, mag sowieso weg
 linkShare             | “Kopieer link”-knop
 otherSharingButton    | Knop voor “Andere apps”
 
-## Specifiek over platformShare
+### Verwijderstrategie
+1. Zoek in je template naar `<b:include name='postShareButtons'/>` 
+→ Verwijder die aanroep, anders krijg je een foutmelding als de includable ontbreekt.
+
+2. Check of je ergens `data:this.sharing.platforms` gebruikt 
+→ Als dat nog ergens staat, haal het weg of vervang het door je eigen logica.
+
+3. Verwijder bijbehorende CSS 
+→ Alles wat begint met `.sharing`, `.share-buttons`, `.sharing-button`, etc. mag weg als je het niet meer gebruikt.
+
+---
+
+### Specifiek over platformShare
 De includable platformShare genereert de daadwerkelijke a-link voor het delen op een platform. 
+
 Hij wordt gebruikt door:
 - facebookShare
 - blogThisShare
@@ -38,106 +187,23 @@ En indirect via:
 - sharingButton → die gebruikt sharingPlatformIcon → die gebruikt platform.key → die kan weer platformShare aanroepen
 
 Omdat jij een eigen sticky share bar hebt gebouwd en deze Blogger-knoppen niet meer gebruikt, is platformShare overbodig. 
-Maar: als je ergens nog <b:include name='platformShare'/> hebt staan buiten de standaard structuur, dan moet je die eerst 
+
+Maar: als je ergens nog `<b:include name='platformShare'/>` hebt staan buiten de standaard structuur, dan moet je die eerst 
 verwijderen voordat je de includable zelf weghaalt.
 
-# Let op
 
-## Wat moet je nog checken vóór verwijderen?
-1. Zoek in je template naar <b:include name='postShareButtons'/> 
-→ Verwijder die aanroep, anders krijg je een foutmelding als de includable ontbreekt.
+## 9. Blogger script-tagged behavior
+Verificatie van Blogger’s afwijkende HTML-parsergedrag bij `<script>` tags:
 
-2. Check of je ergens data:this.sharing.platforms gebruikt 
-→ Als dat nog ergens staat, haal het weg of vervang het door je eigen logica.
-
-3. Verwijder bijbehorende CSS 
-→ Alles wat begint met .sharing, .share-buttons, .sharing-button, etc. mag weg als je het niet meer gebruikt.
-
-## Wat blijft staan?
-Je eigen sticky bar (#stickyShareBarBottom) en de HTML die je daarvoor hebt gemaakt. 
-Die kun je blijven stylen en uitbreiden zoals jij wilt.
-
-
-### [audit-layer] Blogger script-tagged behavior
-
-✅ Blogger accepteert `<script src="..."/>` als self-closing tag  
-❌ Verwijdert expliciete `</script>` zelfs als correct geschreven  
-❌ Niet conform HTML5-specificatie  
-✅ Script correct geladen en uitgevoerd via `defer`  
-🔍 DevTools: script zichtbaar onder “Sources”, geen parse errors
+- Blogger accepteert `<script src="..."/>` als self-closing tag
+- ❌ Verwijdert expliciete `</script>` zelfs als correct geschreven, is niet conform HTML5-specificatie  
+- Script correct geladen en uitgevoerd via `defer`
+- 🔍 DevTools: script zichtbaar onder “Sources”, geen parse errors
 
 ---
 
-## ✅ Enginegedrag
 
-**`defer` attribuut**  
-✅ Script wordt pas uitgevoerd na DOM  
-🔍 Compatibel met `DOMContentLoaded`-logica
 
-**`position: sticky`**  
-✅ Werkt in moderne browsers  
-🔍 Geen filtering door Blogger parser
 
-**`z-index: 9999`**  
-✅ Correct toegepast  
-🔍 Geen conflicts met andere elementen
-
-**`box-shadow`**  
-✅ Visueel zichtbaar  
-🔍 Engine accepteert volledige syntax
-
-**`border-radius`**  
-✅ Rondingen correct weergegeven  
-🔍 Geen parserproblemen
-
----
-
-## 🧪 Parserfiltering
-
-**`background: linear-gradient(...)`**  
-✅ Geaccepteerd  
-🔍 Zowel legacy als modern syntax werkt
-
-**`@media (max-width: 600px)`**  
-✅ Werkt correct  
-🔍 Geen filtering in layout editor
-
-**`transition: all 0.3s ease`**  
-✅ Vloeiend gedrag zichtbaar  
-🔍 Geen parserproblemen
-
----
-
-## 🔍 DOM-verificatie
-
-- `#stickyShareBarBottom` correct geïnjecteerd
-- `.share-link` elementen correct gevonden via `querySelectorAll`
-- `data-base` attributen correct gelezen en verwerkt
-- `link.href` correct samengesteld met `encodeURIComponent`
-
----
-
-## 🧭 Edge-cases en fallbacks
-
-- Fallback voor ontbrekende `data-base` → voorkomt JS-crash
-- UTM-tags toegevoegd voor tracking → optioneel, engine-onafhankelijk
-- Script werkt ook zonder `defer` → maar dan vóór DOM, niet aanbevolen
-
----
-
-## 🔙 Rollbackstrategie
-
-- Layer volledig verwijderbaar via `git rm -r layers/sharebar-layer`
-- Geen afhankelijkheden buiten deze layer
-- Geen impact op andere layers of enginegedrag
-
----
-
-## 🧾 DevTools-verificatie
-
-- Script zichtbaar onder “Sources” → `sharebar.js`
-- DOM-elementen traceerbaar via `#stickyShareBarBottom`
-- JS-uitvoering zichtbaar in “Console” → geen errors
-- CSS-effecten zichtbaar in “Elements” → hover, shadow, radius
 
 
