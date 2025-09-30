@@ -3,6 +3,17 @@
 			/* ================================================================================================================	*/
 		
 			/*** BEGIN *** CSS SCROLLING BANNER bovenaan in main ****************************************************************/
+			/* 30-09-2025																										*/
+			/*		Scrolling snelheid wordt bepaalt door de animation-speed en de breedte (width) van het scherm.				*/
+			/*																													*/
+			/*		De scrolling-content kan bij blogger veel breder worden dan vanaf een html-bestand.							*/
+			/*		Omdat blogger extra zaken injecteert.																		*/
+			/*																													*/
+			/*		Verwijder de de padding-left en vervang door translateX(100vw). Daardoor is de scroll-afstand niet meer		*/
+			/*		afhankelijk van de breedte van de scrolling-content.														*/
+			/*																													*/
+			/*		Vervang transform: translateX(0%) door transform: translateX(100vw);										*/
+			/*																													*/
 	
 			.scrolling-banner 
 			{
@@ -14,7 +25,8 @@
 			.scrolling-content 
 			{
 				display: inline-block;
-				padding-left: 100%; /* start buiten beeld */
+/* 30-09-2025				padding-left: 100%; */ /* start buiten beeld */
+				white-space; nowrap;
 				animation: scroll-left 20s linear infinite;
 			}
 
@@ -40,7 +52,8 @@
 			@keyframes scroll-left 
 			{
 				from {
-					transform: translateX(0%);
+/* 30-09-2025					transform: translateX(0%); */
+					transform: translateX(100vw);
 				}
 				to {
 					transform: translateX(-100%);
