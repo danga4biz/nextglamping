@@ -1,3 +1,9 @@
+# CHANGELOG: sharebar-layer
+
+Bestand: `CHANGELOG-sharebar-layer.md`
+
+# Versie historie
+
 ## ✅ Versie 1 – 2025-09-29
 
 ### Layer aangemaakt: `sharebar-layer`
@@ -12,7 +18,7 @@ Sticky social media sharebar onderaan de pagina met visuele styling en dynamisch
 
 ### 🔧 Subcomponent Mapping: sharebar-layer v1A
 
-| Subcomponent       | Versie     | Laatste wijziging | Changelog-sectie        |
+| Subcomponent       | Versie     | Laatste wijziging | Changelog-sectie         |
 |--------------------|------------|-------------------|--------------------------|
 | `sharebar-style`   | v1A        | 1 Sep 2025        | [sharebar-style v1A]     |
 | `sharebar-script`  | v1A        | 1 Sep 2025        | [sharebar-script v1A]    |
@@ -50,11 +56,12 @@ Sticky social media sharebar onderaan de pagina met visuele styling en dynamisch
 ---
 
 ### [audit-layer]
-- ✅ CSS getest op parser-acceptatie
-- ✅ JS werkt via `DOMContentLoaded` zonder externe afhankelijkheden
-- ✅ Hover-effecten en media queries DevTools-verifieerbaar
+- CSS getest op parser-acceptatie
+- JS werkt via `DOMContentLoaded` zonder externe afhankelijkheden
+- Hover-effecten en media queries DevTools-verifieerbaar
 
 ### [rollback]
-- 🔙 Layer is volledig verwijderbaar zonder impact op andere delen van de repository
-- 🔙 Subtree-pad: `layers/sharebar-layer`
-- 🔙 Rollback via `git rm -r layers/sharebar-layer` + changelog-update
+- Layer is volledig verwijderbaar via `git rm -r layers/sharebar-layer`
+- Geen afhankelijkheden buiten deze layer
+- Subtree-pad: `layers/sharebar-layer`
+- Rollback vereist changelog-update
