@@ -33,3 +33,13 @@ Bevat JavaScript-functies voor:
 ## Changelog
 
 Zie `CHANGELOG-utilities-layer.md` voor versiehistorie, audit-layer tagging en DevTools-verificatie.
+
+
+# Scrolling banner
+Deze layer bevat een horizontaal scrollende banner met consistente snelheid en afstand, ongeacht schermgrootte of tekstlengte.
+
+- Scrollsnelheid: `12s` via `animation-duration`
+- Scrollafstand: van `translateX(100vw)` naar `translateX(-100%)`
+- Geen afhankelijkheid van tekstbreedte of containerinjectie
+- DevTools-verifieerbaar via `animation-*` en `transform` properties
+
