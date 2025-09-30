@@ -1,0 +1,3301 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+<!-- next glamping menu old to new v1 --> 
+
+	<meta content='IE=Edge' http-equiv='X-UA-Compatible'/>
+
+	<!-- *** BEGIN *** VIEWPORT VOOR MOBIEL ***************************************************************************	-->
+	<meta content='width=device-width,initial-scale=1.0' name='viewport'/>
+
+	<!-- preconnect verbetert de laadtijd -->
+	<link href='https://fonts.googleapis.com' rel='preconnect'/>  
+	<link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>  
+  
+	<!-- links naar fonts -->
+	<link href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap' rel='stylesheet'/>
+	<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap' rel='stylesheet'/>
+	<link href='https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&amp;display=swap' rel='stylesheet'/>
+	<link href='https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&amp;display=swap' rel='stylesheet'/>  
+	
+	<!-- 30-09-2025 toegevoegd font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	
+  
+	<!-- *** BEGIN *** SOCIAL MEDIA TAGS ******************************************************************************	-->
+
+	<!-- *** END *** SOCIAL MEDIA TAGS *******************************************************************************	-->
+
+
+  	<!-- *** BEGIN *** referrer policy ********************************************************************************	-->
+	<meta content='same-origin' name='referrer'/>
+	<!-- *** END *** referrer policy **********************************************************************************	-->
+      
+  
+	<!-- *** BEGIN *** content security policy ************************************************************************	-->
+	<!-- *** END *** content security policy **************************************************************************	-->  
+
+
+  	<!-- *** BEGIN *** FAVICON WEBSITE ********************************************************************************	-->
+
+	
+	<!-- href bevat de locatie van het icoonbestand - meestal in de root van de site									-->
+	<!-- type = het bestandsformaat van het icoonbestand																-->
+	
+	<!-- <link rel="icon" href="/favicon.ico" type="image/x-icon"> -->
+	
+	<!-- *** END *** FAVICON WEBSITE **********************************************************************************	-->
+
+
+	<!-- *** BEGIN *** menu-layer javascript **************************************************************************	-->	
+
+<!--	<script src="https://danga4biz.github.io/nextglamping/layers/menu-layer/menu.js" defer></script> -->
+
+	<!-- *** END *** menu-layer javascript ****************************************************************************	-->
+
+  
+	<style id="layer-setup">
+		/*** BEGIN *** LAYER VOLGORDE DEFINITIES ********************************************************************************/
+		/*																														*/
+		/* 12-09-2025																											*/
+		/*		CSS buiten een @layer krijgt de laagste prioriteit en wordt als eerste toegepast in de cascadevolgorde			*/
+		/*																														*/
+
+		@layer reset, b-template-skin, reset-template-skin, theme, blogger-css, skin, layout, utilities, variables, menu, temp, test;
+
+		/*** END *** LAYER VOLGORDE DEFINITIES **********************************************************************************/    
+	</style>
+
+<style id="template-skin">
+		/* *** BEGIN *** layer b-template-skin ********************************************************************************	*/
+		/* 24-09-2025 verwijder justify-content en align-items																	*/
+		/*																														*/
+		/*	Blogger layout editor lijkt een preprocessor te hebben die:															*/
+		/*		- Regels uitsluit op basis van engine-compatibiliteit															*/
+		/*		- Mogelijk inline styles of widgetstructuur als leidend beschouwt												*/
+		/*		- Soms flex-regels negeert als de container of context niet voldoet												*/
+		/*																														*/
+		/*	Dit is een enginefilter die bepaalde properties uitschakelt, zoals:													*/
+		/*		- justify-content en align-items worden genegeerd door ze uit te commentariëren									*/
+		/*		- background-color met var worden eveneens genegeerd															*/
+		/*																														*/
+		
+		@layer b-template-skin {  
+
+			/*** TEMPLATE-SKIN *** CSS topLineWrapper ***************************************************************************/
+			#topLineWrapper
+			{
+				border-color: green;
+				border-top-style: solid;
+				border-width: 2px;
+
+background-color: magenta;
+
+				display: flex;
+			}
+
+		 /*** TEMPLATE-SKIN *** CSS topContainerWrapper **********************************************************************/
+			#topContainerWrapper
+			{
+				border-color: green;
+				border-top-style: dashed;
+				border-width: 2px;
+
+background-color: magenta;
+
+				display: flex;
+			}
+
+			/*** TEMPLATE-SKIN *** CSS topBarWrapper ****************************************************************************/
+			#topBarWrapper
+			{
+				border-color: green;
+				border-top-style: solid;
+				border-width: 2px;
+
+background-color: magenta;
+
+				display: flex;
+			}
+
+			/*** TEMPLATE-SKIN *** CSS topMenuFlexWrapper ***********************************************************************/
+			#topMenuFlexWrapper
+			{
+				border-color: black;
+				border-top-style: solid;
+				border-width: 2px;
+
+background-color: magenta;
+
+				display: flex;
+			}
+
+			/*** TEMPLATE-SKIN *** CSS topMenuBar *******************************************************************************/
+			#topMenuBar
+			{
+				border-color: green;
+				border-top-style: solid;
+				border-width: 2px;
+
+background-color: magenta;
+
+				display: flex;
+			}
+
+			/*** TEMPLATE-SKIN *** CSS middleContainerWrapper *******************************************************************/
+			#middleContainerWrapper
+			{
+				border-color: black;
+				border-top-style: solid;
+				border-width: 2px;
+
+background-color: magenta;
+
+				display: flex;
+			}
+
+			/*** TEMPLATE-SKIN *** CSS centerBarWrapper *************************************************************************/
+			#centerBarWrapper
+			{
+				border-color: black;
+				border-top-style: solid;
+				border-width: 2px;
+
+background-color: magenta;
+
+				display: flex;
+			}
+
+			/*** TEMPLATE-SKIN *** CSS bottomBarWrapper **********************************************************************/
+			#bottomBarWrapper
+			{
+				border-color: green;
+				border-top-style: dashed;
+				border-width: 2px;
+
+background-color: magenta;
+
+				display: flex;
+			}
+
+			/*** TEMPLATE-SKIN *** CSS bottomContainerWrapper *******************************************************************/
+			#bottomContainerWrapper
+			{
+				border-color: black;
+				border-top-style: solid;
+				border-width: 2px;
+
+background-color: magenta;
+
+				display: flex;
+			}
+
+
+			/*** TEMPLATE-SKIN *** CSS bottomLineWrapper ***************************************************************************/
+			#bottomLineWrapper
+			{
+				border-color: black;
+				border-top-style: solid;
+				border-width: 2px;
+
+background-color: magenta;
+
+				display: flex;
+			}
+
+
+		}
+		/* *** END *** layer b-template-skin **********************************************************************************	*/			      
+
+</style>
+
+	<style id="reset-layer">
+		/* *** BEGIN *** layer reset ******************************************************************************************	*/
+		@layer reset {
+		
+			/* === UNIVERSELE RESET ===========================================================================================	*/
+			/* LET OP: box-sizing UITGEZET VOOR SCROLLING THUMBNAIL IN middleContainer 											*/
+
+			*,
+			*::before,
+			*::after 
+			{
+				margin: 0; /* browsers voegen standaard marges toe aan elementen */
+				padding: 0; /* verwijdert standaard witruimte - is niet echt nodig, browsers geven standaard geen padding */
+	/*			box-sizing: border-box;  zorgt dat padding en border binnen de breedte vallen */
+				font-family: inherit; /* erft de font-family van de html, body, div of zijn host-element */
+			}
+			
+			/* === reset voor html ===================+++++++++++++++++++++++++++++++++========================================	*/
+			/*																													*/
+			/* 13-09-2025																										*/
+			/*		'line-height: 1.5' is een erfbare eigenschap die het beste in de root (zoals html) staat					*/
+			/*		'font-size: 1rem' is 16px bij default HTML																	*/
+
+			html 
+			{
+				font-size: 100%; /* respecteer browser-default */
+				line-height: 1.5; /* 1.5 x de huidige font-size van het element */
+				scroll-behavior: smooth; /* zorgt voor vloeiende scroll bij anchor-links */
+				-webkit-text-size-adjust: 100%;
+				-ms-text-size-adjust: 100%; /* voorkomt dat mobiele browsers automatisch de tekstgrootte aanpassen */
+			
+				/* bepaalt of browsers tekstgrootte automatisch aanpassen op basis van het apparaat of de gebruikersinstellingen */
+				text-size-adjust: 100%; 
+
+				line-height: 1.5;
+			}
+			
+			/* === reset voor body ===================+++++++++++++++++++++++++++++++++========================================	*/
+
+			body 
+			{
+				font-family: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+				background: white; /* background op html kan soms niet renderen, vooral bij height: 100% situaties - daarom body */
+/*			color: black; laten we eerst eens proberen met donkergrijs #333 */
+				color: #333;
+				margin: 0; /* verwijdert standaard witruimte */
+				text-rendering: optimizeLegibility; /* optimaliseert de leesbaarheid van tekst */
+				-webkit-font-smoothing: antialiased; /* maakt tekst gladder en minder pixelachtig */
+			}
+ 
+			/* === reset voor header settings =================================================================================	*/
+			/* 13-09-2025																										*/
+			/*		in de algemene reset zijn margin en padding al meegenomen, toch laat ik ze hier staan owv blogger			*/
+			/*		border en background komen normaal niet voor bij koppen, toch laat ik ze hier staan owv blogger				*/
+	
+			h1, h2, h3, h4, h5, h6 
+			{
+				border: 0; 
+				margin: 0; 
+				padding: 0; 
+				background: transparent; /* geen ongewenste achtergrondkleur die door sommige browsers wordt gegeven */
+				line-height: 1.2; /* let op de line height van html staat op 1.5 */
+				color: inherit;
+				font-family: Raleway, sans-serif;
+				font-weight: 700; /* bold */
+			}
+
+			h1 {font-size: 2.00em; font-weight: bold; margin: 0.67em 0.00em;}
+			h2 {font-size: 1.50em; font-weight: bold; margin: 0.83em 0.00em;}
+			h3 {font-size: 1.17em; font-weight: bold; margin: 1.00em 0.00em;}
+			h4 {font-size: 1.00em; font-weight: bold; margin: 1.33em 0.00em;}
+			h5 {font-size: 0.83em; font-weight: bold; margin: 1.67em 0.00em;}
+			h6 {font-size: 0.67em; font-weight: bold; margin: 2.33em 0.00em;}
+
+			/* === reset voor lijsten en paragrafen =======================================================================	*/
+			/* 13-09-2025																										*/
+			/*		het is netter om font-family en font-weight in de body te zetten want alle tekst-elementen erven dit		*/
+			/*		maar ik laat deze hier toch staan owv blogger 																*/
+
+			p, ul, ol, li, blockquote, pre 
+			{
+				margin: 0;
+				padding: 0;
+				font-family: "Poppins", sans-serif;
+				font-weight: 400;
+			}
+   
+			/* === reset voor formulier elementen =============================================================================	*/
+
+			input, textarea, button, select 
+			{
+				font: inherit;
+				color: inherit;
+				background: none;
+				border: none;
+				padding: 0;
+				margin: 0;  
+			}
+
+			/* === reset voor navigatie en buttons ============================================================================	*/
+		
+			/* 13-09-2025 toegevoegd																							*/
+			/*		'text-decoration: none' verwijdert de standaard onderstreping												*/
+			/*		'transition: background-color 0.2s ease, color 0.2s ease' Zorgt voor een vloeiende overgang van 0.2 sec		*/
+			/*			wanneer de achtergrondkleur of tekstkleur verandert (bij hover/focus/active).							*/
+
+			nav a 
+			{
+				text-decoration: none;
+				background-color: transparent; /* zorgt dat de achtergrond van de link doorzichtig is */
+			}
+
+		
+		}
+		/* *** END *** layer reset ********************************************************************************************	*/	
+		
+	</style>
+
+	<style id='reset-template'>
+	
+		/* *** BEGIN *** layer reset-template-skin ****************************************************************************	*/			      
+		@layer reset-template-skin {  
+	
+      
+		/* *** BEGIN *** layer reset-template-skin ****************************************************************************	*/
+		
+		/* 24-09-2025																											*/
+		/*																														*/
+		/*		[border-style: none] schakelt de stijl van de rand uit dat is: border-top-style, border-left-style, etc			*/
+		/*																														*/		
+		/*		[border: none] is overbodig wanneer border-style none gebruikt wordt											*/
+		/*																														*/
+		/*		[background-color: unset] is geen erfbare eigenschap in CSS, als je unset gebruikt op background-color, dan zal	*/
+		/*		de browser niet automatisch de kleur van een ouder-element overnemen, tenzij die kleur via een class of andere 	*/
+		/*		selector expliciet wordt toegepast.																				*/
+		/*																														*/
+		/*		- als er geen andere geldige stijlregel via cascade dan valt het element terug op de initiële waarde 			*/
+		/*		transparent																										*/
+		/*																														*/
+		      
+			#topMenuBar
+			{
+				background-color: unset; /* verwijder eerder ingestelde waarde, laat cascade het werkt doen */
+  				background-image: none;
+  				float: none !important; /* important om sterkere stijlregels zoals float: left te overschrijven	*/
+				border-style: none; 
+				border-width: 0; /* geen ruimte meer voor de rand */
+				border-color: transparent; /* maakt de kleur onzichtbaar */
+				background-repeat: initial;
+				background-position: initial;
+				background-size: initial;
+				background-attachment: initial;	
+				background-origin: initial;		
+				background-clip: initial;
+				display: block; /* schakelt flex uit */
+				align-items: unset; /* genegeerd want zijn niet van toepassing op een block-element */
+				justify-content: unset; /* genegeerd want zijn niet van toepassing op een block-element */
+				width: auto;
+			} 
+
+			#middleContainerWrapper
+			{
+				background-color: unset; /* verwijder eerder ingestelde waarde, laat cascade het werkt doen */
+  				background-image: none;
+	  			float: none !important; /* important om sterkere stijlregels zoals float: left te overschrijven	*/
+  				border: none; /* verwijdert alle aspecten van de border: breedte, stijl én kleur */	
+				background-repeat: initial;
+				background-position: initial;
+				background-size: initial;
+				background-attachment: initial;	
+				background-origin: initial;		
+				background-clip: initial;
+				display: block; /* schakelt flex uit */
+				align-items: unset; /* genegeerd want zijn niet van toepassing op een block-element */
+				justify-content: unset; /* genegeerd want zijn niet van toepassing op een block-element */
+				width: auto;
+			}  
+
+			#centerBarWrapper
+			{
+				background-color: unset; /* verwijder eerder ingestelde waarde, laat cascade het werkt doen */
+  				background-image: none;
+	  			float: none !important; /* important om sterkere stijlregels zoals float: left te overschrijven	*/
+  				border: none; /* verwijdert alle aspecten van de border: breedte, stijl én kleur */	
+				background-repeat: initial;
+				background-position: initial;
+				background-size: initial;
+				background-attachment: initial;	
+				background-origin: initial;		
+				background-clip: initial;
+				display: block; /* schakelt flex uit */
+				align-items: unset; /* genegeerd want zijn niet van toepassing op een block-element */
+				justify-content: unset; /* genegeerd want zijn niet van toepassing op een block-element */
+				width: auto;
+			}  			
+
+			#bottomBarWrapper
+			{
+				background-color: unset; /* verwijder eerder ingestelde waarde, laat cascade het werkt doen */
+  				background-image: none;
+	  			float: none !important; /* important om sterkere stijlregels zoals float: left te overschrijven	*/
+  				border: none; /* verwijdert alle aspecten van de border: breedte, stijl én kleur */	
+				background-repeat: initial;
+				background-position: initial;
+				background-size: initial;
+				background-attachment: initial;	
+				background-origin: initial;		
+				background-clip: initial;
+				display: block; /* schakelt flex uit */
+				align-items: unset; /* genegeerd want zijn niet van toepassing op een block-element */
+				justify-content: unset; /* genegeerd want zijn niet van toepassing op een block-element */
+				width: auto;
+			}  
+
+			#bottomLineWrapper
+			{
+				background-color: unset; /* verwijder eerder ingestelde waarde, laat cascade het werkt doen */
+	  			background-image: none;
+  				float: none !important; /* important om sterkere stijlregels zoals float: left te overschrijven	*/
+  				border: none; /* verwijdert alle aspecten van de border: breedte, stijl én kleur */	
+				background-repeat: initial;
+				background-position: initial;
+				background-size: initial;
+				background-attachment: initial;	
+				background-origin: initial;		
+				background-clip: initial;
+				display: block; /* schakelt flex uit */
+				align-items: unset; /* genegeerd want zijn niet van toepassing op een block-element */
+				justify-content: unset; /* genegeerd want zijn niet van toepassing op een block-element */
+				width: auto;
+			}  
+
+		}
+		/* *** END *** layer reset-template-skin ******************************************************************************	*/			      
+	</style>
+  			
+	<style id="skin-layer">
+		/* *** BEGIN *** layer skin *******************************************************************************************	*/
+		@layer skin {  
+		
+			/*** BEGIN *** CSS SET CLEAR BOX ************************************************************************************/
+			/* 18-08-2025 use-clear om alle floats te neutraliseren 															*/
+			
+			body.use-clear .header-wrapper::after,
+			body.use-clear .main-wrapper::after,
+			body.use-clear .footer-wrapper::after
+			{
+				content: "";
+				display: table;
+				clear: both;
+			}
+			/*** END *** CSS SET CLEAR BOX **************************************************************************************/
+			
+
+			/*** BEGIN *** CSS .main-wrapper, .header-wrapper, .footer-wrapper **************************************************/
+			/* 12-09-2025 ACTIE:																								*/
+			/*				- check waarom [display: inline-block] hierop stond in oude versie									*/
+			/*				- check waarom [padding: 0%] hierop stond in oude versie											*/
+			/*		LET OP: nieuwe versie: zie element-wrapper padding nodig om te simuleren dat container hoogte heeft			*/
+		
+			.main-wrapper,
+			.header-wrapper,
+			.footer-wrapper 
+			{
+				width: 100%;
+
+/*			display: inline-block; */
+/*			padding: 0%; */			
+			}
+			/*** END *** CSS .main-wrapper, .header-wrapper, .footer-wrapper ****************************************************/
+			
+
+			/*** BEGIN *** CSS .element-wrapper *********************************************************************************/
+			/*																													*/
+			/* 11-09-2025																										*/
+			/*		padding hebben we nodig om te zorgen dat topMenuBarLeft en topMenuBarRight de kleur van de class			*/
+			/*		container-items krijgen.  																					*/
+			/*																													*/
+			/* 1-09-2025	responsive design																					*/
+			/*		padding vervangen door padding-inline en padding-block														*/
+			/*																													*/
+			/********************************************************************************************************************/
+			.element-wrapper
+			{
+				padding-inline:  1rem; /* geeft ruimte links en rechts */
+				padding-block: 1rem; /* geeft ruimte boven en onder */
+			}
+			/*** END *** CSS .element-wrapper ***********************************************************************************/
+
+
+			/*** BEGIN *** CSS FLEX-CONTAINER ***********************************************************************************/
+			/*																													*/
+			/* 12-09-2025																										*/
+			/*		[flex-direction: row] is de standaard waarde van [display: flex] hoeven we eigenlijk niet in te stellen		*/
+			/*			maar voor inzicht wel handig om wel te doen																*/
+			/*																													*/
+			/*		[align-items: center] werkt alleen bij een container die 													*/
+			/*			display: flex of display: inline-flex heeft, of display: grid of display: inline-grid heeft.			*/
+			/*				en wanneer een expliciete hoogte is ingesteld of de hoogte ontstaat door de inhoud					*/
+			/*																													*/
+			/* 18-9-2023																										*/
+			/*		padding-left and padding-rigth ensure the flex-container does not fill the complete line which would make 	*/
+			/*		the items stretch out over the screen																		*/
+			/*	ACTIE: check geldt dit niet alleen voor een float-based structuur												*/
+			/*																													*/
+			
+			.flex-container 
+			{
+				display: flex;
+				justify-content: space-around;
+				padding-left:  1%;
+				padding-right: 1%;
+
+				flex-direction: row;
+				
+				align-items: center;
+			}
+			/*** END *** CSS FLEX-CONTAINER *************************************************************************************/
+
+
+			.container-items
+			{
+				background-color: var(--container-items-BG-color, var(--root-BG-color, white ));
+				color: var(--container-items-TXT-color, var(--root-TXT-color, white ));
+			}
+
+			/*** BEGIN *** CSS outerWrapper *************************************************************************************/
+			
+			/* 23-09-2025 class weer omgezet naar id																			*/
+			/*																													*/
+			/* 13-09-2025 maak van de id outerWrapper een class 																*/
+			/*																													*/
+			
+			/* 12-09-2025 ACTIE: background-color toevoegen																		*/
+
+			#outerWrapper
+			{
+				padding-top: 0.5%;
+				padding-right: 1%;
+				padding-bottom: 1%;
+				padding-left: 0.5%;
+			}
+			/*** END *** CSS outerWrapper ***************************************************************************************/
+			
+
+			/*** BEGIN *** CSS topLineWrapper, topLineLeft, topLineMiddle, topLineRight *****************************************/
+			/* voor test doeleinden */
+			/* was navy blue */
+			#topLineWrapper
+			{
+				background-color: DodgerBlue;
+			}
+
+			/* LET OP: DEZE GAAN WE MISSCHIEN VERVANGEN DOOR FLEX-CONTAINER CLASS 								*/
+			#topLineWrapper
+			{
+				display: flex;
+				justify-content: space-between; /* houdt ruimte tussen de blokken */   
+				align-items: center; /* hoe worden items verticaal uitgelijnd als je flex-direction: row gebruikt). */
+				/*		width: 100%; niet nodig al aanwezig in de class container-wrapper */
+		}
+
+			#topLineLeft,
+			#topLineMiddle,
+			#topLineRight
+			{
+				flex-grow: 0;     /* element mag niet groeien om extra ruimte op te vullen */
+				flex-shrink: 1;   /* element mag krimpen als er te weinig ruimte is */
+				flex-basis: auto; /* basisbreedte wordt bepaald door de inhoud van het element */
+				white-space: nowrap; /* voorkomt afbreken van tekst */
+			}
+
+			/* voor test doeleinden */
+			#topLineLeft,
+			#topLineMiddle
+			{
+				border-right: 2px solid black;
+			}
+			/*** END *** CSS topLineWrapper, topLineLeft, topLineMiddle, topLineRight *******************************************/
+
+
+      		/*** BEGIN *** CSS topContainerWrapper, topContainerLeft, topContainerRight *****************************************/
+			/* voor test doeleinden */
+			#topContainerWrapper
+			{
+				background-color: red;
+			}
+ 
+			/* LET OP: DEZE GAAN WE MISSCHIEN VERVANGEN DOOR FLEX-CONTAINER CLASS 								*/
+			#topContainerWrapper
+			{
+				display: flex;
+				justify-content: space-between; /* houdt ruimte tussen de blokken */   
+				align-items: center; /* hoe worden items verticaal uitgelijnd als je flex-direction: row gebruikt). */
+			/*		width: 100%; niet nodig al aanwezig in de class container-wrapper */
+			}
+
+			#topContainerLeft
+			{ 
+				flex-grow: 0; /* element mag NIET groeien om extra ruimte op te vullen */
+				flex-shrink: 1; /* mag beperkt krimpen */
+				flex-basis: auto; /* breedte gebaseerd op inhoud */
+				white-space: nowrap;  /* voorkomt afbreken van logo/tekst */
+			} 
+
+			#topContainerRight
+			{ 
+				flex-grow: 1; /* element mag groeien om beschikbare ruimte op te vullen */
+				flex-shrink: 1; /* krimp als het nodig is */
+				flex-basis: 0; /* start met 0 breedte */
+				min-width: 0; /* mag krimpen, tot nul pixels breed als dat nodig is zelfs als je inhoud breder is */
+				white-space: nowrap; /* voorkomt afbreken naar nieuwe regel */
+			} 
+
+			/* voor test doeleinden */
+			#topContainerLeft
+			{
+				border-right: 2px solid black;
+			}
+			/*** END *** CSS topContainerWrapper, topContainerLeft, topContainerRight *******************************************/
+
+
+			/*** BEGIN *** CSS topBarWrapper, topBarLeft, topBarRight ***********************************************************/
+			/* voor test doeleinden */
+			#topBarWrapper
+			{
+				background-color: beige;
+			}
+ 
+			/* LET OP: DEZE GAAN WE MISSCHIEN VERVANGEN DOOR FLEX-CONTAINER CLASS 								*/
+			#topBarWrapper
+			{
+				display: flex;
+				justify-content: space-between; /* houdt ruimte tussen de blokken */   
+				align-items: center; /* hoe worden items verticaal uitgelijnd als je flex-direction: row gebruikt). */
+			/*		width: 100%; niet nodig al aanwezig in de class container-wrapper */
+			}
+
+			#topBarLeft
+			{ 
+				flex-grow: 0; /* element mag NIET groeien om extra ruimte op te vullen */
+				flex-shrink: 1; /* mag beperkt krimpen */
+				flex-basis: auto; /* breedte gebaseerd op inhoud */
+				white-space: nowrap;  /* voorkomt afbreken van logo/tekst */
+			} 
+
+			#topBarRight
+			{ 
+				flex-grow: 1; /* element mag groeien om beschikbare ruimte op te vullen */
+				flex-shrink: 1; /* krimp als het nodig is */
+				flex-basis: 0; /* start met 0 breedte */
+				min-width: 0; /* mag krimpen, tot nul pixels breed als dat nodig is zelfs als je inhoud breder is */
+				white-space: nowrap; /* voorkomt afbreken naar nieuwe regel */
+			} 
+
+			/* voor test doeleinden */
+			#topBarLeft
+			{
+				border-right: 2px solid black;
+			}
+			/*** END *** CSS topBarWrapper, topBarLeft, topBarRight *************************************************************/
+			
+
+			/*** BEGIN *** CSS topMenuBar, topMenuBarLeft, topMenuBarRight ******************************************************/
+
+			/* =======================================	topMenuBar ============================================================	*/
+
+			/*																													*/
+			/*	[flex-wrap: wrap] zorgt dat topMenuBarLeft boven topMenuBarRight komt te staan bij een kleiner scherm			*/
+			/*																													*/
+
+			/* =======================================	topMenuBar ============================================================	*/
+			#topMenuBar
+			{
+				display: flex;
+				justify-content: space-between; /* houdt ruimte tussen de blokken */   
+				align-items: center; /* hoe worden items verticaal uitgelijnd als je flex-direction: row gebruikt). */
+	/*			background-color: var(--topMenuFlexWrapper-BG-color);		*/
+	/*		width: 100%; niet nodig al aanwezig in de class container-wrapper */
+
+				flex-wrap: wrap; /* staat flex items toe om over te lopen naar een nieuwe regel */
+
+			}
+
+			/* =======================================	#topMenuBarLeft =======================================================	*/
+			
+			/* 22-09-2025																										*/
+			/*		flex-grow gewijzigd van 0 naar 1 zodat menu-titel de ruimte opvult die niet wordt ingevuld door het menu	*/
+
+			/* 16-09-2025																										*/
+			/*		1. de hamburger-knop (#myHamburg-3 en menu-toggleZ) staat nu in de topMenuBarRight zodat hij steeds 		*/
+			/*		naast de titel verschijnt en blijft staan.																	*/
+			/*		2. [display: flex] en [align-item: center] zijn nodig om ervoor te zorgen dat de hamburger knop en de 		*/
+			/*			op één lijn blijven staan - verticaal gecentreerd worden 												*/
+
+			/*																													*/
+			/*	[background-color: inherit] expliciet dwingen om de kleur van de parent over te nemen, ongeacht of het 			*/
+			/*		element padding bevat = zie element-wrapper:																*/
+			/*			padding hebben we nodig om te zorgen dat topMenuBarLeft en topMenuBarRight de kleur van de class		*/
+			/*			container-items krijgen.  																				*/
+			/*																													*/
+			
+			/*																													*/
+
+			/* 13-09-2025 																										*/
+			/*	[width: max-content] op d-flyout ul > li > ul lost het probleem van de [white-space: nowrap] op					*/
+			/*		kan dus blijven staan																						*/
+			/*																													*/
+			/*	[white-space: nowrap] veroorzaakt dat de tekst van de submenu items niet volledig getoond worden 				*/
+			/*		in de drop down box zijnde d-flyout ul > li > ul															*/
+			
+			/* =======================================	topMenuBarLeft ========================================================	*/
+			
+			#topMenuBarLeft
+			{ 
+				flex-grow: 0; /* element mag NIET groeien om extra ruimte op te vullen */
+				flex-shrink: 1; /* mag beperkt krimpen */
+				flex-basis: auto; /* breedte gebaseerd op inhoud */
+				white-space: nowrap;  /* voorkomt afbreken van logo/tekst */
+				background-color: inherit; /* dwingt om de kleur van de parent over te nemen, ook al bevat de child een padding */
+
+				display: flex;
+				align-items: center;
+
+	outline: 4px solid red; /* voor test doeleinden */					
+			} 
+
+			/* =======================================	topMenuBarRight =======================================================	*/
+
+			/* 14-09-2025																										*/
+			/*		[white-space: nowrap] dwingt directe children (zoals het menu) in één lijn te blijven, zonder wrapping		*/
+			/*		en dat bepertk de breedte van auto-breedte elementen zoals je li - denk in dit geval aan de breedte			*/
+			/*		van de submenu items in de drop down box. Want browsers proberen die dan in te persen in één lijn.			*/
+			/* 																													*/
+			/*		GEVOLG: de drop down items lopen visueel door, maar de parent (het top level item) groeit niet mee.			*/
+			/*			en de drop down box (submenu ul) heeft geen ruimte om breder te worden.									*/
+			/*			Daardoor loop de tekst van de submenu items over de rand heen of worden onzichtbaar (overflowed).		*/
+			/*																													*/
+			/*		Zodra je de [white-space: nowrap] verwijdert uit #topMenuBarRight, laat je de browser weer toe om:			*/
+			/*		elementen te laten wrappen/terug te vloeien, breedte van li en ul te laten groeien met de inhoud en			*/
+			/*		het submenu volledig zichtbaar te maken, zelfs als het breder is dan het top-level item.					*/
+			
+			/*																													*/
+			/* 13-09-2025																										*/
+			/*		[flex-grow:1] zorgt dat de topMenuBarRight meer ruimte inneemt naar links toe								*/
+			/*																													*/
+			/*		[justify-content: flex-end] het element blijft aan de rechterkant en duwt andere elementen naar links		*/
+			/*			als het groeit																							*/
+			/*																													*/
+			/*		[flex-shrink: 1] mag krimpen bij ruimtegebrek,																*/
+			/*			maar door de 'white-space: nowrap' kan de inhoud niet breken, maar gaat de layout breken, echter		*/
+			/*			dat wordt voorkomen door de mediaquery																	*/
+			/*																													*/
+			/* 11-09-2025 nodig om hamburger-menu op gelijke positie als logo en menu-items te plaatsen							*/
+			/*																													*/
+			/*		zorg er wel voor dat positionering verwijdert wordt uit .menu-toggleZ										*/
+			/*																													*/
+
+			/*																													*/
+			/* REMARK: Rechterzijde krijgt extra flexgedrag voor uitlijning van de knop 										*/
+			
+			/* =======================================	topMenuBarRight =======================================================	*/
+			
+			#topMenuBarRight 
+			{
+				flex-grow: 1; /* element mag groeien om beschikbare ruimte op te vullen, hier naar links */
+				flex-shrink: 1; /* mag beperkt krimpen */
+				flex-basis: auto; /* breedte gebaseerd op inhoud */
+	/* 14-09-2025			white-space: nowrap;*/ /* voorkomt afbreken naar nieuwe regel */
+				background-color: inherit; /* dwingt om de kleur van de parent over te nemen, ook al bevat de child een padding */
+			
+				display: flex;
+				align-items: center;
+				
+				justify-content: flex-end; /* zorgt ervoor dat de flex-items aan het einde van de hoofd-as worden geplaatst 	*/
+
+	outline: 4px solid red; /* voor test doeleinden */					
+				
+			} 
+			/*** END *** CSS topMenuBar, topMenuBarLeft, topMenuBarRight ********************************************************/
+
+
+			/*** BEGIN *** CSS middleContainerWrapper ***************************************************************************/
+			/*															middleContainerWrapper is een Scrolling Banner			*/
+			/********************************************************************************************************************/
+			/* voor test doeleinden */
+			#middleContainerWrapper
+			{
+				background-color: Khaki;
+			}
+
+			/* LET OP: DEZE GAAN WE MISSCHIEN VERVANGEN DOOR FLEX-CONTAINER CLASS 								*/
+			#middleContainerWrapper
+			{
+				display: flex;
+				justify-content: space-between; /* verdeelt items over de breedte, houdt ruimte tussen de blokken */
+				align-items: center; /* hoe worden items verticaal uitgelijnd als je flex-direction: row gebruikt). */
+			/*		width: 100%; niet nodig al aanwezig in de class container-wrapper */
+			}
+
+			/*** END *** CSS middleContainerWrapper *****************************************************************************/
+			/*															middleContainerWrapper is een Scrolling Banner			*/
+			/********************************************************************************************************************/
+
+			/*** BEGIN *** CSS centerBarWrapper, centerBarLeft, centerBarMiddle, centerBarRight *********************************/
+			/* voor test doeleinden */
+			#centerBarLeft,
+			#centerBarMiddle,
+			#centerBarRight
+			{
+				background-color: lightgreen;
+			}
+
+			/* voor test doeleinden */  
+			#centerBarWrapper
+			{
+				background: lightblue;
+			}  
+  
+			/* LET OP: DEZE GAAN WE MISSCHIEN VERVANGEN DOOR FLEX-CONTAINER CLASS 								*/
+				#centerBarWrapper
+			{
+				display: flex;
+				justify-content: space-between; /* houdt ruimte tussen de blokken */   
+				align-items: flex-start; /* items worden aan het begin van de kruis-as (bovenkant) uitgelijnd */
+/*				align-items: center; */ /* hoe worden items verticaal uitgelijnd als je flex-direction: row gebruikt). */
+			/*		width: 100%; niet nodig al aanwezig in de class container-wrapper */
+			}
+
+			/* ======================================== centerBarLeft =========================================================	*/
+			#centerBarLeft 
+			{
+				flex-grow: 0; /* groeit niet als er extra ruimte is */
+				flex-shrink: 0; /* krimpt niet als er te weinig ruimte is */
+				flex-basis: 5%; /* vaste startbreedte van 5% van de container */
+			}
+
+			/* ======================================== centerBarMiddle =======================================================	*/
+			#centerBarMiddle
+			{ 
+				flex-grow: 1; /* element mag groeien om beschikbare ruimte op te vullen */
+				flex-shrink: 1; /* element mag krimpen als er te weinig ruimte is */
+				flex-basis: 0%; /* startbreedte is 0%, dus het element begint zonder vaste breedte */
+				min-width: 0; /* voorkomt binnen een flexbox dat een element breed blijft als de inhoud dat wil */
+			} 
+
+			/* ======================================== centerBarRight ========================================================	*/
+			#centerBarRight
+			{
+				flex-grow: 0;     /* groeit niet mee als er extra ruimte is */
+				flex-shrink: 1;   /* mag krimpen als er te weinig ruimte is */
+				flex-basis: 25%;  /* startbreedte is 25% van de container */	
+			}
+			/*** END *** CSS centerBarWrapper, centerBarLeft, centerBarMiddle, centerBarRight ***********************************/
+
+
+			/*** BEGIN *** CSS bottomBarWrapper, bottomBarLeft, bottomBarRight, bottomBarMiddle *********************************/
+			/* voor test doeleinden */
+			#bottomBarWrapper
+			{
+				background-color: MistyRose;
+			}
+
+			/* LET OP: DEZE GAAN WE MISSCHIEN VERVANGEN DOOR FLEX-CONTAINER CLASS 								*/
+			/* ======================================== bottomBarWrapper ======================================================	*/
+			#bottomBarWrapper
+			{
+				display: flex;
+				justify-content: space-between; /* houdt ruimte tussen de blokken */   
+				align-items: center; /* hoe worden items verticaal uitgelijnd als je flex-direction: row gebruikt). */
+			/*		width: 100%; niet nodig al aanwezig in de class container-wrapper */
+			}
+
+			/* ======================================== bottomBarLeft, bottomBarMiddle, bottomBarRight ========================	*/
+			#bottomBarLeft,
+			#bottomBarMiddle,
+			#bottomBarRight
+			{
+				flex-grow: 0;     /* element mag niet groeien om extra ruimte op te vullen */
+				flex-shrink: 1;   /* element mag krimpen als er te weinig ruimte is */
+				flex-basis: auto; /* basisbreedte wordt bepaald door de inhoud van het element */
+				white-space: nowrap; /* voorkomt afbreken van tekst */
+			}
+
+			/* voor test doeleinden */
+			#bottomBarLeft,
+			#bottomBarMiddle
+			{
+				border-right: 2px solid black;
+			}
+			/*** END *** CSS bottomBarWrapper, bottomBarLeft, bottomBarMiddle, bottomBarRight ***********************************/
+
+
+			/*** BEGIN *** CSS bottomContainerWrapper, bottomContainer1, bottomContainer2, bottomContainer3, bottomContainer4 ***/
+			/* voor test doeleinden */
+			/* ======================================== bottomContainerWrapper ================================================	*/			
+			#bottomContainerWrapper
+			{
+				background-color: pink;
+			}
+	 
+			/* LET OP: DEZE GAAN WE MISSCHIEN VERVANGEN DOOR FLEX-CONTAINER CLASS 									*/
+			/* ======================================== bottomContainerWrapper ================================================	*/
+			/* 	align-items lijnt verticaal uit en dat willen ze niet												*/
+			#bottomContainerWrapper
+			{
+				display: flex;
+				justify-content: space-around;   
+	/*			align-items: center;*/ /* hoe worden items verticaal uitgelijnd als je flex-direction: row gebruikt). */
+	/*		width: 100%; niet nodig al aanwezig in de class container-wrapper */
+
+			background-color: var(--container-items-BG-color, var(--root-BG-color, white ));
+		}
+
+			/* ======================================== bottomContainer =======================================================	*/
+			/* bottomContainer elements styling */
+			#bottomContainer1,
+			#bottomContainer2,
+			#bottomContainer3,
+			#bottomContainer4 
+			{
+				flex: auto;	
+				padding-left: 5px;
+				padding-right: 5px;
+				white-space: nowrap;
+			}
+			/*** END *** CSS bottomContainerWrapper, bottomContainer1, bottomContainer2, bottomContainer3, bottomContainer4 *****/
+
+
+			/*** BEGIN *** CSS bottomLineWrapper, bottomLineMiddle **************************************************************/
+			/* voor test doeleinden */
+			#bottomLineWrapper
+			{
+				background-color: Wheat;
+			}
+
+			/* LET OP: DEZE GAAN WE MISSCHIEN VERVANGEN DOOR FLEX-CONTAINER CLASS 								*/
+			/* ======================================== bottomLineWrapper =====================================================	*/			
+			#bottomLineWrapper
+			{
+				display: flex;
+	/*		justify-content: space-around; */ /* houdt ruimte tussen de blokken en met de zijkant */
+	/*		justify-content: space-between; */ /* verdeelt items over de breedte, houdt ruimte tussen de blokken */
+	/*		justify-content: flex-start; */ /* items komen naast elkaar, geen extra ruimte tussen */
+				justify-content: center; /* centreert het enige kind horizontaal */
+				align-items: center; /* hoe worden items verticaal uitgelijnd als je flex-direction: row gebruikt). */
+	/*		width: 100%; niet nodig al aanwezig in de class container-wrapper */
+			}
+
+			/* ======================================== bottomLineMiddle ======================================================	*/			
+			#bottomLineMiddle
+			{
+				flex-grow: 0;       /* groeit niet mee met de beschikbare ruimte */
+				flex-shrink: 0;     /* krimpt niet als er te weinig ruimte is */
+				flex-basis: auto;   /* breedte wordt bepaald door de inhoud */
+				white-space: nowrap; /* voorkomt afbreken van tekst */
+
+				text-align: center;        /* centreert tekst binnen het element */
+			}
+
+			/*** END *** CSS bottomLineWrapper, bottomLineMiddle ****************************************************************/
+			
+
+			/*** BEGIN *** CSS website-title ************************************************************************************/
+			
+			/* 22-09-2025																										*/
+			/*		Maak font-size variabel instelbaar																			*/
+			/*																													*/
+
+			/* 14-09-2025																										*/
+			/*		Voeg de CSS toe voor het stylen van de titel van de website.												*/
+			/*																													*/
+			/*																													*/
+			
+			.website-title
+			{
+				font-size: var(--website-title-font-size);
+				font-weight: 700; /* vetgedrukt voor visuele kracht */
+				color: var(--website-title-TXT-color, var(--root-TXT-color, white ));			
+				font-family: var(--website-title-TXT-font-family, var(--root-font-family));
+				letter-spacing: 0.05em;    /* iets meer ruimte voor luxe uitstraling */
+				line-height: 1.2;          /* compacte regelhoogte */
+			}			
+			/*** END *** CSS website-title **************************************************************************************/
+
+		
+			/*** END *** CSS .info-box-wrapper, .block-title ********************************************************************/
+
+			.block-title 
+			{
+				font-size: 1rem;
+				font-weight: 600; /* iets subtieler dan bold */
+				margin-bottom: 26px;
+				margin-top: 20px;
+				line-height: 40px;
+				border-bottom: 2px solid #222;
+			}
+
+			.block-title > span
+			{
+				background-color: #3a85c7;
+				color: #fff;
+				padding: 7px 12px 4px;
+				align-items: center;
+			}
+
+
+			/* === info-box-wrapper styling === */
+			.info-box-wrapper 
+			{
+				padding: 5px;
+			}
+
+			.info-box-wrapper ul
+			{
+				list-style-type: none;		
+				margin: 0;
+				padding: 0;
+			}
+
+			.info-box-wrapper li
+			{
+				color:  white;
+				margin: 5px;
+			}
+
+			.info-box-wrapper li a
+			{
+				display: block;
+				text-decoration: none;
+				color: white; /* a overschrijft de kleur van zijn ouder li */
+			}
+
+			.info-box-wrapper li a:hover 
+			{
+				background-color: #111;
+				text-decoration: underline;
+				color: red;
+			}
+
+			.info-box-wrapper li a:link
+			{
+	/*			color: white; gaan we niet een andere kleur geven, dus eigenlijk niet nodig */
+			}
+
+			.info-box-wrapper li a:visited
+			{
+	/*			color: white; gaan we niet een andere kleur geven, dus eigenlijk niet nodig */
+			}
+
+			.info-box-wrapper li a:active
+			{
+	/*			color: white; gaan we niet een andere kleur geven, dus eigenlijk niet nodig */
+			}
+		
+		
+		}
+		
+		/* *** END *** layer skin *********************************************************************************************	*/			
+	</style>
+
+	<style id="utilities-layer">
+		/* *** BEGIN *** layer utilities **************************************************************************************	*/
+		@layer utilities {  
+		
+			/* ================================================================================================================	*/
+			/* 02-09-2025							SCROLLING BANNER BOVENAAN START												*/
+			/* ================================================================================================================	*/
+		
+			/*** BEGIN *** CSS SCROLLING BANNER bovenaan in main ****************************************************************/
+			/* 30-09-2025																										*/
+			/*		Scrolling snelheid wordt bepaalt door de animation-speed en de breedte (width) van het scherm.				*/
+			/*																													*/
+			/*		De scrolling-content kan bij blogger veel breder worden dan vanaf een html-bestand.							*/
+			/*		Omdat blogger extra zaken injecteert.																		*/
+			/*																													*/
+			/*		Verwijder de de padding-left en vervang door translateX(100vw). Daardoor is de scroll-afstand niet meer		*/
+			/*		afhankelijk van de breedte van de scrolling-content.														*/
+			/*																													*/
+			/*		Vervang transform: translateX(0%) door transform: translateX(100vw);										*/
+			/*																													*/
+	
+			.scrolling-banner 
+			{
+				overflow: hidden;
+				white-space: nowrap;
+				width: 100%;
+			}
+
+			.scrolling-content 
+			{
+				display: inline-block;
+/* 30-09-2025				padding-left: 100%; */ /* start buiten beeld */
+				white-space; nowrap;
+				animation: scroll-left 20s linear infinite;
+			}
+
+			/* pauseert wanneer cursor over scroll-item heen gaat */
+			/* 2-9-2025 vervangen door scrolling-banner				*/
+			/*
+			.scrolling-content:hover 
+			{
+				animation-play-state: paused;
+			}  
+			*/
+			/* 2-9-2025 vervangen door scrolling-banner				*/
+
+			/* pauseert wanneer cursor over scrolling-banner heen gaat */
+			/* geeft andere kleur aan de scrollende content			*/
+			.scrolling-banner:hover .scrolling-content 
+			{
+				animation-play-state: paused;
+				cursor: pointer;
+				background-color: #f0f0f0;
+			}
+  
+			@keyframes scroll-left 
+			{
+				from {
+/* 30-09-2025					transform: translateX(0%); */
+					transform: translateX(100vw);
+				}
+				to {
+					transform: translateX(-100%);
+				}
+			}
+  
+			/*** END *** CSS SCROLLING BANNER bovenaan in main ******************************************************************/
+
+			/* ================================================================================================================	*/
+			/* 02-09-2025							SCROLLING BANNER BOVENAAN END												*/
+			/* ================================================================================================================	*/
+			
+
+
+
+		}
+		/* *** END *** layer utilities ****************************************************************************************	*/
+  
+	</style>
+	
+	<style id="sharebar-layer">
+		/* *** BEGIN *** layer sharebar ***************************************************************************************	*/
+		@layer sharebar {  
+
+			/* ================================================================================================================	*/
+			/* 23-08-2025							SOCIAL MEDIA BUTTONS ONDERAAN START											*/
+			/* ================================================================================================================	*/
+
+			/*** BEGIN *** CSS SOCIAL MEDIA BUTTONS ONDERAAN ********************************************************************/
+			/*																													*/
+			/* 30-09-2025	stickybar voor linkerkant toegevoegd 																*/
+			/*	- de knoppen verschijnen bij gebruik van deze stickybar aan de linkerkant in centerBarLeft						*/
+			/*	- 																												*/
+			/*																													*/
+			/* 03-9-2025	zorg dat SCRIPT Dynamically Add URL	wordt geïnstalleerd	(encodeURIComponent)						*/
+			/*																													*/
+			/* 18-08-2025 css voor het stylen van de social media balk onderaan posts											*/
+			/*																													*/
+			/* social media buttons onderaan post: 																				*/
+			/* 	- de knoppen verschijnen onderaan de pagina																		*/
+			/*	- ze blijven zichtbaar bij scrollen																				*/
+			/*	- werken op desktop en mobiel																					*/
+			/*																													*/
+			/* 23-08-2025 stickyShareBarBottom onzichtbaar gemaakt 																*/
+			/*	- background-color op transparant: maakt de balk onzichtbaar													*/ 
+			/*	- width op auto: zorgt dat de balk alleen zo breed is als de iconen zelf										*/ 
+			/*	- border-radius op 0: verwijdert alle rondingen - eigenlijk niet nodig als balk niet getoond wordt				*/  
+			/*	- box-shadow op none: geen schaduw - eigenlijk niet nodig als balk niet getoond wordt							*/
+			/*																													*/
+			/*	INSTALL: in b:skin OF in layer base																				*/
+			/*																													*/
+			/********************************************************************************************************************/ 
+
+				/* STICKY BAR LINKS */
+				#stickyShareBarLeft {
+					position: fixed;
+					top: 50%;
+					left: 12;
+					transform: translateY(-50%);
+					display: flex;
+					flex-direction: column;
+					gap: 16px;
+					padding: 12px 0;
+					z-index: 9999;
+
+					background-color: transparent;
+					box-shadow: none;
+					border-radius: 0;
+				}
+
+				#stickyShareBarLeft a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 42px;
+					height: 42px;
+					border-radius: 50%;
+					background-color: #f0f0f0;
+					text-decoration: none;
+					font-size: 22px;
+					transition: transform 0.2s ease, background-color 0.3s ease;
+				}
+
+				#stickyShareBarLeft a:hover {
+					transform: scale(1.1);
+					background-color: #e0e0e0;
+				}				
+
+				/* Mobiel gedrag */
+				@media (max-width: 600px) {
+					#stickyShareBarLeft {
+						top: auto;
+						bottom: 0;
+						left: 50%;
+						transform: translateX(-50%);
+						flex-direction: row;
+						gap: 12px;
+						padding: 10px 0;
+					}
+
+					#stickyShareBarLeft a {
+						width: 40px;
+						height: 40px;
+						font-size: 20px;
+					}
+				}		  
+				
+				/* STICKY BAR ONDERAAN */  
+				#stickyShareBarBottom {
+					position: sticky;
+					bottom: 0;
+					width: 100%; /* uitgezet hierna zodat balk net zo groot als de iconen die er in staan 23-08-2025 */
+					background-color: #ffffff; /* uitgezet hierna zodat balk onzichtbaar is - 23-08-2025 */
+					display: flex;
+					justify-content: center;
+					gap: 16px; /* bepaalt de afstand tussen de iconen binnen stickyShareBarBottom */
+					padding: 12px 0; /* voegt verticale ruimte toe boven en onder de iconen binnen stickyShareBarBottom */
+					box-shadow: 0 -2px 6px rgba(0,0,0,0.1); /* uitgezet hierna 23-08-2025*/
+					z-index: 9999;
+			  
+					border-radius: 40px; /* Hier komen je afgeronde hoeken - uitgezet hierna 23-08-2025 */
+					transition: all 0.3s ease; /* zorgt dat veranderende CSS-eigenschappen (zoals kleur, grootte, positie, etc.) vloeiend verlopen in plaats van abrupt */  
+			  
+					/* 23-08-2025 balk onzichtbaar gemaakt */
+					width: auto; /* zorgt dat de balk alleen zo breed is als de iconen zelf */
+					background-color: transparent; /* maakt de balk onzichtbaar */  
+					border-radius: 0; /* verwijder alle rondingen - eigenlijk niet nodig want balk wordt toch niet getoond */
+					box-shadow: none; /* geen schaduw - eigenlijk niet nodig want balk wordt toch niet getoond */  
+				}
+
+				/* Icon styling met afgeronde hoeken */
+				#stickyShareBarBottom a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 48px;
+					height: 48px;
+					border-radius: 50%; /* Ronde iconen */
+					background-color: #f0f0f0;
+					text-decoration: none;
+					font-size: 24px;
+					transition: transform 0.2s ease, background-color 0.3s ease;
+			  
+					/* 23-08-2025 social media icons kleiner gemaakt voor desktop */
+					/*	- voor mobiel zie media query */
+					width: 42px;
+					height: 42px;
+					font-size: 22px;  
+				}
+
+				/* Hover effect */
+				#stickyShareBarBottom a:hover {
+					transform: scale(1.1);
+					background-color: #e0e0e0;
+				}
+
+				/* Merk-kleuren */
+				.share-icon.linkedin i  { color: #0077B5; }
+				.share-icon.twitter i   { color: #1DA1F2; }
+				.share-icon.facebook i  { color: #1877F2; }
+				.share-icon.whatsapp i  { color: #25D366; }
+
+				/* Hover tinten */
+				.share-icon.linkedin:hover i  { color: #005582; }
+				.share-icon.twitter:hover i   { color: #1681c4; }
+				.share-icon.facebook:hover i  { color: #145dbf; }
+				.share-icon.whatsapp:hover i  { color: #1da851; }
+
+				/* Mobiel optimalisatie */
+				@media (max-width: 600px) {
+					#stickyShareBarBottom {
+						gap: 12px; /* tussen de iconen wordt op mobiel iets kleiner dan op desktop 16px naar 12px) */
+						padding: 10px 0; /* voegt verticale ruimte toe boven en onder de iconen binnen stickyShareBarBottom */
+					}
+			  
+					#stickyShareBarBottom a {
+						width: 40px;
+						height: 40px;
+						font-size: 20px;
+					}
+				}  
+			  
+			/*** END *** CSS SOCIAL MEDIA BUTTONS ONDERAAN **********************************************************************/
+
+			/* ================================================================================================================	*/
+			/* 23-08-2025							SOCIAL MEDIA BUTTONS ONDERAAN END											*/
+			/* ================================================================================================================	*/
+
+
+		}
+		/* *** END *** layer sharebar *****************************************************************************************	*/
+	</style>	
+
+	<style id="menu-layer">
+		/* *** BEGIN *** layer menu *******************************************************************************************	*/
+		
+			/* ================================================================================================================ */
+			/* 										W3C FLY-OUT MenuText START													*/
+			/* ================================================================================================================ */
+			
+			/* ================================================================================================================ */
+			/*																													*/
+			/*	SAMENVATTING VAN DEZE MENU STRUCTUUR 																			*/
+			/*																													*/
+			/*	- Een top-level menu item met een dunne streep bovenaan en een dikke streep onderaan bij hover					*/
+			/*	- Een gap van 15px tussen menu item en submenu																	*/
+			/*	- De submenu-items gecentreerd in de dropdown																	*/
+			/*	- De dropdown gecentreerd onder het top-level menu item															*/
+			/*	- Zowel top-level item als dropdown box nemen de breedte aan van het breedste submenu item						*/
+			/*	- Gebruik van ::after pseudo-element om hover-activatie betrouwbaar te houden									*/
+
+			/* ================================================================================================================ */
+		
+		
+			@import url('https://danga4biz.github.io/nextglamping/layers/menu-layer/menu.css') layer(menu); 
+		
+			/* ================================================================================================================ */
+			/* 										W3C FLY-OUT MenuText END													*/
+			/* ================================================================================================================ */
+
+		
+		/* *** END *** layer menu *********************************************************************************************	*/	
+	</style>
+	
+	<style id="pagination-layer">
+	
+		/* *** BEGIN *** layer pagination *************************************************************************************	*/
+		@layer pagination {  
+	
+
+			/* ================================================================================================================	*/
+			/* 11-09-2024							PAGINATION START															*/
+			/* ================================================================================================================	*/
+
+			/*	INSTALL: in b:skin OF in layer base																				*/
+
+
+				/* Container voor paginering met Flexbox */
+				#blog-pager {
+					display: flex;               /* Zet de kinderen naast elkaar in een flexibele rij */
+					justify-content: center;     /* Centreert alle knoppen horizontaal */
+					flex-wrap: wrap;             /* Laat knoppen automatisch naar de volgende regel gaan bij weinig ruimte */
+					gap: 8px;                    /* Zorgt voor ruimte tussen de knoppen */
+					padding: 7px;                /* Binnenruimte rondom de knoppen */
+					margin: 30px auto;           /* Boven/onder marge en centrering op de pagina */
+					clear: both;                 /* Voorkomt dat floats van andere elementen de layout verstoren */
+					background: none;            /* Geen achtergrondkleur voor de container */
+				}
+
+				/* Genummerde pagina en actieve pagina */
+				.displaypageNum a,
+				.showpage a,
+				.pagecurrent {
+					display: inline-block;
+					font-size: 14px;             /* Leesbare tekstgrootte */
+					padding: 5px 12px;           /* Binnenruimte voor klikbare knoppen */
+					color: #666;                 /* Neutrale tekstkleur */
+					background-color: #eee;      /* Lichtgrijze achtergrond voor knoppen */
+					text-decoration: none;       /* Verwijdert onderstreping van links */
+					border-radius: 4px;          /* Ronde hoeken voor moderne look */
+					line-height: 1.4;
+					transition: background 0.3s, color 0.3s;
+				}
+
+				/* Hover en actieve stijl */
+				.displaypageNum a:hover,
+				.showpage a:hover,
+				.pagecurrent:hover,
+				.firstpage a:hover,
+				.lastpage a:hover,
+				.blog-pager-older-link:hover,
+				.blog-pager-newer-link:hover {
+					background: #359BED;         /* Blauwe achtergrond bij hover of actieve pagina */
+					color: #fff;                 /* Witte tekst voor contrast */
+				}
+
+				/* Actieve pagina visueel gemarkeerd */
+				.pagecurrent {
+					background: #359BED;
+					color: #fff;
+					font-weight: bold;           /* Maakt actieve pagina visueel sterker */
+					cursor: default;
+				}
+
+				/* Eerste en Laatste knoppen */
+				.firstpage a,
+				.lastpage a {
+					display: inline-block;
+					font-size: 14px;             /* Leesbare tekstgrootte */
+					padding: 5px 12px;           /* Binnenruimte voor klikbare knoppen */
+					color: #666;                 /* Neutrale tekstkleur */
+					background-color: #eee;      /* Lichtgrijze achtergrond voor knoppen */
+					text-decoration: none;       /* Verwijdert onderstreping van links */
+					border-radius: 4px;          /* Ronde hoeken voor moderne look */
+					line-height: 1.4;
+					transition: background 0.3s, color 0.3s;
+				}
+
+				/* Blogger standaard navigatie-links (ouder/nieuwer) */
+				.blog-pager-older-link,
+				.blog-pager-newer-link {
+					display: inline-block;
+					font-size: 14px;             /* Leesbare tekstgrootte */
+					padding: 5px 12px;           /* Binnenruimte voor klikbare knoppen */
+					color: #666;                 /* Neutrale tekstkleur */
+					background-color: #eee;      /* Lichtgrijze achtergrond voor knoppen */
+					text-decoration: none;       /* Verwijdert onderstreping van links */
+					border-radius: 4px;          /* Ronde hoeken voor moderne look */
+					line-height: 1.4;
+					transition: background 0.3s, color 0.3s;
+				}
+
+				.blog-pager-older-link:hover,
+				.blog-pager-newer-link:hover {
+					background: #359BED;
+					color: #fff;
+				}
+
+				/* Opruiming van ongewenste elementen */
+				.showpageOf {
+					display: none !important;    /* Verbergt Pagina X van Y tekst */
+				}
+
+				#blog-pager .pages {
+					border: none;                /* Verwijdert eventuele rand rond paginering */
+				}
+
+				/* Mobiele optimalisatie */
+				@media (max-width: 480px) 
+				{
+					#blog-pager {
+						gap: 4px;
+						padding: 5px;
+						flex-direction: row;
+						flex-wrap: wrap;
+					}
+
+					.displaypageNum a,
+					.showpage a,
+					.pagecurrent,
+					.firstpage a,
+					.lastpage a,
+					.blog-pager-older-link,
+					.blog-pager-newer-link {
+						font-size: 12px;
+						padding: 4px 8px;
+					}
+
+					.gap {
+						display: none; /* Verbergt &quot;...&quot; op kleine schermen */
+					}
+				}
+
+			/* ================================================================================================================	*/
+			/* 11-09-2024							PAGINATION END																*/
+			/* ================================================================================================================	*/
+
+			/* ================================================================================================================	*/
+			/* 10-09-2025							READ MORE BUTTON START														*/
+			/* ================================================================================================================	*/
+			
+			/*** BEGIN *** CSS READ MORE BUTTON *********************************************************************************/
+			/*																													*/
+			/* 10-09-2025																										*/
+			/*																													*/
+			/*	jump-link: Styling of jump-link is done with this CSS.															*/
+			/*																													*/
+			/*																													*/
+			/********************************************************************************************************************/
+
+			.jump-link {
+				display: block;
+				font-size: 12px;
+				font-weight: bold;
+				text-align:right;
+			}
+
+			.jump-link  a {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 12px;
+				color: #ffffff;
+				padding: 6px 15px;
+
+				/* Gradient background (fallback, old, modern) */
+				background: #42aaff; /* fallback for old browsers */
+
+      			background: -moz-linear-gradient(top, #42aaff 0%, #003366); /* Firefox legacy */
+				background: -webkit-gradient(linear, left top, left bottom, from(#42aaff), to(#003366)); /* Webkit legacy */
+
+      			background: linear-gradient(to bottom, #42aaff 0%, #003366 100%); /* modern syntax */
+      
+      
+				/* Rounded corners */
+				border-radius: 8px;
+    
+				/* Border */
+				border: 1px solid #003366;
+      
+				/* Box shadow for depth */
+				box-shadow:
+					0px 1px 3px rgba(0, 0, 0, 0.5),
+					inset 0px 0px 1px rgba(255, 255, 255, 0.5);
+    
+				/* Text shadow for slight emboss effect */
+				text-shadow:
+					0px -1px 0px rgba(0, 0, 0, 0.7),
+					0px 1px 0px rgba(255, 255, 255, 0.3);      
+
+			}
+			/*** END *** CSS READ MORE BUTTON ***********************************************************************************/   
+			
+			/* ================================================================================================================	*/
+			/* 10-09-2025							READ MORE BUTTON END														*/
+			/* ================================================================================================================	*/	
+		}
+		/* *** END *** layer pagination ***************************************************************************************	*/
+	
+	</style>
+
+	<style id="variables-layer">
+
+		/* *** BEGIN *** layer variables **************************************************************************************	*/
+		@layer variables {
+	
+			/* === Kleuren en typografie ==========================================================================================	*/
+			:root
+			{
+				--main-bg-color: teal;
+				--main-txt-color: blue;
+
+				--root-BG-color: AliceBlue;
+				--root-TXT-color: Black;
+				--root-font-family: Frutiger, Baskerville, "Segoe UI", sans-serif;
+				--root-font-weight: 400;
+
+				--outerWrapper-BG-color: Azure;
+				--outerWrapper-TXT-color: DarkRed;
+				--outerWrapper-TXT-font-family: Frutiger, Baskerville, "Segoe UI", sans-serif;
+
+				--website-title-TXT-color: DarkBlue;
+				--website-title-TXT-font-family: Raleway, Frutiger, Baskerville, "Segoe UI", sans-serif;
+				--website-title-font-size: 1.5rem;
+
+				/* topMenuFlexWrapper en bottomContainerWrapper achtergrondkleur */
+				--container-items-BG-color: #3399cc;
+
+				/* tekstkleur menubalk */
+				/* 12-09-2025 vervangen door menu-items-TXT-color */
+				--container-items-TXT-color: white;
+				
+				/* tekstkleur menu-items */
+				--menu-items-TXT-link-color: white;
+	/*			--menu-items-TXT-visited-color: green;	*/
+				--menu-items-TXT-hover-color: yellow;
+				--menu-items-TXT-active-color: brown;
+				--menu-items-TXT-fallback-color: white;
+							
+				--topMenuFlexWrapper-BG-color: #D4E4F7;
+
+				--topLineWrapper-BG-color: #D4E4F7;
+
+				--bottomLineWrapper-BG-color: #D4E4F7;
+
+				--centerBarWrapper-BG-color: #D4E4F7;
+
+				--middleContainerWrapper-BG-color: #D4E4F7;
+
+				--bottomContainerWrapper-BG-color: #D4E4F7;
+
+				/* dropdown box achtergrondkleur */
+				--d-flyout-dropdown-BG-color: #036;
+
+				/* dropdown tekstkleur en hoverkleur */
+				--d-flyout-dropdown-TXT-color: #ffffff;
+				--d-flyout-link-hover: #ffd700;
+			}	
+
+		}
+		/* *** END *** layer variables ****************************************************************************************	*/
+		
+	</style>
+	
+
+	
+	<style>	
+
+	
+		
+
+
+		/* ================================================================================================================ */
+		/* 										W3C FLY-OUT MenuText START													*/
+		/* ================================================================================================================ */
+		
+		/* ================================================================================================================ */
+		/*																													*/
+		/*	SAMENVATTING VAN DEZE MENU STRUCTUUR 																			*/
+		/*																													*/
+		/*	- Een top-level menu item met een dunne streep bovenaan en een dikke streep onderaan bij hover					*/
+		/*	- Een gap van 15px tussen menu item en submenu																	*/
+		/*	- De submenu-items gecentreerd in de dropdown																	*/
+		/*	- De dropdown gecentreerd onder het top-level menu item															*/
+		/*	- Zowel top-level item als dropdown box nemen de breedte aan van het breedste submenu item						*/
+		/*	- Gebruik van ::after pseudo-element om hover-activatie betrouwbaar te houden									*/
+
+		/* ================================================================================================================ */
+
+		/*************************************** BEGIN desktop menu layout d-flyout *****************************************/
+		/* desktop menu layout 																								*/
+		/*																													*/
+		/*	REMARK: 	Design is desktop georiënteerd, voor mobiel gebruiken we @mediaquery								*/
+		/*																													*/
+		/*************************************** BEGIN desktop menu layout d-flyout *****************************************/
+		
+		/* 	+-------------------------------+-------------------------+-----------------------------+-------------------------------+	*/
+		/* 	| Element                       | Rol in layout           | Hovergedrag                 | Transition                    |	*/
+		/*	+-------------------------------+-------------------------+-----------------------------+-------------------------------+	*/
+		/*	| .d-flyout > ul > li           | Container van menu-item | Border-top/bottom kleur     | border-color 0.3s ease        |	*/
+		/*	| .d-flyout li a                | Klikbare link           | Tekstkleur + achtergrond    | background-color, color 0.3s  |	*/
+		/*	| .d-flyout li a:hover          | Hover op link           | Kleur verandert via cascade | Geactiveerd via bovenstaande  |	*/
+		/*	| .d-flyout > ul > li:hover     | Hover op container      | Borderkleur zichtbaar       | Geactiveerd via container     |	*/
+		/*	| .d-flyout > ul > li > a:after | Pijltje-indicator       | Geen hovergedrag            | Geen transition nodig         |	*/
+		/*	+-------------------------------+-------------------------+-----------------------------+-------------------------------+	*/
+		
+		/********************************************************************************************************************/
+		/* BEGIN MEDIA QUERY @media screen and (min-width: 801px) {															*/
+		/********************************************************************************************************************/
+		@media screen and (min-width: 801px) { 
+		
+
+			/* =======================================	d-flyout ul ===========================================================	*/
+
+			/* 29-09-2023 	'display: flex' is set in class flex-container														*/
+			/*																													*/
+			/*				class flex-container is added to the ul (navigatie)													*/
+			/*																													*/
+			/* 24-09-2023	set 'box-sizing: border-box' to include the padding and border in de width and height 				*/
+			/*																													*/
+			/* 21-09-2023	set 'align-items: center' to ensure the icon aligns with the other menu-options						*/
+			/*					maybe we have to assign 'align-items: center' to the class flex-container						*/
+			/*																													*/
+			/*		'padding: 0' en 'margin: 0' reset spacing																	*/
+			/*		'list-style-type: none' verwijdert de list bullets															*/
+			
+			/* =======================================	d-flyout ul ===========================================================	*/
+		
+			.d-flyout ul
+			{
+				list-style-type: none;		
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box; /* optioneel: is gedefinieerd als universele reset */
+				gap: 1rem; /* ruimte tussen menu-items */
+				
+				display: flex;	
+				justify-content: center;	
+				align-items: center;	
+			}
+
+			/* =======================================	d-flyout > ul > li ====================================================	*/
+			
+			/* 17-09-2025 verwijder flex wordt niet gebruikt in d-flyout														*/
+			
+			/* transition zorgt voor de verandering van border-top/bottom kleur													*/
+			
+			/*	bevat de dunne streep boven een top menu item en de dikke streep onder een top menu item						*/
+			/*																													*/
+			/* 11-09-2025 vervang border parameters door border-top en border-bottom											*/
+			/*																													*/
+			/* 27-09-2023 border parameters avoid that the drop down box stretches each time a top menu item is hovered			*/
+			/*		border-bottom-color: transparent and border-top-color: transparent											*/
+			/*		set the border back in '.d-flyout > ul > li:hover' to show them												*/
+			/*		set the border-bottom-color: initial to set back the original color											*/
+			/*		set the border-top-color: initial to set back the original color											*/
+			/*																													*/
+			/* 8-09-2023                                                                                  						*/
+			/*  Set 'flex: auto' means flex-grow=1, flex-shrink=1, flex-basis=auto                      						*/
+			/*  Need to set 'display: flex' in d-flyout ul                                              						*/
+			/*																													*/
+			/* 23-08-2023 'text-align: center' aligns the text in the li and also those in sub-menu's							*/
+			/*																													*/
+			/*			(ul binnen li) d-flyout > ul > li > ul dat 'position: absolute' heeft 									*/
+			/*																													*/
+			/* REMARK: 	?? li handles the CSS layout of each top menu item	??													*/
+			/*			positioneringscontext met 'position: relative'															*/
+			
+			/* =======================================	d-flyout > ul > li ====================================================	*/
+			.d-flyout > ul > li
+			{
+				position: relative;
+				flex: auto; 
+				text-align: center;
+				
+				border-bottom-color: transparent;
+				border-bottom-style: solid;
+				border-bottom-width: thick;
+				border-bottom: 3px solid transparent; /* dikke lijn onder */
+
+				border-top-color: transparent;
+				border-top-style: solid;
+				border-top-width: thin;
+				border-top: 1px solid transparent; /* dunne lijn boven */
+
+				transition: border-color 0.3s ease;
+	  
+			}
+
+			/* =======================================	.d-flyout > ul > li:hover =============================================	*/
+			
+			.d-flyout > ul > li:hover
+			{
+				border-bottom-color: initial; /* dikke lijn zichtbaar bij hover */
+				border-bottom-style: solid;
+				border-bottom-width: thick;
+				border-top-color: initial; /* dunne lijn zichtbaar bij hover */
+				border-top-style: solid;
+				border-top-width: thin;
+			}
+			
+			/*	=======================================	.d-flyout li a ========================================================	*/
+			
+			/*																													*/
+			/*		'display: block' zorgt dat het a-element block-level, belangrijk anders werkt 'text-align: center' niet		*/
+			/*		op elk sub-menu item in .d-flyout > ul > li > ul > li 														*/
+			/*																													*/
+			/*		transition: vloeiende kleurverandering, met iets snellere color-reactie, op a-element						*/
+			/*																													*/
+			/*		'padding: 10px' voegt ruimte toe binnen de link - rondom de tekst 											*/
+			/*			verbetert de klikbare zone en visuele ademruimte														*/
+			/*																													*/
+			/*		'text-decoration: none' verwijdert de onderstreping die standaard op het a-element staat					*/
+			/*			geeft meer controle over de visuele stijl van de link, zodat je later zelf hover-onderstreping, 		*/
+			/*			kleurverandering of andere effecten aan toe kunt voegen 												*/
+				
+			/*	REMARK: block-level item 																						*/
+			/*			vloeiende overgang bij hover op top level menu items													*/
+			
+			/*	=======================================	.d-flyout li a ========================================================	*/
+			.d-flyout li a 
+			{
+				display: block;
+				transition: background-color 0.3s ease, color 0.3s ease;
+				padding: 10px;
+				text-decoration: none;
+			}
+
+			/*	=======================================	.d-flyout > ul > li > a ===============================================	*/
+			
+			/* 17-09-2025 verwijder, wordt reeds in voorzien door .d-flyout li a												*/
+
+			/*																													*/
+			/*	Ensures the color of the top-label fades in, the color is set in .d-flyout li a:hover							*/
+			/*																													*/
+
+			/*	=======================================	.d-flyout > ul > li > a ===============================================	*/
+	/*		
+			.d-flyout > ul > li > a
+			{
+				transition: color .2s linear;
+			}
+	*/
+
+			/****************************** COMMENTS d-flyout pseudo classes ****************************/
+			/* a:hover MUST come after a:link and a:visited in the CSS definition to be effective!      */
+			/* a:active MUST come after a:hover in the CSS definition to be effective!                  */
+			/*                                                                                          */
+			/*  https://www.w3schools.com/css/css_pseudo_classes.asp                                    */
+			/*                                                                                          */
+			/* NEED TO CHANGE THE ORDER OF THE PSEUDO CLASSES IN MENU_WRAPPER                           */
+			/********************************************************************************************/
+
+			/* REMARK: Standaard heeft CSS 4 link toestanden (in deze volgorde van specificiteit):								*/
+			/*		a:link       → nog niet bezocht																				*/
+			/*		a:visited    → bezocht																						*/
+			/*		a:hover      → wanneer je er met je muis overheen gaat														*/
+			/*		a:active     → op het moment dat je erop klikt																*/
+			/*																													*/
+			/*	De volgorde waarin je deze definieert, maakt uit, en wordt vaak samengevat als:									*/
+			/*		LoVe HAte → :link, :visited, :hover, :active																*/
+
+
+			/*	=======================================	.d-flyout li a:link ===================================================	*/
+			/* REMARK: sets the color of all li-elements of type link 															*/
+			
+			.d-flyout li a:link
+			{
+				color: var(--menu-items-TXT-link-color, var(--menu-items-TXT-fallback-color, var(--root-TXT-color, white )));
+			}
+
+			/*	=======================================	.d-flyout li a:visited ================================================	*/
+			/* REMARK: sets the color of all li-elements of type visited														*/
+			
+			.d-flyout li a:visited
+			{
+				color: var(--menu-items-TXT-visited-color, var(--menu-items-TXT-fallback-color, var(--root-TXT-color, white )));
+			}
+
+			/*	=======================================	.d-flyout li a:hover ==================================================	*/
+			/* REMARK: sets the color of all li-elements of type hover 															*/
+			
+			
+			.d-flyout li a:hover
+			{
+				color: var(--menu-items-TXT-hover-color, var(--menu-items-TXT-fallback-color, var(--root-TXT-color, white )));
+			}
+
+			/*	=======================================	.d-flyout li a:active =================================================	*/
+			/* REMARK: sets the color of all li-elements of type active															*/
+			
+			.d-flyout li a:active
+			{
+				color: var(--menu-items-TXT-active-color, var(--menu-items-TXT-fallback-color, var(--root-TXT-color, white )));
+			}
+			
+			/*	=======================================	.d-flyout > ul > li > a:after =========================================	*/
+			
+			/* 11-09-2025 visueel kleine arrow vervangen door grote																*/
+			/*																													*/
+			/* REMARK: Set the drop down arrow (desktop) 																		*/
+			/*																													*/
+
+			/*	=======================================	.d-flyout > ul > li > a:after =========================================	*/
+			/* 11-09-2025 visueel kleine arrow vervangen door grote 															*/
+			/* .d-flyout > ul > li > a:after {content: '\1F893';} */
+
+			/* visueel grote en duidelijke arrow 																				*/
+			.d-flyout > ul > li > a:after {
+				content: '\25BC'; 
+				font-size: 1.2rem;
+				margin-left: 0.5rem;
+			}
+
+			/* voorkomt dat een arrow verschijnt bij items zonder submenu 														*/
+			.d-flyout li > a:only-child:after {content: '';}
+
+			/*	=======================================	.d-flyout > ul > li > ul ==============================================	*/
+			
+			/* 13-09-2025																										*/
+			/*		'right: 0' zorgt dat de breedte van het sub-menu aan de li wordt gebonden, nodig om ervoor te zorgen		*/
+			/*			dat het top level menu item de breedte overneemt van het sub-menu										*/
+			/*																													*/
+			
+
+			/* 21-10-2023 'background-color' zorgt dat de drop down box donkerblauw kleur heeft									*/
+			/*																													*/
+			/* 28-9-2023 remove 'list-style-type: none' is already set in 'd-flyout ul'											*/
+			/*		'display: none' ensures the drop down box is not shown, it is only shown when hovering over the top 		*/
+			/*			level menu item due to 'display: block' in .d-flyout > ul > li:hover::after								*/
+			/*																													*/
+			/* 25-09-2023 'margin-top: 15px' creates gap between top level menu items and the drop down box 					*/
+			/*																													*/
+			/*		'.d-flyout > ul > li:hover::after' fills up the gap	otherwise when hovering over the top level				*/
+			/*			item otherwise the drop down box looses focus and vanishes												*/
+			/*																													*/
+			/* 8-9-2023 'fonts-size: smaller' makes drop down box smaller than its containing parent .d-flyout > ul > li		*/
+
+			/* 30-08-2023 z-index ensures the drop down box is shown overlaying other contexts           						*/
+			/*																													*/
+			/*		'position: absolute' positioneert submenu ten opzichte van parent li - maar alleen als de parent  			*/
+			/*			ul > li 'position; relative' heeft 																		*/
+			/*																													*/
+			/* REMARK: 	handles the css layout of the drop down box when a top level menu ite is selected						*/
+			/*			dropdowns die netjes onder hun parent vallen															*/
+			/*			positioneringscontext met 'position: absolute'															*/
+			/*			ruimte tussen dikke streep en drop down box																*/
+
+			/*	=======================================	.d-flyout > ul > li > ul ==============================================	*/
+			.d-flyout > ul > li > ul 
+			{
+				display: none;
+				position: absolute;
+				padding: 0;
+				margin: 0;
+				left: 0;
+				right: 0;
+				z-index: 2;
+				font-size: smaller;
+				margin-top: 15px;
+				background-color: var(--d-flyout-dropdown-BG-color, var(--root-BG-color, white ));
+			}
+
+			/*	=======================================	.d-flyout > ul > li:hover::after ======================================	*/
+			
+			/*                                                                                          						*/
+			/* 25-09-2023																										*/
+			/*		'display: block' ensures that the drop down box is shown when hovering over the top level menu item,		*/
+			/*			the drop down box was set to 'display: none' in .d-flyout > ul > li > ul								*/
+			/*																													*/
+			/*		fills up the gap between the top level menu item and the drop down box created by 'margin-top: 15px'		*/
+			/*			in .d-flyout > ul > li > ul to avoid the drop down box looses focus	and vanishes when hovering over		*/
+			/*			the top level menu item 																				*/
+			/*						 																							*/
+			/*		::after pseudo-element creëert een onzichtbare laag over het li bij hover									*/
+			/*			Die laag verlengd het hovergebied en zorgt voor een buffer van 15px tussen het top level menu item		*/
+			/*			en de drop down box — dankzij margin-top: 15px op de dropdown (.d-flyout > ul > li > ul)				*/
+			/*			Dit voorkomt dat de drop down box verdwijnt zodra je je muis beweegt tussen het top level menu item		*/
+			/*			drop down box.																							*/
+			/*																													*/
+			/*      adds an element content '' = onzichtbare laag between the li and the dropdown list 							*/
+			/*      	so when hovering down the mouse does not loose focus            										*/
+
+			/* REMARK: 	fills up the gap between top level menu item and drop down box with content = gap 						*/
+			/*			dropdowns die netjes onder hun parent vallen															*/
+			/*			positioneringscontext met 'position: absolute'															*/
+			/*			ruimte tussen dikke streep en drop down box																*/
+
+			/*	“Samen vormen ::before en ::after een onzichtbare hoverzone die het menu-item én de ruimte tot de dropdown 		*/
+			/*	afdekt, zodat de muisbeweging nooit het hovergebied verlaat.”													*/
+
+			/*	=======================================	.d-flyout > ul > li:hover::after ======================================	*/
+
+			.d-flyout > ul > li:hover::after
+			{
+				content:'';
+				display:block;
+				position: absolute;
+				height: 100%;
+				width: 100%;
+			}
+
+			/*	=======================================	.d-flyout > ul > li:hover ul ==========================================	*/
+
+			/* 13-09-2025 brede selector 																						*/
+			/*		Het submenu 'd-flyout > ul > li > ul' blijft in de flow van de parent li en de li moet ruimte maken, 		*/
+			/*		daardoor groeit het li mee met de 	breedte van de submenu													*/
+			/*																													*/
+			/*		'display: block' hiermee verleng je het hovergebied															*/
+			/*			Dit zorgt dat de dropdown open blijft zolang je óf op het menu-item bent, óf op de dropdown zelf		*/
+			/*																													*/
+			/*		LET OP: brede selector .d-flyout > ul > li:hover ul															*/
+			/*				met de specifieke selector (zie hierna) bereik je hetzelfde effect									*/
+			
+			/*																													*/
+			/* 6-9-2023                                                                                							*/
+			/*		replaces the nav > ul li:hover ul which was set by fly-out menu W3C                    						*/
+			/*																													*/
+			
+			/*																													*/
+			/* REMARK: 	hover over sub-menu ul bepaalt wanneer sub-menu en onderliggende structuur zichtbaar worden 			*/
+			/*			zodra de muis het menu-item of submenu verlaat, verdwijnt de dropdown									*/
+			/*																													*/
+		
+			/*	=======================================	.d-flyout > ul > li:hover ul ==========================================	*/
+
+			.d-flyout > ul > li:hover ul {display: block;}
+
+
+
+			/*	=======================================	.d-flyout > ul > li:hover > ul ========================================	*/
+			
+			/* 18-09-2025 
+			/*		- submenu wordt zichtbaar als het ouder element (li) de .open class heeft									*/
+			/*		- deze .open class wordt door SCRIPT voor openen van submenus op het ouder element gezet					*/
+			/*																													*/
+
+			/* 13-09-2025 specifieke selector 																					*/
+			/*		Het submenu 'd-flyout > ul > li > ul' blijft in de flow van de parent li en de li moet ruimte maken, 		*/
+			/*		daardoor groeit het li mee met de breedte van de submenu													*/
+			/*																													*/
+			/*		'display: block' hiermee verleng je het hovergebied															*/
+			/*			Dit zorgt dat de dropdown open blijft zolang je óf op het menu-item bent, óf op de dropdown zelf		*/
+			/*																													*/
+			/*		LET OP: specifieke selector .d-flyout > ul > li:hover > ul													*/
+			/*				hiermee bereik je hetzelfde effect als met de brede selector 										*/
+			/*				bovendien als je deze alleen gebruikt dan voorkomt het dat nested ul’s per ongeluk meedoen.			*/
+			/*					voorlopig allebei gebruiken hebben geen nested ul's												*/
+
+			/*																													*/
+			/* REMARK: 	hover over sub-menu ul bepaalt wanneer sub-menu en onderliggende structuur zichtbaar worden 			*/
+			/*			zodra de muis het menu-item of submenu verlaat, verdwijnt de dropdown									*/
+			/*																													*/
+
+			/*	=======================================	.d-flyout > ul > li:hover > ul ========================================	*/
+
+			.d-flyout > ul > li:hover > ul {display: block;}
+			
+
+			/*	=======================================	.d-flyout > ul > li > ul > li =========================================	*/
+
+			/*	13-09-2025																										*/
+			/*		zorgt dat de inhoud binnen elk sub-menu-item (dus binnen elk li in de drop down box) 						*/
+			/*		gecentreerd wordt — maar alleen als die inhoud inline of inline-block is.									*/
+			/*	
+			/*		standaard is li een block-level element: 																	*/
+			/*			het vult de volledige breedte van zijn container														*/
+			/*			begint op een nieuwe regel																				*/
+			/*			kan 'text-align' toepassen op inline of inline-block kinderen, maar niet op block-level kinderen		*/
+			
+			/*																													*/
+			/* REMARK: sub-menu items centreren 																				*/
+			/*																													*/
+
+			/*	=======================================	.d-flyout > ul > li > ul > li =========================================	*/
+
+			.d-flyout > ul > li > ul > li 
+			{
+				text-align: center;
+			}
+			
+
+			/*	=======================================	.d-flyout > ul > li.open > ul =========================================	*/
+			/* bepaalt wanneer sub-menu's zichtbaar worden 																		*/
+			
+			/* LET OP: 	zorg dat je JS of toggle-logica op mobiel de .open class toevoegt aan li bij tap						*/
+			/*			zie SCRIPT voor openen van submenus																		*/
+			
+			/* REMARK: 	klikmechanisme via .open class zorgt dat het sub-menu geopend wordt 									*/
+			/*			Dit is permanent: zolang de li de class .open heeft, blijft de dropdown open — ongeacht hover.			*/
+			/*																													*/
+			
+			/*	=======================================	.d-flyout > ul > li.open > ul =========================================	*/
+			
+			.d-flyout > ul > li.open > ul {display: block; }
+
+		}
+
+		/********************************************************************************************************************/
+		/* END MEDIA QUERY @media screen and (min-width: 801px) {															*/
+		/********************************************************************************************************************/
+		
+		/*************************************** END desktop menu layout d-flyout *******************************************/
+		/* desktop menu layout 																								*/
+		/*************************************** END desktop menu layout d-flyout *******************************************/
+
+		/*************************************** BEGIN hamburger knop en menu instellingen **********************************/
+		/* Hamburger-knop EN menu instellingen 																				*/
+		/*																													*/
+		
+		/* Er zijn drie selectors .menu-toggleZ en myHamburg-3 + open die samenwerken maar verschillende dingen doen		*/
+		/*																													*/
+		/*	UITLEG:																											*/
+		/*		CSS Selector		Wat het doet							Voor welk element?								*/
+		/*		.menu-toggleZ		Verbergt of toont de hamburgerknop		🔘 De knop om menu te openen					*/
+		/*							Styling van de hamburgerknop 															*/
+		/*		#myHamburg-3		Verbergt of toont het mobiele menu		📋 Het daadwerkelijke menu						*/
+		/*		#myHamburg-3.open	Toont het menu wanneer knop geklikt is	📋 Het menu mét .open klas						*/
+		/*																													*/
+		/*		.m-menu-middle		Maakt hamburgerknop	op mobiel			🔘 De knop om menu te openen					*/
+		/*		.m-menu-hide		Verbergt het navigatiemenu op mobiel	Navigatiemenu									*/
+
+		/*	16-09-2025																										*/
+		/*		OPMERKING: onclick verwijdert																				*/
+		/*		button onclick='myHamburgFunction3()																		*/
+		/*			de hamburger knop activeert de functie myHamburgFunction3												*/
+		/*			functie voegt class open toe aan #myHamburg-3 waardoor het menu getoond wordt via de media query		*/
+		/*				voor mobiel die #myHamburg-3.open  op display: block zetten											*/
+		/*		OPMERKING: onclick verwijdert																				*/
+		
+		/*	OPMERKING: .m-menu-middle is redundant want .menu-toggleZ doet hetzelfde										*/
+		
+		/*																													*/
+		/*************************************** BEGIN hamburger knop en menu instellingen **********************************/
+
+		/*************************************** hamburger knop instellingen ************************************************/
+
+		/*	=======================================	.menu-toggleZ =========================================================	*/
+
+		/*																													*/
+		/* 11-09-2025																										*/
+		/* 		'position: relative' is geen positionering van de layout maar alleen om de bars binnen de knop te 			*/
+		/*			positioneren  — niet om de knop zelf uit te lijnen in de topbar. 										*/
+		/*			de uitlijning zelf blijft via de flex box topMenuBarRight												*/
+		/*																													*/
+		/*		'display: inline-flex' om de drie balkjes netjes te centreren binnen de knop								*/
+		/*		'display: inline-flex' maakt de knop een flex-container														*/
+		/*																													*/
+		/*		'align-items: center' en 'justify-content: center' centreert de inhoud (de drie balkjes) verticaal én 		*/
+		/*			horizontaal binnen de knop																				*/
+		/*																													*/
+		/*		'height: 34px' en 'width: 40px' bepaalt de klikbare zone van de knop — visueel én interactief				*/
+		/*																													*/
+		/*		'margin-left: auto' in flex-container (#topMenuBarRight) duwt dit de knop helemaal naar rechts				*/
+		/*																													*/
+		/*		'border: 0' en 'background: transparent' verwijdert de standaard knopstijl en zorgt dat de knop visueel		*/
+		/*			neutraal is — alleen de balkjes zijn zichtbaar															*/
+		/*																													*/
+		/*		'cursor: pointer' geeft een handje bij hover — visuele feedback voor interactie								*/
+		/*																													*/
+		/*		'text-decoration: none' voorkomt onderstreping — handig als je ooit een a gebruikt ipv button				*/
+		/*																													*/
+		/*	LET OP nesting van flexboxen: #topMenuBar → #topMenuBarRight → .menu-toggleZ → .menu-toggle-barZ				*/
+		/*																													*/
+		
+		/*																													*/
+		/*	REMARK: hamburger knop instellingen																				*/
+		/*																													*/
+		
+		/*	=======================================	.menu-toggleZ =========================================================	*/
+
+		.menu-toggleZ 
+		{
+			position: relative;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			height: 34px;
+			width: 40px;
+			margin-left: auto; /* duwt hem naar rechts binnen de flex-container */
+			border: 0;
+			background: transparent;
+			cursor: pointer;
+			color: var(--container-items-TXT-color, #000);
+			text-decoration: none;
+			transition: color 0.3s ease;
+		}
+
+		/*	=======================================	verberg Hamburger menu ================================================	*/
+		
+		/* 	'display: none' zorgt dat menu-toggleZ op desktop schermen het hamburger menu niet laat zien					*/
+
+		/*																													*/
+		/* REMARK: verberg hamburger menu																					*/
+		/*																													*/
+
+		/*	=======================================	verberg Hamburger menu ================================================	*/
+		
+		.menu-toggleZ {
+			display: none;
+		}
+
+
+		/*	=======================================	.menu-toggleZ voor mobiel =============================================	*/
+		@media screen and (max-width: 800px) {
+			.menu-toggleZ {
+				display: inline-flex;
+			}
+		}
+
+
+		/*** BEGIN *** CSS .menu-toggle-barZ ********************************************************************************/
+		/*																													*/
+		/* SCSS-Syntax: deze CSS moet worden gecompileerd naar gewone CSS													*/
+		/*																													*/
+		/*		Gebruik SCSS-syntax, vereist class nav-openZ op parent, in de body											*/
+		/*																													*/
+		/*		Zie SCRIPT om nav-openZ in de body te zetten																*/
+		/*** BEGIN *** CSS menu-toggle-barZ *********************************************************************************/
+	
+		.menu-toggle-barZ {
+			display: block;
+			position: absolute;
+			top: 50%;
+			margin-top: -1px;
+			right: 0;
+			width: 100%;
+			height: 3px;
+			border-radius: 4px;
+			background-color: black;
+			transition: all 0.3s ease;
+
+			&.menu-toggle-bar--topZ {
+				transform: translate(0, -8px);
+			}
+		
+			&.menu-toggle-bar--middleZ {
+			}
+		
+			&.menu-toggle-bar--bottomZ {
+				transform: translate(0, 8px);
+			}
+
+			.nav-openZ & {
+				&.menu-toggle-bar--topZ {
+					transform: translate(0, 0) rotate(45deg);
+				}
+    
+				&.menu-toggle-bar--middleZ {
+					opacity: 0;
+				}
+
+				&.menu-toggle-bar--bottomZ {
+					transform: translate(0, 0) rotate(-45deg);
+				}
+			}
+		}
+	
+		/*	=======================================	#myHamburg-3 en .open =================================================	*/
+		
+		/*	
+		/*		#myHamburg-3 (je hoofdmenu-navigatie) wordt standaard verborgen met display: none;							*/
+		/*																													*/
+		/*		Als het element de klasse .open krijgt (dus #myHamburg-3.open), dan wordt het menu zichtbaar gemaakt	 	*/
+		/*		met display: block;																							*/
+		/*																													*/
+		/* 	REMARK: ondersteunt hamburger menu op mobiel																	*/
+		/*																													*/
+		/*	=======================================	#myHamburg-3 en .open =================================================	*/
+
+		@media screen and (max-width: 800px) {
+		
+			#myHamburg-3 {
+				display: none;
+			}
+			
+			#myHamburg-3.open {
+				display: block;
+			}
+		}
+	
+		/*************************************** END hamburger knop instellingen ********************************************/
+
+
+	
+
+		/* 11-09-2025																										*/
+
+		/*		We hebben het volgende gedaan: 																				*/
+		/*			- de oude versie van myHamburgFunction3 vervangen, geen style.display meer, alles via class toggling	*/
+		/*																													*/
+		/*			- matchMedia-script (in myHamburgFunction3) verwijdert, is niet langer nodig, je regelt dit via CSS		*/
+		/*																													*/
+		/*			- onderstaande CSS toegevoegd																			*/
+		/*																													*/
+
+
+
+		/*************************************** BEGIN mobiel menu layout m-flyout ******************************************/
+		/* mobiel menu layout 																								*/
+		/*************************************** BEGIN mobiel menu layout m-flyout ******************************************/
+		
+		/*	=======================================	@media queries mobiel =================================================	*/
+		/*		BEGIN			INSTELLINGEN VOOR DE MEDIA QUERIES VOOR MOBIELE MENU								BEGIN	*/
+		/*	=======================================	@media queries mobiel =================================================	*/
+
+		/*	=======================================	m-menu-middle configureren MOBIEL =====================================	*/
+		
+		/*																													*/
+		/* m-menu-middle bevat de css van de hamburger knop																	*/
+		/*																													*/
+		/*		'background-color: transparent' zorgt dat de knop geen eigen achtergrondkleur heeft (was voorheen			*/
+		/*			lichtgroen.																								*/
+		/*																													*/
+		/*	LET OP: Als menu-toggleZ na m-menu-middle komt zorg dat deze de background-color niet overschrijft.				*/
+		/*																													*/
+
+		/* On screens that are 800px or less, set the background color to lightgreen 										*/
+		/*		@media screen: de stijl geldt alleen voor beeldschermen (dus niet voor print bijvoorbeeld)	 				*/
+		/*		(max-width: 800px): de stijl geldt alleen als het scherm 800 pixels breed of smaller is						*/
+
+		@media screen and (max-width: 800px) { 
+
+			.m-menu-middle
+			{
+				background-color: lightgreen;
+				display: block;
+				text-align: left;
+				z-index: 2;
+			}
+
+			.m-menu-hide
+			{
+				display: none;
+			}
+		}
+
+		/* ========================================	topMenuBar configureren MOBIEL ========================================	*/
+
+		/* 16-09-2025 wijzig de direction van topMenuBar bij mobiel															*/
+		/*		'flex-direction: column' zorgt ervoor dat de beide flex-items topMenuBarRight en topMenuBarLeft onder 		*/
+		/*			worden geplaatst op mobiel of tablet.																	*/
+		/*																													*/
+		/*		'align-items; stretch' zorgt ervoor dat de flex-items in de container zich uitrekken om de volledige 		*/
+		/*			hoogte 																									*/
+		/*																													*/
+		/*		(of breedte) van de container te vullen langs de kruis-as.													*/
+		/*			- in een flex-direction: 	row is de hoofdas horizontaal en de kruisas verticaal						*/
+		/*			- 							column is de hoofdas verticaal en de kruisas horizontaal					*/
+		/*																													*/
+		
+		@media screen and (max-width: 800px) {
+
+			#topMenuBar {
+				flex-direction: column;
+				align-items: stretch;
+			}
+		}
+
+
+
+		/* LET OP: mobiele layout is flex georienteerd																		*/
+		
+		/*	+-------------------------------+-------------------------+-------------------------------+-------------------------------+	*/
+		/*	| Element                       | Rol in layout           | Hovergedrag                   | Transition                    |	*/
+		/*	+-------------------------------+-------------------------+-------------------------------+-------------------------------+	*/
+		/*	| .m-flyout > ul > li           | Container van menu-item | Geen hover-effect             | Geen transition nodig         |	*/
+		/*	| .m-flyout li a                | Klikbare link           | Kleur + achtergrond verandert | background-color, color 0.3s  |	*/
+		/*	| .m-flyout li a:hover          | Hover op link           | Kleur verandert via cascade   | Geactiveerd via bovenstaande  |	*/
+		/*	| .m-flyout > ul > li > a:after | Pijltje-indicator       | Geen hovergedrag              | Geen transition nodig         |	*/
+		/*	| .m-flyout > ul > li > ul      | Submenu-container       | Wordt zichtbaar via `.open`   | Geen transition (optioneel)   |	*/
+		/*	+-------------------------------+-------------------------+-------------------------------+-------------------------------+	*/
+		
+		@media screen and (max-width: 800px) {
+
+		/* =======================================	m-flyout ==============================================================	*/
+
+		/* 17-09-2025																										*/
+		
+		/*	'display: none' verbergt het menu standaard op mobiel, wordt overschreven door .open							*/
+		/*					voorkomt dat het menu zichtbaar is vóór activatie.												*/
+		/*																													*/
+		/*	'padding: 1rem' geeft interne ruimte rondom de inhoud															*/
+		/*																													*/
+		/*	'width: 100%' laat het menu de volledige breedte van de container innemen										*/
+		/*																													*/
+				
+		.m-flyout {
+			display: none;
+			width: 100%;
+			padding: 1rem;				
+			background-color: var(--d-flyout-dropdown-BG-color, #036);
+		}
+
+		/* =======================================	m-flyout.open =========================================================	*/
+		
+		/*	'display: flex' activeert flex box zodra menu opent, nodig om flex-direction en align-items te laten werken		*/
+		/*																													*/
+		/*	'flex-direction: column' stapelt child-elementen verticaal, onder elkaar										*/
+		/*																													*/
+		/*	'align-items: flex-start' lijnt child-elementen links uit in container, als ze smaller zijn dan 100%			*/
+		/*																													*/
+
+		.m-flyout.open {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start; 
+		}
+
+		/* =======================================	m-flyout ul ===========================================================	*/
+		
+		/*	'display: flex' zorgt dat de li-items als flex-items acteren													*/
+		/*																													*/
+		/*	'flex-direction: column' plaatst de li-items onder elkaar														*/
+		/*																													*/
+		/*	padding: 0 + margin: 0 verwijdert de standaard browserruimte													*/
+		/*																													*/
+		/*	'list-style: none' verwijdert bullets																			*/
+		/*																													*/
+		/*	'width: 100%' laat de lijst de volledige breedte benutten, nodig voor linkse uitlijning van de inhoud			*/
+		/*																													*/
+		
+		.m-flyout ul {
+			display: flex;
+			flex-direction: column;
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			width: 100%;
+		}
+
+
+		/* =======================================	m-flyout > ul > li ====================================================	*/
+		
+		/*	'width: 100%' laat elk menu-item de volledige breedte innemen, zorgt dat de klikbare zone breed is				*/
+		/*																													*/
+		/*	'margin: 0' verwijdert de verticale ruimte tussen items															*/
+		/*																													*/
+		/*	'text-align: left' lijnt de tekst links uit																		*/
+		/*																													*/
+		
+		.m-flyout > ul > li {
+			width: 100%;
+			margin: 0;
+			text-align: left;
+			
+			border-top: none;
+			border-bottom: none;
+		}
+		
+		/* =======================================	.d-flyout > ul > li:hover =============================================	*/
+		
+		
+		/* =======================================	.m-flyout li a ========================================================	*/
+		
+		/*	'display: block' maakt van a een block-element zodat hij de volledige breedte van zijn container inneemt		*/
+		/*		hierdoor wordt de hele rij klikbaar, niet alleen de tekst													*/
+		/*																													*/
+		/*	transition: zorgt voor een vloeiende overgang bij hover of active states										*/
+		/*																													*/
+		/*	'padding: 10px' geeft ruimte binnen de link, zodat tekst niet tegen de rand plakt								*/
+		/*		Verhoogt de klikbare zone en verbetert de toegankelijkheid.													*/
+		/*																													*/
+		
+		.m-flyout li a 
+		{
+			display: block;
+			transition: background-color 0.3s ease, color 0.3s ease;
+/* magweg			padding: 10px; */
+			text-decoration: none;
+		}
+
+		/* =======================================	.m-flyout > ul > li > a ===============================================	*/
+
+		/*	'display: flex' maakt het mogelijk om tekst en icoon naast elkaar te zetten										*/
+		/*																													*/
+		/*	'justify-content: space-between' zet tekst links, icoon rechts													*/
+		/*																													*/
+		/*	'width: 100%' laat de link de hele rij vullen																	*/
+		/*																													*/
+		
+		.m-flyout > ul > li > a {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+/* magweg			padding: 0.5rem 0.75rem; */
+			font-size: 1rem;
+			color: white;
+			text-decoration: none;
+			width: 100%;
+		}		
+
+
+		/* =======================================	.d-flyout li a:link ===================================================	*/
+
+		/* =======================================	.d-flyout li a:visited ================================================	*/
+
+		/* =======================================	.d-flyout li a:hover ==================================================	*/
+
+		/* =======================================	.d-flyout li a:active =================================================	*/
+		
+		/* =======================================	.d-flyout > ul > li > a:after =========================================	*/
+		
+		/* =======================================	.d-flyout > ul > li > a:after =========================================	*/
+
+
+		/* =======================================	.m-flyout > ul > li > ul ==============================================	*/
+		
+		/*	'display: none' verbergt het menu standaard op mobiel, wordt overschreven door .open							*/
+		/*					voorkomt dat het menu zichtbaar is vóór activatie.												*/
+		/*																													*/
+
+		.m-flyout > ul > li > ul {
+			display: none;
+			background-color: #024;
+			padding-left: 1rem;
+			margin-top: 0.25rem;
+		}		
+
+		/* =======================================	.m-flyout > ul > li.open > ul =========================================	*/
+		
+		/*  Is het een selector die het sub-menu opent wanneer de class open op li wordt gezet.	Daarvoor zorgt het			*/
+		/*	script dat naar has-submenu zoekt.																				*/
+		/*																													*/
+		/*	LET OP: met .m-flyout > ul > li:hover > ul - niet op display; none zetten want dan ontstaan conflicten,		 	*/
+		/*			omdat deze open-css en de hover-css, allebei selectors even specifiek zijn en vechten om iets met		*/
+		/*			de ul te doen.																							*/
+		/*																													*/
+		/*	'display: flex' activeert flex box zodra het menu opent 														*/
+		/* 																													*/
+		/*	
+		/*			nodig om flex-direction en align-items te laten werken													*/
+		/*																													*/
+		/*	'flex-direction: column' stapelt child-elementen verticaal, onder elkaar										*/
+		/*																													*/
+		/*	REMARK: selector voor het openen van het submenu																*/
+		/*																													*/
+		
+				
+		.m-flyout > ul > li.open > ul {
+			display: flex;
+			flex-direction: column;			
+		}		
+
+		
+		/* =======================================	.d-flyout > ul > li > ul ==============================================	*/
+
+		/* =======================================	.d-flyout > ul > li:hover::after ======================================	*/
+
+		/* =======================================	.d-flyout > ul > li:hover::after ======================================	*/
+
+		/* =======================================	.d-flyout > ul > li:hover ul ==========================================	*/
+
+		/* =======================================	.m-flyout > ul > li:hover > ul ========================================	*/
+
+		/* =======================================	.d-flyout > ul > li > ul > li =========================================	*/
+		
+		/* =======================================	.d-flyout > ul > li.open > ul =========================================	*/
+
+
+		/*	=======================================	.m-flyout > ul > li.has-submenu > a:after =============================	*/
+		
+		/*	content: '+' / '−' visuele cue dat er een submenu is															*/
+		/*																													*/
+		/*	font-size, color, margin-left styling van het icoon																*/
+		/*																													*/
+		
+		.m-flyout > ul > li.has-submenu > a:after {
+			content: '+';
+			font-size: 1.2rem;
+			color: white;
+			margin-left: 0.5rem;
+		}		
+		
+		/* =======================================	.m-flyout > ul > li.open > a:after ====================================	*/
+		
+		/*	content: '+' / '−' visuele cue dat er een submenu is															*/
+
+		.m-flyout > ul > li.open > a:after {
+			content: '−';
+		}
+
+	}
+
+		/* =======================================	@media queries mobiel =================================================	*/
+		/*		END				INSTELLINGEN VOOR DE MEDIA QUERIES VOOR MOBIELE MENU							END			*/
+		/* =======================================	@media queries mobiel =================================================	*/
+
+
+
+		/* ================================================================================================================ */
+		/* 										W3C FLY-OUT MenuText END													*/
+		/* ================================================================================================================ */
+
+	</style>		
+		
+
+
+	<script id="sharebar-layer" type="text/javascript">
+
+	/*** BEGIN *** SCRIPT Dynamically Add URL for SOCIAL MEDIA BUTTONS **************************************************/
+	/*																													*/
+	/* 03-9-2025 Nieuwe versie voor sharing van bijdrages via social media												*/
+	/*																													*/
+	/* 		Dynamisch toevoegen van de URL voor de pagina aan de media buttons											*/
+	/*																													*/
+	/*		1. DOMContentLoaded zodat het pas draait als de DOM klaar is												*/
+	/*																													*/
+	/*		DOMContentLoaded zorgt ervoor dat je script pas wordt uitgevoerd zodra de hele HTML-structuur geladen 		*/
+	/*	 	is, inclusief jouw div id="stickyShareBarBottom".     														*/
+	/*																													*/
+	/*		2. Fallback voor ontbrekende data-base																		*/
+	/*																													*/
+	/*		Voegt een check toe zodat je script niet crasht als een link per ongeluk geen data-base heeft.				*/
+	/*																													*/
+	/*		3. UTM-tags voor tracking (optioneel)																		*/
+	/*																													*/
+	/*		UTM-tags zijn stukjes tekst die je aan een URL toevoegt om te meten waar je bezoekers vandaan komen.		*/
+	/*																													*/
+	/*	18-08-2025 script voor het automatisch vullen van de social media buttons met de juiste URL						*/
+	/*																													*/
+	/*		share-link: gebruikt voor het vinden van de class met de social media button								*/
+	/*		const base: krijgt de URL toegewezen die in data-base staat													*/
+	/*		link.href: wordt samengesteld uit base + de URL van de post													*/
+	/*																													*/
+	/*** END *** SCRIPT Dynamically Add URL for SOCIAL MEDIA BUTTONS ****************************************************/
+  
+	//<![CDATA[
+		document.addEventListener("DOMContentLoaded", function () 
+		{
+			const currentURL = window.location.href;
+			const utm = "?utm_source=social&utm_medium=sharebar&utm_campaign=post";
+			const fullURL = currentURL + utm;
+
+			document.querySelectorAll('.share-link').forEach(link => 
+			{
+				const base = link.getAttribute('data-base');
+				if (!base) return; // fallback: sla over als geen data-base
+
+				link.href = base + encodeURIComponent(fullURL);
+			});
+		});
+	//]]>
+
+	/*** END *** SCRIPT Dynamically Add URL for SOCIAL MEDIA BUTTONS ****************************************************/
+	</script>
+
+	<!-- ****** SCRIPT om nav-openZ in de body te zetten ************************************************************** -->
+
+	<!-- 17-09-2025 VERWIJDERT STAAT IN SCRIPT voor drop-down MENU myHamburgFunction3()									-->
+	<!-- 16-09-025 																										-->
+	
+	<!--	Er zijn twee scripts die hetzelfde element aanspreken, maar met verschillende intenties.					-->
+	<!--		document.body.classList.toggle('nav-openZ')																-->
+	<!--																												-->
+	<!--	1. 	Bindt een klik op #menu-toggle-3 met .addEventListener('click', function()								-->
+	<!--		Zet alleen nav-openZ op body																			-->
+	<!--																												-->
+	<!--	2. 	Bindt een klik op dezelfde knop (id='menu-toggle-3) 													-->
+	<!--		Zet nav-openZ op body, én .open op #myHamburg-3															-->
+	<!-- 																												-->
+	<!-- 	Je hebt twee event listeners op dezelfde knop:																-->
+	<!-- 		Eén die alleen nav-openZ togglet																		-->
+	<!-- 		Eén die nav-openZ, .open, en aria-expanded togglet														-->
+	<!-- 		Beide worden uitgevoerd bij klikken, tenzij ze elkaar overschrijven of conflicteren.					-->
+	<!--																												-->
+
+	<!-- 	1. Verwijder script (optie 1 hieronder) dat aleen nav-openZ op de body zet via klik op de hamburger knop	-->
+	<!-- 	(id='menu-toggle-3') via document.getElementById('menu-toggle-3').addEventListener('click', function(), 	-->
+	<!--	want de regel document.body.classList.toggle('nav-openZ') zit ook al in de functie myHamburgFunction3 (). 	-->
+	<!--																												-->
+	<!--	Door deze dubbele toggle op nav-openZ krijg je toggles die elkaar acties ongedaan maken of elkaars gedrag	-->
+	<!--	verstoren.																									-->
+	<!--		>>>> SCRIPT om nav-openZ in de body te zetten VERWIJDERT <<<<											-->
+	
+	<!--	2. Zorg dat myHamburgFunction3() wordt geactiveerd wanneer op de hamburger knop wordt geklikt				-->
+	<!--																												-->
+	<!-- 	Voeg een script toe waarin myHamburgFunction3() wordt gebonden aan een click event op de hamburger knop		-->
+	<!--	(id='menu-toggle-3') zodat de functie wordt aangeroepen als op de knop wordt geklikt.						-->
+	<!--																												-->
+	<!--	In de oude situatie werd de functie myHamburgFunction3() die de open-klasse op #myHamburg-3 zet niet 		-->
+	<!-- 	aangeroepen wanneer een gebruiker op de hamburger knop klikt ((id='menu-toggle-3') waardoor de hamburger	-->
+	<!--	knop niet veranderde van horizontale bars naar kruis.														-->
+	<!--																												-->
+	<!--		>>>> ZIE SCRIPT om de myHamburgFunction3() te activeren <<<<											-->
+	<!-- *** END *** SCRIPT om nav-openZ in de body te zetten ********************************************************* -->
+	
+	
+
+	
+	<script>
+	/* ****************************************************************************************************************	*/
+	/* - myHamburgFunction3() → togglet menu en knop 																	*/
+	/* - initHamburgerToggle() → voegt click-event toe																	*/
+	/* - initMobileMenuDropdowns() → submenu gedrag op mobiel															*/
+	/* - initDesktopAriaExpanded() → accessibility op desktop 															*/
+	/* - initMenuCloseHandlers() → sluit menu bij klik buiten of Escape 												*/
+	/* ****************************************************************************************************************	*/
+	
+	/* ****************************************************************************************************************	*/
+	/* *** BEGIN *** SCRIPT voor drop-down MENU myHamburgFunction3() **************************************************	*/
+	/* 			met menu-toggle-3, myHamburg-3, nav-openZ *************************************************************	*/
+	
+	/* Laatste update: 22-09-2025																						*/
+	/*		Commentaarstijl aangepast en commentaar binnen script geplaatst	in HTML-versie								*/
+	/*																													*/
+	/* Historie																											*/
+	/* 	16-09-2025																										*/
+	/*																													*/
+	/*		Script definieert toggle-functie voor het hamburger menu en voor visuele transformatie hamburger knop		*/
+	/*																													*/
+	/* 		Wat doet het?																								*/
+	/* 			Zet .nav-openZ op de body (hamburgeranimatie)															*/
+	/* 			Zet .open op #myHamburg-3 (menu openen/sluiten)															*/
+	/* 			CSS maakt de hamburgerknop zichtbaar																	*/
+	/* 			Zet aria-expanded op true gezet voor screenreaders														*/
+	/*																													*/
+	/*	13-09-2025  																									*/
+	/*																													*/
+	/*		x.style.display-logica is niet meer nodig vervangen door semantisch en modulair gedrag						*/
+	/*		via CSS en class switches.																					*/
+	/*																													*/
+	/* Toelichting:																										*/
+	/* 		'const nav = document.getElementById('myHamburg-3')'haalt het element met ID 'myHamburg-3', het 			*/
+	/*		navigatiemenu, op.																							*/
+	/*																													*/
+	/*		'const toggleBtn = document.getElementById('menu-toggle-3') 'haalt de knop op waarmee je het menu 			*/
+	/* 		opent/sluit.																								*/
+	/*																													*/
+	/*		'const isOpen = nav.classList.toggle('open')' wisselt de CSS-klasse 'open' aan/uit op het menu-element;		*/
+	/*		als het er was, wordt het verwijderd, anders toegevoegd. 'isOpen' is true als 'open' nu actief is.			*/
+	/*																													*/
+	/*		'document.body.classList.toggle('nav-openZ')' Wisselt ook de class nav-openZ op de body						*/
+	/*																													*/
+	/*		'toggleBtn.classList.toggle('open')' wisselt de klasse 'open' op de knop zelf , hamburger wordt kruis.		*/
+	/*																													*/
+	/*		'toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false')' zet toegankelijkheidsattribuut (ARIA) 	*/
+	/*		op de knop zodat schermlezers weten of menu open is.														*/
+	
+	/* 																													*/
+	/* DOEL: Functie myHamburgFunction3 opent en sluit Drop Down menu en transformeert de hamburger knop				*/
+	/*																													*/
+	
+	function myHamburgFunction3() {
+		const nav = document.getElementById('myHamburg-3');
+		const toggleBtn = document.getElementById('menu-toggle-3');
+		
+		if (!nav || !toggleBtn) return;
+		
+		const isOpen = nav.classList.toggle('open');
+
+		document.body.classList.toggle('nav-openZ');
+		toggleBtn.classList.toggle('open');
+		toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+	}
+	
+	/* *** END *** SCRIPT voor drop-down MENU myHamburgFunction3() ****************************************************	*/
+	/*			met menu-toggle-3, myHamburg-3, nav-openZ *************************************************************	*/
+	/* ****************************************************************************************************************	*/
+
+
+	/* ****************************************************************************************************************	*/
+	/* *** BEGIN *** SCRIPT om de myHamburgFunction3() te activeren *************************************************** */
+
+	/* Laatste update: 22-09-2025																						*/
+	/*		Functienaam initHamburgerToggle toegevoegd aan script														*/
+	/*		DOMContentLoaded event toegevoegd via document.addEventListener (ipv window.addEventListener) 				*/
+	/*		Controle toegevoegd om te checken of element #menu-toggle-3 bestaat alvorens event toe te voegen 			*/
+	/*		Commentaarstijl aangepast en commentaar binnen script geplaatst	in HTML-versie								*/
+	/*																													*/
+	/* Historie																											*/
+	/* 	16-09-2025																										*/
+	/*																													*/
+	/* 		Script activeert myHamburgFunction3() die de 'open' klasse toggle't op #myHamburg-3 						*/
+	/*		Voeg click-eventlistener toe op element met id 'menu-toggle-3' 												*/
+	/*																													*/
+	/* Toelichting:																										*/
+	/* 		'const toggleBtn = document.getElementById('menu-toggle-3')' zoekt naar een HTML-element met ID				*/
+	/*		menu-toggle-3 en slaat dit op in de variabele toggleBtn.													*/
+	/*																													*/
+	/*		'toggleBtn.addEventListener('click', myHamburgFunction3)' voegt een click-eventlistener toe aan element en 	*/
+	/* 		zorgt bij klik dat de functie myHamburgFunction3 wordt uitgevoerd.											*/
+	/*																													*/
+	/*		'document.addEventListener("DOMContentLoaded", ...)' zorgt dat de code pas loopt wanneer de DOM volledig 	*/
+	/* 		geladen is																									*/
+	/* 																													*/
+	/* 																													*/
+	/* DOEL: Script roept functie myHamburgFunction3 bij klik op het element met ID menu-toggle-3 						*/
+	/*																													*/
+	
+	function initHamburgerToggle() {
+		const toggleBtn = document.getElementById('menu-toggle-3');
+		
+		if (toggleBtn) {
+			toggleBtn.addEventListener('click', myHamburgFunction3);
+		}
+	}		
+	
+	//document.addEventListener("DOMContentLoaded", initHamburgerToggle); staat centraal
+	
+	/* *** END *** SCRIPT om de myHamburgFunction3() te activeren ***************************************************** */
+	/* ****************************************************************************************************************	*/
+
+
+	/* ****************************************************************************************************************	*/
+	/* *** BEGIN *** SCRIPT voor openen van submenus ******************************************************************	*/
+	
+	/* Laatste update: 22-09-2025																						*/
+	/*		Commentaarstijl aangepast en commentaar binnen script geplaatst	in HTML-versie								*/
+	
+	/* Historie																											*/
+	/* 	18-09-2025 																										*/
+	/*																													*/
+	/*		geen JS meer nodig om submenu's te openen en te sluiten voor hover op desktop								*/
+	/*		wordt geregeld via .d-flyout > ul > li:hover > ul {display: block;}											*/
+	/*		er hoeft geen .open class meer te worden toegevoegd via een script											*/
+	/*																													*/
+	/*		CSS laat het submenu (de ul) zien als de .open-class aanwezig is via:										*/
+	/*			.m-flyout > ul > li.open > ul {display: flex; flex-direction: column;}									*/
+	/*																													*/
+	/* Toelichting:																										*/
+	/*																													*/
+	/* 	Gedrag				Desktop (>800px)					Mobiel (≤800px)											*/
+	/*																													*/
+	/* 	Submenu openen		Via :hover (CSS)					Via klik op a in li.has-submenu (JavaScript)			*/
+	/* 	Submenu sluiten		Automatisch bij mouseout (CSS)		Bij klik op ander submenu, buiten menu, of Escape		*/
+	/* 	.open class			Niet gebruikt						Wordt gezet op nav en li.has-submenu					*/
+	/* 	Event listeners		Niet actief (JS checkt viewport)	Actief: klik, buitenklik & Escape						*/
+
+	/* 	Hamburger openen	Niet zichtbaar	 			Klik op #menu-toggle-3 => opent nav#myHamburg-3 (class .open)	*/
+	/* 	Hamburger sluiten	Niet zichtbaar				Bij klik buiten menu of Escape => sluit nav + reset knop		*/
+	/* 	Hamburger toggle	Niet zichtbaar				class .open wordt op knop gezet voor visuele transformatie		*/
+	/*																													*/
+
+	/* 																													*/
+	/* DOEL: SCRIPT voor openen van submenus 																			*/
+	/*																													*/
+
+	function initMobileMenuDropdowns() {
+	
+		const menuItems = document.querySelectorAll("li.has-submenu");
+
+		menuItems.forEach((el) => {
+		
+			// zoekt binnen elke li.has-submenu naar het eerste a-element
+			const link = el.querySelector("a");
+
+			// zet een klik-event op het a-element
+			link.addEventListener("click", function (event) {
+				const isMobile = window.matchMedia("(max-width: 800px)").matches;
+				if (!isMobile) return; // Alleen op mobiel actief
+
+				event.preventDefault(); // Voorkom dat de link volgt
+
+				const isOpen = el.classList.contains("open");
+
+				// Sluit alle submenu's eerst
+				menuItems.forEach((item) => {
+					item.classList.remove("open");
+					const itemLink = item.querySelector("a");
+					if (itemLink) {
+						itemLink.setAttribute("aria-expanded", "false");
+					}
+				});
+
+				// Open het aangeklikte submenu als het nog niet open was
+				if (!isOpen) {
+					el.classList.add("open");
+					link.setAttribute("aria-expanded", "true");
+				}
+			});
+		});
+		
+		// sluit submenu's als viewport van mobiel naar desktop gaat **
+		window.addEventListener("resize", () => {
+			const isDesktop = window.matchMedia("(min-width: 801px)").matches;
+			
+			if (isDesktop) {
+				menuItems.forEach((submenu) => {
+					if (submenu.classList.contains("open")) {
+						submenu.classList.remove("open");
+						const link = submenu.querySelector("a");
+						
+						if (link) {
+							link.setAttribute("aria-expanded", "false");
+						}
+					}
+				});
+			}
+		});
+		
+	}
+
+	//document.addEventListener("DOMContentLoaded", initMobileMenuDropdowns); staat centraal
+
+	/* *** END *** SCRIPT voor openen van submenus ******************************************************************** */
+	/* ****************************************************************************************************************	*/
+
+
+	/* ****************************************************************************************************************	*/
+	/* *** BEGIN *** SCRIPT om aria-expanded op desktop op true en false te zetten ************************************	*/
+	
+	/* Laatste update: 22-09-2025																						*/
+	/*		Commentaarstijl aangepast en commentaar binnen script geplaatst	in HTML-versie								*/
+	
+	/* Historie																											*/
+	/* 	18-09-2025																										*/
+	/*																													*/
+	/*		Script toegevoegd om aria-expanded in desktop mode goed te zetten.											*/
+	/*																													*/
+	/* Toelichting:																										*/
+	/*																													*/
+	/*		LET OP: desktop aria-expanded werd niet meer gezet omdat we het afhandelen via CSS voor destkop. 			*/
+	/*		Dit script ervoor dat aria-expanded alsnog wordt gezet in desktop mode.										*/
+	/*																													*/
+	/* DOEL: Script zorgt dat aria-expanded in desktop mode goed gezet wordt bij open en sluiten 						*/
+	/*																													*/
+
+	function initDesktopAriaExpanded() {
+		const menuItems = document.querySelectorAll("li.has-submenu");
+
+		function isDesktop() {
+			return window.matchMedia("(min-width: 801px)").matches;
+		}
+
+		menuItems.forEach((el) => {
+			const link = el.querySelector("a");
+
+			el.addEventListener("mouseenter", function handleMouseEnter() {
+				if (isDesktop()) {
+					link.setAttribute("aria-expanded", "true");
+				}
+			});
+
+			el.addEventListener("mouseleave", function handleMouseLeave() {
+				if (isDesktop()) {
+					link.setAttribute("aria-expanded", "false");
+				}
+			});
+		});
+	}
+	
+	//document.addEventListener("DOMContentLoaded", initDesktopAriaExpanded); staat centraal
+	
+	/* *** END *** SCRIPT om aria-expanded op desktop op true en false te zetten **************************************	*/
+	/* ****************************************************************************************************************	*/
+
+	
+	/* ****************************************************************************************************************	*/
+	/* *** BEGIN *** SCRIPT voor verbeterde mobiele toegankelijkheid **************************************************	*/
+	
+	/* Laatste update: 22-09-2025																						*/
+	/*		Commentaarstijl aangepast en commentaar binnen script geplaatst	in HTML-versie								*/
+	
+	/* Historie																											*/
+	/*																													*/
+	/*	17-09-2025																										*/
+	/*		Code aangepast / vereenvoudigt																				*/
+	/* 		Gezorgd dat de klasse open die op de toggle-button wordt gezet om deze te openen (open-toestand) weer wordt	*/
+	/*		verwijderd wanneer de gebruiker klikt buiten het menu of escape.											*/
+	/*																													*/
+	/* 		Dit zorgt ervoor dat gebruikers het mobiele menu kunnen sluiten door:										*/
+	/*			op ESC te drukken																						*/
+	/*			buiten het menu te tikken																				*/
+	/*																													*/
+	/*																													*/
+	/* Toelichting:																										*/
+	/*																													*/
+	/* 		Wat doet het?																								*/
+	/* 		Sluit menu bij klik buiten of op Escape																		*/
+	/*		Verwijdert .open van #myHamburg-3																			*/
+	/* 		Verwijdert .nav-openZ van body																				*/
+	/*																													*/
+	/* DOEL: Script verbetert mobiele menu toegankelijkheid met ESC en buiten-klik sluiten								*/
+	/*																													*/
+	
+	function initMenuCloseHandlers() {	
+
+		/* klik buiten menu */
+		document.addEventListener('click', function handleOutsideClick(event) {
+			const menu = document.getElementById('myHamburg-3');
+			const toggleBtn = document.getElementById('menu-toggle-3');
+
+			const isClickInsideMenu = menu.contains(event.target);
+			const isToggleButton = toggleBtn.contains(event.target);
+
+			if (!isClickInsideMenu && !isToggleButton) {
+			
+				// Sluit het menu en alle open submenu's als buiten het menu wordt geklikt		
+				menu.classList.remove('open');
+				document.body.classList.remove('nav-openZ');
+				toggleBtn.classList.remove('open');
+				toggleBtn.setAttribute('aria-expanded', 'false');
+
+				// Sluit ook de open submenu's
+				document.querySelectorAll('.has-submenu').forEach(submenu => {
+					submenu.classList.remove('open');
+					const link = submenu.querySelector('a');
+					if (link) {
+						link.setAttribute('aria-expanded', 'false');
+					}					
+				});								
+			}
+		});
+	
+		/* escape */
+		document.addEventListener('keydown', function (event) {
+			if (event.key === 'Escape') {
+				const menu = document.getElementById('myHamburg-3');
+				const toggleBtn = document.getElementById('menu-toggle-3');
+			
+				if (!menu || !toggleBtn) return; //als element met id menu-toggle-3 niet bestaat stop uitvoering functie
+
+				menu.classList.remove('open');
+				document.body.classList.remove('nav-openZ');
+				toggleBtn.classList.remove('open');
+				toggleBtn.setAttribute('aria-expanded', 'false');
+			}
+		});			
+	}	
+	
+	//document.addEventListener("DOMContentLoaded", initMenuCloseHandlers); staat centraal
+	
+	document.addEventListener("DOMContentLoaded", () => {
+		initHamburgerToggle();
+		initMobileMenuDropdowns();
+		initDesktopAriaExpanded();
+		initMenuCloseHandlers();
+	});
+
+	/* *** END *** SCRIPT voor verbeterde mobiele toegankelijkheid ****************************************************	*/	
+	</script>
+
+    
+  </head>
+
+<!-- 12-09-2025 ACTIE: Vergeet data:blog.mobileClass niet in Blogger -->
+<!-- 18-08-2025 tijdelijk gaan use-clear gebruiken tot alle floats niet meer gebruikt worden -->  
+<!--<body expr:class='&quot;loading&quot; + data:blog.mobileClass'>-->
+<body expr:class='&quot;use-clear loading&quot; + data:blog.mobileClass'>
+
+
+<!-- begin outerWrapper -->
+<div id='outerWrapper'>
+
+	<header>
+
+		<!-- begin topLineWrapper -->
+		<div class='header-wrapper' id='topLineWrapper'>
+
+			<!-- begin topLineLeft -->
+			<div class='element-wrapper' id='topLineLeft'>
+
+				<!-- begin section class header topLineLeftS -->
+				<!-- end section class header topLineLeftS -->
+              
+			</div>
+			<!-- end topLineLeft -->
+
+			<!-- begin topLineMiddle -->
+			<div class='element-wrapper' id='topLineMiddle'>
+
+				<!-- begin section class header topLineMiddleS -->
+				<!-- end section class header topLineMiddleS -->
+
+			</div>
+			<!-- end topLineMiddle -->
+<b:section class='header' growth='horizontal' id='topLineLeftS' maxwidgets='2' showaddelement='yes'/>
+			<!-- begin topLineRight -->
+			<div class='element-wrapper' id='topLineRight'>
+              
+				<!-- begin section class tabs topLineRightS-->
+				<!-- end section class tabs topLineRightS-->
+
+			</div>
+			<!-- end topLineRight -->
+
+		</div>
+		<!-- end topLineWrapper -->
+
+		<!-- begin topMenuBar -->
+			<!-- container-items bevat de background-color -->
+			<!--	weggehaald bij topMenuBarLeft = topMenuFlex1 -->
+  		<div class='header-wrapper container-items' id='topMenuBar'>
+		
+			<!-- begin topMenuBarLeft -->
+			<div class='element-wrapper' id='topMenuBarLeft'>
+
+				<!-- begin section class header topMenuFlex1S -->
+				<!-- begin site titel -->
+				<div class="website-title">
+DANGA BUSINESS ADVENTURE
+				<!-- end section class header topMenuFlex1S -->
+				</div>
+				<!-- end site title -->
+
+				<button class='menu-toggleZ m-menu-middle' id='menu-toggle-3' 
+					aria-label='Hoofdmenu openen' 
+					aria-controls='myHamburg-3' 
+					aria-expanded='false'>
+                    <span class='menu-toggle-barZ menu-toggle-bar--topZ'></span>
+                    <span class='menu-toggle-barZ menu-toggle-bar--middleZ'></span>
+                    <span class='menu-toggle-barZ menu-toggle-bar--bottomZ'></span>
+				</button>
+				
+			</div>
+			<!-- end topMenuBarLeft -->
+
+			<!-- begin topMenuFlex2 -->
+			<div class='element-wrapper' id='topMenuBarRight'>
+							
+				<!-- navigatie (op desktop naast de naam; op mobiel onder de balk als paneel) -->
+				<nav class="m-menu-hide m-flyout d-flyout" id="myHamburg-3" role="navigation" aria-label="Hoofdmenu">
+					<ul class="mobile-menu-main flex-container">
+						<li><a href="https://www.danga.biz/search/label/NEWS">News</a></li>
+
+						<li class="has-submenu">
+							<a href="#" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Technologies</a>
+							<ul class="submenu">
+								<li><a href="https://www.danga.biz/search/label/ERP">ERP</a></li>
+								<li><a href="https://www.danga.biz/search/label/WMS">WMS</a></li>
+								<li><a href="https://www.danga.biz/search/label/PLM">PLM</a></li>
+								<li><a href="https://www.danga.biz/search/label/e-Invoicing">Electronic Invoicing</a></li>
+								<li><a href="https://www.danga.biz/search/label/e-Commerce">Electronic Commerce</a></li>
+								<li><a href="https://www.danga.biz/search/label/e-Procurement">Electronic Procurement</a></li>
+								<li><a href="https://www.danga.biz/search/label/Smart%20Industry">Smart Industry</a></li>
+							</ul>
+						</li>
+
+						<li class="has-submenu">
+							<a href="#" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Solutions</a>
+							<ul class="submenu">
+								<li><a href="https://www.danga.biz/search/label/D365%20FSCM">D365 FSCM</a></li>
+								<li><a href="https://www.danga.biz/search/label/SAP">SAP</a></li>
+								<li><a href="https://www.danga.biz/search/label/NetSuite">NetSuite</a></li>
+								<li><a href="https://www.danga.biz/search/label/Rootstock">Rootstock</a></li>
+								<li><a href="https://www.danga.biz/search/label/Salesforce">Salesforce</a></li>
+								<li><a href="https://www.danga.biz/search/label/Acumatica">Acumatica</a></li>
+								<li><a href="https://www.danga.biz/search/label/PropelPLM">PropelPLM</a></li>
+								<li><a href="https://www.danga.biz/search/label/ToolsGroup">ToolsGroup</a></li>
+							</ul>
+						</li>
+
+						<li class="has-submenu">
+							<a href="#" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Leadership</a>
+							<ul class="submenu">
+								<li><a href="https://www.danga.biz/search/label/Consultancy">Consultancy</a></li>
+								<li><a href="https://www.danga.biz/search/label/Business%20Leadership">Business</a></li>
+								<li><a href="https://www.danga.biz/search/label/Digital%20Leadership">Digital</a></li>
+								<li><a href="https://www.danga.biz/search/label/Digital%20Transformation">Transformation</a></li>
+								<li><a href="https://www.danga.biz/search/label/Process%20Modeling">Process Modelling</a></li>
+								<li><a href="https://www.danga.biz/search/label/Supply%20Chain">Supply Chain</a></li>
+								<li><a href="https://www.danga.biz/search/label/Sustainability">Sustainability</a></li>
+							</ul>
+						</li>
+
+						<li class="has-submenu">
+							<a href="#" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Cultuur - Toerisme</a>
+							<ul class="submenu">
+								<li><a href="https://www.danga.biz/search/label/Wijn">Wijn</a></li>
+								<li><a href="https://www.danga.biz/search/label/Bier">Bier</a></li>
+							</ul>
+						</li>
+
+						<li class="has-submenu">
+							<a href="#" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">Methodologies</a>
+							<ul class="submenu">
+								<li><a href="https://www.danga.biz/search/label/Prince2">PRINCE2®</a></li>
+								<li><a href="https://www.danga.biz/search/label/Prosci%20ADKAR">Prosci ADKAR</a></li>
+								<li><a href="https://www.danga.biz/search/label/Archimate">Archimate</a></li>
+								<li><a href="https://www.danga.biz/search/label/BPMN">BPMN</a></li>
+								<li><a href="https://www.danga.biz/search/label/DMN">DMN</a></li>
+								<li><a href="https://www.danga.biz/search/label/DSDM">DSDM</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				
+			</div>
+			<!-- end topMenuBarRight -->
+
+		</div>
+		<!-- end topMenuBar -->
+
+
+
+</header>  
+
+<!-- deze clear:both zorgt dat header wel getoond wordt - 29-6-2023 -->
+<div style='clear:both;'/>
+
+	<main>
+
+		<!-- begin middleContainerWrapper -->
+		<div class='element-wrapper' id='middleContainerWrapper'>
+
+			<!-- begin section class header topMenuBarRightS -->     
+			<!-- end section class header topMenuBarMiddleS -->
+      
+		<!-- begin scrolling banner on index page -->
+          
+			<!-- begin scrolling-banner -->
+				<!-- use class instead of div for reusability -->
+			<div class='scrolling-banner'>
+              
+				<!-- begin scrolling-content -->   
+				<div class='scrolling-content'>
+					<a href='https://nextglamping.blogspot.com/2023/07/wat-zijn-de-grootste-uitdagingen-bij-de-implementatie-van-erp.html' target='_blank'>
+						Wat zijn de grootste uitdagingen bij de implementatie van ERP
+					</a>
+&#160;
+&#160;
+&#160;
+					<a href='https://nextglamping.blogspot.com/2025/08/tijd-voor-leiderschap-waarom-erp-nu-het-verschil-maakt.html' target='_blank'>
+						Tijd voor leiderschap: waarom ERP nú het verschil maakt
+					</a>
+&#160;
+&#160;
+&#160;
+					<a href='https://www.danga.biz/2024/04/europese-commissie-helpt-wijnproducenten-met-alcoholvrije-wijn.html' target='_blank'>
+						Europese Commissie kondigt ontwikkeling rechtskader aan voor alcoholarme wijn
+					</a>
+                  
+				</div>
+				<!-- end scrolling-content -->
+
+			</div>
+			<!-- end scrolling-banner -->
+          
+		<!-- end scrolling banner on index page -->
+
+	</div>
+	<!-- end middleContainerWrapper -->
+
+	<!-- Begin class centerBarWrapper -->
+	<div class='main-wrapper' id='centerBarWrapper'>
+
+				<!-- begin centerBarLeft -->
+				<div class='element-wrapper' id='centerBarLeft'>
+
+				<!-- begin section class header centerBarLeftS -->
+centerBarLeftS
+					<!-- begin stickyShareBarLeft -->
+					<div id="stickyShareBarLeft">
+
+						<a class="share-link share-icon linkedin" 
+							data-base="https://www.linkedin.com/shareArticle?url=" 
+							target="_blank" 
+							rel="noopener noreferrer nofollow" 
+							title="LinkedIn">
+							<i class="fab fa-linkedin-in"></i>  
+						</a>  
+
+						<a class="share-link share-icon twitter" 
+							data-base="https://twitter.com/intent/tweet?url=" 
+							target="_blank" 
+							rel="noopener noreferrer nofollow" 
+							title="X">
+							<i class="fab fa-x-twitter"></i>  
+						</a>  
+
+						<a class="share-link share-icon facebook" 
+							data-base="https://www.facebook.com/sharer/sharer.php?u=" 
+							target="_blank" 
+							rel="noopener noreferrer nofollow" 
+							title="Facebook">
+							<i class="fab fa-facebook-f"></i>  
+						</a>
+					  
+						<a class="share-link share-icon whatsapp" 
+							data-base="https://api.whatsapp.com/send?text=" 
+							target="_blank" 
+							rel="noopener noreferrer nofollow" 
+							title="Whatsapp">
+							<i class="fab fa-whatsapp"></i>  
+						</a>
+					 
+					</div>
+					<!-- end stickyShareBarLeft -->
+
+				<!-- end section class header centerBarLeftS -->
+
+				</div>
+				<!-- end centerBarLeft -->
+
+				<!-- begin centerBarMiddle -->
+				<div class='element-wrapper' id='centerBarMiddle'>
+					<!-- begin section class header centerBarMiddleS -->
+centerBarMiddleS
+<div style="height: 600px; background: rgba(0,0,0,0.03);">
+  <!-- tijdelijke testhoogte -->
+</div>
+					<!-- end section class header centerBarMiddleS -->
+
+				</div>
+				<!-- end centerBarMiddle -->
+
+				<!-- begin centerBarRight -->
+				<div class='element-wrapper' id='centerBarRight'>
+
+				<!-- begin section class header centerBarRightS -->
+centerBarRightS
+				<!-- end section class header centerBarRightS -->
+				</div>
+				<!-- end centerBarRight -->
+
+
+	</div>
+	<!-- end centerBarWrapper -->
+
+</main>
+
+
+	<footer>
+ 		<!-- begin BottomLineWrapper -->
+		<div class='footer-wrapper' id='bottomLineWrapper'>
+
+			<!-- begin bottomLineMiddle -->
+			<div id='bottomLineMiddle'>
+
+				<!-- begin section class header bottomLineMiddleS -->
+				<!-- end section class header bottomLineMiddleS -->
+
+			<!-- begin copyright notice -->
+			Copyright &#169; 2000 -
+			<script language='JavaScript'>
+				today=new Date();
+				year=today.getFullYear();
+				document.write(year);
+			</script> 
+			DanGa | Alle rechten voorbehouden - All rights reserved.
+			<!-- end copyright notice -->
+
+			</div>
+			<!-- end bottomLineMiddle -->
+
+		</div>
+		<!-- end BottomLineWrapper -->
+
+	</footer>
+
+</div>
+<!-- end outerWrapper -->
+
+  
+</body>
+
+</html>
+  
