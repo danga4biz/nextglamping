@@ -7,6 +7,12 @@
 			/*** BEGIN *** CSS SOCIAL MEDIA BUTTONS ONDERAAN ********************************************************************/
 			/*																													*/
 			/* 01-10-2025																										*/
+			/*	- responsieve afmetingen met clamp() EN aspect-ratio: 1 / 1 voor de buttons 									*/
+			/*	- text-align: center in #stickyShareBarLeft en #stickyShareBarBottom: helpt bij centrering van elementen		*/
+			/*	- position: fixed voor max-width: 600px zorg dat bij mobiel gedrag de sticky bar onderaan komt te staan			*/
+			/*	- width, height en font in media query verwijderd																*/
+			/*																													*/
+			/* 01-10-2025																										*/
 			/*	- correctie left: 12 verwijderen																				*/
 			/*																													*/
 			/* 30-09-2025	stickybar voor linkerkant toegevoegd 																*/
@@ -34,31 +40,44 @@
 
 				/* STICKY BAR LINKS */
 				#stickyShareBarLeft {
-					position: fixed;
-					top: 50%; /* sticky vanaf halverwege viewport */
-/* 01-10-2025					left: 12; */
-					transform: translateY(-50%); /* exact verticaal centreren */
+      
+/* 01-10-2025					position: fixed; */
+position: sticky;
+
+/* 01-10-2025					top: 50%; */ /* sticky vanaf halverwege viewport */
+top: 12px;      
+/*					left: 12px;*/
+/* 01-10-2025					transform: translateY(-50%);*/ /* exact verticaal centreren */
 					display: flex;
 					flex-direction: column;
 					gap: 16px;
 					padding: 12px 0;
 					z-index: 9999;
 
-					background-color: transparent;
-					box-shadow: none;
-					border-radius: 0;
+					background-color: transparent; /* maakt de balk onzichtbaar */  
+					border-radius: 0; /* verwijder alle rondingen - eigenlijk niet nodig want balk wordt toch niet getoond */
+					box-shadow: none; /* geen schaduw - eigenlijk niet nodig want balk wordt toch niet getoond */  
+      
+					/* 01-10-2025 centreren elementen */
+      				text-align: center;
 				}
 
+				/* 01-10-2025 reponsieve buttons mbv clamp 												*/  
+      			/* met aspect-ratio: 1 / 1 zeggen we maak de hoogte automatisch gelijk aan de breedte 	*/
+      
 				#stickyShareBarLeft a {
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					width: 42px;
-					height: 42px;
+/* 01-10-2025				width: 42px;*/
+					width: clamp(32px, 6vw, 42px); /* 01-10-2025 toegevoegd */		
+					aspect-ratio: 1 / 1; /* 01-10-2025 toegevoegd */
+/* 01-10-2025					height: 42px;*/
 					border-radius: 50%;
 					background-color: #f0f0f0;
 					text-decoration: none;
-					font-size: 22px;
+/* 01-10-2025					font-size: 22px; */
+					font-size: clamp(16px, 4vw, 22px); /* 01-10-2025 toegevoegd */
 					transition: transform 0.2s ease, background-color 0.3s ease;
 				}
 
@@ -70,6 +89,8 @@
 				/* Mobiel gedrag */
 				@media (max-width: 600px) {
 					#stickyShareBarLeft {
+/* 01-10-2025 toegevoegd, zorgt dat de sticky bar onder centerBarMiddle komt te staan */
+position: fixed;					
 						top: auto;
 						bottom: 0;
 						left: 50%;
@@ -78,20 +99,14 @@
 						gap: 12px;
 						padding: 10px 0;
 					}
-
-					#stickyShareBarLeft a {
-						width: 40px;
-						height: 40px;
-						font-size: 20px;
-					}
 				}		  
 				
 				/* STICKY BAR ONDERAAN */  
 				#stickyShareBarBottom {
 					position: sticky;
 					bottom: 0;
-					width: 100%; /* uitgezet hierna zodat balk net zo groot als de iconen die er in staan 23-08-2025 */
-					background-color: #ffffff; /* uitgezet hierna zodat balk onzichtbaar is - 23-08-2025 */
+/* 23-08-25 					width: 100%; */ /* uitgezet hierna zodat balk net zo groot als de iconen zijn die er in staan 23-08-2025 */
+/* 23-08-2025					background-color: #ffffff;  uitgezet zodat balk onzichtbaar is, zie hierna  */
 					display: flex;
 					justify-content: center;
 					gap: 16px; /* bepaalt de afstand tussen de iconen binnen stickyShareBarBottom */
@@ -107,6 +122,9 @@
 					background-color: transparent; /* maakt de balk onzichtbaar */  
 					border-radius: 0; /* verwijder alle rondingen - eigenlijk niet nodig want balk wordt toch niet getoond */
 					box-shadow: none; /* geen schaduw - eigenlijk niet nodig want balk wordt toch niet getoond */  
+      
+					/* 01-10-2025 centreren elementen */
+      				text-align: center;
 				}
 
 				/* Icon styling met afgeronde hoeken */
@@ -114,19 +132,16 @@
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					width: 48px;
-					height: 48px;
+/* 01-10-2025				width: 42px;*/
+					width: clamp(32px, 6vw, 42px); /* 01-10-2025 toegevoegd */		
+					aspect-ratio: 1 / 1; /* 01-10-2025 toegevoegd */
+/* 01-10-2025					height: 42px;*/
 					border-radius: 50%; /* Ronde iconen */
 					background-color: #f0f0f0;
 					text-decoration: none;
-					font-size: 24px;
+/* 01-10-2025					font-size: 22px; */
+					font-size: clamp(16px, 4vw, 22px); /* 01-10-2025 toegevoegd */
 					transition: transform 0.2s ease, background-color 0.3s ease;
-			  
-					/* 23-08-2025 social media icons kleiner gemaakt voor desktop */
-					/*	- voor mobiel zie media query */
-					width: 42px;
-					height: 42px;
-					font-size: 22px;  
 				}
 
 				/* Hover effect */
@@ -154,13 +169,9 @@
 						padding: 10px 0; /* voegt verticale ruimte toe boven en onder de iconen binnen stickyShareBarBottom */
 					}
 			  
-					#stickyShareBarBottom a {
-						width: 40px;
-						height: 40px;
-						font-size: 20px;
-					}
 				}  
 			  
+      
 			/*** END *** CSS SOCIAL MEDIA BUTTONS ONDERAAN **********************************************************************/
 
 			/* ================================================================================================================	*/
