@@ -6,6 +6,9 @@
 
 			/*** BEGIN *** CSS SOCIAL MEDIA BUTTONS ONDERAAN ********************************************************************/
 			/*																													*/
+			/* 01-10-2025																										*/
+			/*	- correctie left: 12 verwijderen																				*/
+			/*																													*/
 			/* 30-09-2025	stickybar voor linkerkant toegevoegd 																*/
 			/*	- de knoppen verschijnen bij gebruik van deze stickybar aan de linkerkant in centerBarLeft						*/
 			/*	- 																												*/
@@ -32,9 +35,9 @@
 				/* STICKY BAR LINKS */
 				#stickyShareBarLeft {
 					position: fixed;
-					top: 50%;
-					left: 12;
-					transform: translateY(-50%);
+					top: 50%; /* sticky vanaf halverwege viewport */
+/* 01-10-2025					left: 12; */
+					transform: translateY(-50%); /* exact verticaal centreren */
 					display: flex;
 					flex-direction: column;
 					gap: 16px;
