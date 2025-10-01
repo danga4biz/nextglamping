@@ -8,6 +8,39 @@ Bestand: `CHANGELOG-sharebar-layer.md`
 
 > ⚠️ Testlog — bevat voorlopige wijzigingen die pas worden toegevoegd aan `CHANGELOG-sharebar-layer.md` na volledige validatie
 
+## 01-10-2025 - [TESTFASE] responsieve afmetingen met clamp() EN aspect-ratio: 1 / 1 voor de buttons 
+
+In #stickyShareBarBottom a en #stickyShareBarLeft a
+- Gebruik clamp(min, preferred, max) voor width en font-size
+- Daardoor schalen de knoppen elegant mee met het schermformaat, zonder media queries
+- Gebruik van aspect-ratio: 1 / 1 om de hoogte te schalen met de breedte
+
+## 01-10-2025 - [TESTFASE] mobiel gedrag via @media (max-width: 600px) voor #stickyShareBarLeft
+- laat de sticky bar netjes onderaan het scherm "floaten" via position: fixed, én je maakt hem horizontaal (row).
+
+
+## 01-10-2025 - - [TESTFASE] text-align: center in #stickyShareBarLeft en #stickyShareBarBottom
+- helpt bij centrering van elementen in sommige browsers
+
+## 01-10-2025 - [TESTFASE] stickyShareBarLeft
+
+- Context: stickyShareBarLeft in centerBarLeft blijft niet plakken aan de bovenkant
+
+- centerBarWrapper: `align-items: flex-start` vervangen door `align-items: stretch`
+
+- `align-items: stretch` zorgt dat alle kolommen even hoog worden als centerBarMiddle
+- stickyBarLeft: `position: fixed` vervangen door `position: sticky`
+- `top: 50%` vervangen door `top;  12px` 
+- `transform: translateY(-50%)` verwijdert
+- `left: 12px` verwijdert
+
+- centerBarLeft: `position: relative` toegevoegd
+
+- voeg font awesome toe met de social media buttons
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet'/>
+
+- buttons verkleinen voor mobiel voor stickyShareBarLeft en stickyShareBarBottom 
+
 ## 30-09-2025 — [TESTFASE] stickyShareBarLeft visueel gematcht aan oude onderbalk
 
 - Context: Overgang van `#stickyShareBarBottom` naar `#stickyShareBarLeft` voor desktopgebruik
