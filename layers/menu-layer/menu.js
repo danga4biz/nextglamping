@@ -1,8 +1,9 @@
 
 
 	/* **************************************************************************************************************** */
-	/* defer zorgt ervoor dat het script pas wordt uitgevoerd nadat de volledige DOM is geladen als volgt: 				*/
-	/* 		<script src="https://danga4biz.github.io/nextglamping/layers/menu-layer/menu.js" defer></script>			*/
+	/* Script wordt extern geladen via defer-attribuut voor correcte DOM-initialisatie									*/
+	/* 	Voorbeeld: menu-layer/menu.js wordt pas uitgevoerd nadat de volledige DOM is geladen							*/
+	/* 	Zie GitHub: https://danga4biz.github.io/nextglamping/layers/menu-layer/menu.js									*/
 	/* **************************************************************************************************************** */
 
 	
