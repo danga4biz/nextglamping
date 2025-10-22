@@ -69,7 +69,11 @@
 		}
 
 		/* =======================================	d-flyout > ul > li ====================================================	*/
-		
+
+		/* 22-10-2025 probleem met shift bij hover over menu-items opgelost door:											*/
+		/*		- dubbele declaratie van border-eigenschappen verwijdert:													*/
+		/*		border-bottom-style, border-bottom-width, border-top-style en border-top-width								*/
+			
 		/* 17-09-2025 verwijder flex wordt niet gebruikt in d-flyout														*/
 		
 		/* transition zorgt voor de verandering van border-top/bottom kleur													*/
@@ -103,29 +107,32 @@
 			text-align: center;
 			
 			border-bottom-color: transparent;
-			border-bottom-style: solid;
-			border-bottom-width: thick;
+/* 22-10-2025 REMOVED				border-bottom-style: solid; */
+/* 22-10-2025 REMOVED				border-bottom-width: thick; */
 			border-bottom: 3px solid transparent; /* dikke lijn onder */
 
 			border-top-color: transparent;
-			border-top-style: solid;
-			border-top-width: thin;
+/* 22-10-2025 REMOVED				border-top-style: solid; */
+/* 22-10-2025 REMOVED				border-top-width: thin; */
 			border-top: 1px solid transparent; /* dunne lijn boven */
 
-			transition: border-color 0.3s ease;
-  
+			transition: border-color 0.3s ease;  
 		}
 
 		/* =======================================	.d-flyout > ul > li:hover =============================================	*/
-		
+			
+		/* 22-10-2025 probleem met shift bij hover over menu-items opgelost door:											*/
+		/*		- dubbele declaratie van border-eigenschappen verwijdert:													*/
+		/*		border-bottom-style, border-bottom-width, border-top-style en border-top-width								*/
+			
 		.d-flyout > ul > li:hover
 		{
 			border-bottom-color: initial; /* dikke lijn zichtbaar bij hover */
-			border-bottom-style: solid;
-			border-bottom-width: thick;
+/* 22-10-2025 REMOVED				border-bottom-style: solid; */
+/* 22-10-2025 REMOVED				border-bottom-width: thick; */
 			border-top-color: initial; /* dunne lijn zichtbaar bij hover */
-			border-top-style: solid;
-			border-top-width: thin;
+/* 22-10-2025 REMOVED				border-top-style: solid; */
+/* 22-10-2025 REMOVED				border-top-width: thin; */
 		}
 		
 		/*	=======================================	.d-flyout li a ========================================================	*/
