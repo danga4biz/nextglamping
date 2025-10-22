@@ -4,6 +4,15 @@ Alle wijzigingen aan de navigatie en hamburgerstructuur worden hier vastgelegd. 
 
 ---
 
+[2025-10-22 16:15] docs – README-menu-layer uitgebreid met scriptstructuur
+
+- Toegevoegd: overzicht van functies in menu.js (hamburger, submenu, aria, sluitgedrag)
+- Toelichting: DOMContentLoaded, viewportgedrag, aria-expanded per device
+- Impact: verhoogt inzicht en traceerbaarheid van JS-layer voor toekomstige uitbreidingen
+
+---
+
+
 ## [2025-10-22 15:55] v0.1.1 – HTML-commentaar vervangen in menu.js
 
 - Gewijzigd: HTML-commentaar (`<!-- ... -->`) verwijderd uit `menu.js`
