@@ -9,6 +9,8 @@
 			/*																													*/
 	
 			/* === Kleuren en typografie ======================================================================================	*/
+			/* 23-10-2025 --menu-items-BORDER-color toegevoegd voor .d-flyout > ul > li											*/
+
 			:root
 			{
 				--main-bg-color: teal;
@@ -40,7 +42,8 @@
 				--menu-items-TXT-hover-color: yellow;
 				--menu-items-TXT-active-color: brown;
 				--menu-items-TXT-fallback-color: white;
-							
+				--menu-items-BORDER-color: white;
+
 				--topMenuFlexWrapper-BG-color: #D4E4F7;
 
 				--topLineWrapper-BG-color: #D4E4F7;
