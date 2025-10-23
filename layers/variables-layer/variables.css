@@ -1,0 +1,65 @@
+		/* *** BEGIN *** layer variables **************************************************************************************	*/
+
+			/* ================================================================================================================	*/
+			/* 23-10-2025							CUSTOM PROPERTY VARIABLES IN :ROOT											*/
+			/* ================================================================================================================	*/
+			
+			/*	:root is het hoogste niveau in de CSS cascade: variabelen daar zijn overal beschikbaar							*/
+			/*		Deze vorm van variabelen benoemen in :root is strategisch krachtig in moderne CSS-architectuur.				*/
+			/*																													*/
+	
+			/* === Kleuren en typografie ======================================================================================	*/
+			:root
+			{
+				--main-bg-color: teal;
+				--main-txt-color: blue;
+
+				--root-BG-color: AliceBlue;
+				--root-TXT-color: Black;
+				--root-font-family: Frutiger, Baskerville, "Segoe UI", sans-serif;
+				--root-font-weight: 400;
+
+				--outerWrapper-BG-color: Azure;
+				--outerWrapper-TXT-color: DarkRed;
+				--outerWrapper-TXT-font-family: Frutiger, Baskerville, "Segoe UI", sans-serif;
+
+				--website-title-TXT-color: DarkBlue;
+				--website-title-TXT-font-family: Raleway, Frutiger, Baskerville, "Segoe UI", sans-serif;
+				--website-title-font-size: 1.5rem;
+
+				/* topMenuFlexWrapper en bottomContainerWrapper achtergrondkleur */
+				--container-items-BG-color: #3399cc;
+
+				/* tekstkleur menubalk */
+				/* 12-09-2025 vervangen door menu-items-TXT-color */
+				--container-items-TXT-color: white;
+				
+				/* tekstkleur menu-items */
+				--menu-items-TXT-link-color: white;
+	/*			--menu-items-TXT-visited-color: green;	*/
+				--menu-items-TXT-hover-color: yellow;
+				--menu-items-TXT-active-color: brown;
+				--menu-items-TXT-fallback-color: white;
+							
+				--topMenuFlexWrapper-BG-color: #D4E4F7;
+
+				--topLineWrapper-BG-color: #D4E4F7;
+
+				--bottomLineWrapper-BG-color: #D4E4F7;
+
+				--centerBarWrapper-BG-color: #D4E4F7;
+
+				--middleContainerWrapper-BG-color: #D4E4F7;
+
+				--bottomContainerWrapper-BG-color: #D4E4F7;
+
+				/* dropdown box achtergrondkleur */
+				--d-flyout-dropdown-BG-color: #036;
+
+				/* dropdown tekstkleur en hoverkleur */
+				--d-flyout-dropdown-TXT-color: #ffffff;
+				--d-flyout-link-hover: #ffd700;
+			}	
+
+		}
+		/* *** END *** layer variables ****************************************************************************************	*/
