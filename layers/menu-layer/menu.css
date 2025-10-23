@@ -70,6 +70,27 @@
 
 		/* =======================================	d-flyout > ul > li ====================================================	*/
 
+		/* 23-10-2025 waar komt de kleur van de borders vandaan en kunnen we die een andere kleur geven dan de tekst		*/
+
+		/*	- De kleur van border-top en border-bottom wordt geactiveerd in .d-flyout > ul > li:hover via:					*/
+		/*		border-top-color: initial;																					*/
+		/* 		border-bottom-color: initial;																				*/
+		/*																													*/
+		/*	- 'initial' reset de waarde naar de standaardwaarde, voor border-kleur is dat: currentColor						*/
+		/* 																													*/
+		/*	- currentColor is een algemeen CSS keyword dat verwijst naar de 'color' van het element zelf:					*/
+		/*		Als 'color' lokaal (op het element zelf) is gedefinieerd, dan wordt die kleur gebruikt, anders 				*/
+		/*		wordt de waarde overgeërfd van een ouder element.															*/
+		/*																													*/
+		/*	- currentColor werkt in alle kleur-eigenschappen (border, outline, fill, stroke, etc.) maar wordt zelden 		*/
+		/*	expliciet gebruikt — meestal impliciet via 'initial' of 'inherit'												*/
+		/*																													*/
+		/*	- Let op: om de border-kleur onafhankelijk te maken van currentColor, moet je deze expliciet instellen op 		*/
+		/*		d-flyout > ul > li:hover als volgt: 																		*/
+		/*			border-top-color: var(--menu-items-BORDER-hover-color, currentColor);									*/
+		/* 			border-bottom-color: var(--menu-items-BORDER-hover-color, currentColor);								*/
+		/*																													*/
+
 		/* 22-10-2025 probleem met shift bij hover over menu-items opgelost door:											*/
 		/*		- dubbele declaratie van border-eigenschappen verwijdert:													*/
 		/*		border-bottom-style, border-bottom-width, border-top-style en border-top-width								*/
@@ -116,23 +137,33 @@
 /* 22-10-2025 REMOVED				border-top-width: thin; */
 			border-top: 1px solid transparent; /* dunne lijn boven */
 
-			transition: border-color 0.3s ease;  
-		}
+				transition: border-color 0.3s ease;
+			}
 
 		/* =======================================	.d-flyout > ul > li:hover =============================================	*/
+
+		/* 23-10-2025 waar komt de kleur van de borders vandaan en kunnen we die een andere kleur geven dan de tekst		*/
+		/*		Zie voor uitleg: d-flyout > ul > li																			*/
 			
+		/*	- border-top-color en border-bottom-color vervangen door:														*/
+		/*			border-top-color: var(--menu-items-BORDER-hover-color, currentColor);									*/
+		/* 			border-bottom-color: var(--menu-items-BORDER-hover-color, currentColor);								*/
+
 		/* 22-10-2025 probleem met shift bij hover over menu-items opgelost door:											*/
 		/*		- dubbele declaratie van border-eigenschappen verwijdert:													*/
 		/*		border-bottom-style, border-bottom-width, border-top-style en border-top-width								*/
-			
+
 		.d-flyout > ul > li:hover
 		{
-			border-bottom-color: initial; /* dikke lijn zichtbaar bij hover */
+/* 23-10-2025 REPLACED				border-bottom-color: initial; */ /* dikke lijn zichtbaar bij hover */
 /* 22-10-2025 REMOVED				border-bottom-style: solid; */
 /* 22-10-2025 REMOVED				border-bottom-width: thick; */
-			border-top-color: initial; /* dunne lijn zichtbaar bij hover */
+/* 23-10-2025 REPLACED				border-top-color: initial; */ /* dunne lijn zichtbaar bij hover */
 /* 22-10-2025 REMOVED				border-top-style: solid; */
 /* 22-10-2025 REMOVED				border-top-width: thin; */
+
+			border-top-color: var(--menu-items-BORDER-color, currentColor); /* dunne lijn zichtbaar bij hover */
+			border-bottom-color: var(--menu-items-BORDER-color, currentColor); /* dikke lijn zichtbaar bij hover */
 		}
 		
 		/*	=======================================	.d-flyout li a ========================================================	*/
