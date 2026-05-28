@@ -262,6 +262,13 @@
 		}
 		
 		/*	=======================================	.d-flyout > ul > li > a:after =========================================	*/
+
+		/* 28-05-2026 grote arrow weer verwijdert en instelling klein arrow aangepast										*/
+		/*		content: '\25BC'; font-size: 0.75rem; margin-left: 0.5rem; vertical-align: middle;							*/
+		/*		[content: '\25BC';] is de Unicode-code voor een solide, naar beneden wijzende driehoek.						*/
+		/*		[font-size: 0.75rem;] verlaagt de grootte van het icoon														*/
+		/*		[margin-left: 0.5rem;] creëert een subtiele, vaste ademruimte tussen het menu-woord en de driehoek.			*/
+		/*		[vertical-align: middle;] lijnt de driehoek verticaal perfect uit op de middellijn van de menu-letters.		*/
 		
 		/* 11-09-2025 visueel kleine arrow vervangen door grote																*/
 		/*																													*/
@@ -269,15 +276,24 @@
 		/*																													*/
 
 		/*	=======================================	.d-flyout > ul > li > a:after =========================================	*/
+		/* 28-05-2026 oorspronkelijk arrow teruggezet met andere instellingen												*/
+		.d-flyout > ul > li > a:after {
+			content: '\25BC';
+			font-size: 0.75rem;
+			margin-left: 0.5rem;
+			vertical-align: middle; 
+    	}
+
 		/* 11-09-2025 visueel kleine arrow vervangen door grote 															*/
 		/* .d-flyout > ul > li > a:after {content: '\1F893';} */
 
+		/* 28-05-2026 verwijdert																							*/
 		/* visueel grote en duidelijke arrow 																				*/
-		.d-flyout > ul > li > a:after {
+		/* .d-flyout > ul > li > a:after {
 			content: '\25BC'; 
 			font-size: 1.2rem;
 			margin-left: 0.5rem;
-		}
+		} */
 
 		/* voorkomt dat een arrow verschijnt bij items zonder submenu 														*/
 		.d-flyout li > a:only-child:after {content: '';}
