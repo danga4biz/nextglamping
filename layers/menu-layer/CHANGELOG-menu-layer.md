@@ -5,7 +5,7 @@ Alle wijzigingen aan de navigatie en hamburgerstructuur worden hier vastgelegd. 
 
 ---
 
-## [28-05-2026] v0.1.4 — Borderkleur hovergedrag geactiveerd via variabele met fallback op `currentColor`
+## [28-05-2026] v0.1.4 — pijltjes grootte en alignment aangepast
 
 ### Components
 - `.d-flyout > ul > li > a:after`
