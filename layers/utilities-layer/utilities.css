@@ -3,6 +3,10 @@
 			/* ================================================================================================================	*/
 		
 			/*** BEGIN *** CSS SCROLLING BANNER bovenaan in main ****************************************************************/
+
+			/* 30-05-2025 .scrolling-content																					*/
+			/*		[white-space] semicolon vervangen door colon 																*/
+			/*																													*/
 			/* 30-09-2025																										*/
 			/*		Scrolling snelheid wordt bepaalt door de animation-speed en de breedte (width) van het scherm.				*/
 			/*																													*/
