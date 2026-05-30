@@ -1,4 +1,15 @@
-## [scrolling-banner-layer] v1.2 — 2025-09-30
+# Changelog - utilities-layer
+
+Alle wijzigingen worden hier vastgelegd. Elke entry bevat datum, tijd, reden en impact.
+
+---
+
+## [30-05-2026] v0.1.2 — .scrolling-content correctie
+- [white-space] semicolon vervangen door colon 
+
+---
+
+## [30-09-2025] v0.1.1 — correcties doorgevoerd op keyframes scroll-left en .scrolling-content
 
 ### Changed
 - 🔁 Scrollafstand gewijzigd van `padding-left + translateX(-100%)` naar `translateX(100vw → -100%)`
@@ -13,7 +24,9 @@
 - ✅ Responsief gedrag op verschillende schermgroottes
 
 
-## Versie 1 – 2025-09-29
+---
+
+## [29-10-2025] v0.1.0 — CHANGELOG-utilities-layer.md aangemaakt
 
 ### Layer aangemaakt: `utilities-layer`
 
