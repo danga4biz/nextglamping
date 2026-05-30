@@ -2,6 +2,18 @@
 
 Alle wijzigingen aan de navigatie en hamburgerstructuur worden hier vastgelegd. Elke entry bevat datum, tijd, reden en impact.
 
+
+---
+
+## [28-05-2026] v0.1.4 — Borderkleur hovergedrag geactiveerd via variabele met fallback op `currentColor`
+
+### Components
+- `.d-flyout > ul > li > a:after`
+
+### Changes
+- grote arrow weer verwijdert en instelling klein arrow aangepast
+- NEW: content: '\25BC'; font-size: 0.75rem; margin-left: 0.5rem; vertical-align: middle;
+
 ---
 
 ## [23-10-2025] v0.1.3 — Borderkleur hovergedrag geactiveerd via variabele met fallback op `currentColor`
